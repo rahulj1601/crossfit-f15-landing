@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ScrollReveal } from "./scroll-reveal";
 import { CursorGlow } from "./cursor-glow";
+import { LeadForm } from "./lead-form";
 
 export default function Home() {
   return (
@@ -185,33 +186,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* BOOKING SECTION */}
-      <section id="book" className="pt-10 sm:pt-14 pb-12 sm:pb-16 px-3 sm:px-6 bg-[#040404] relative overflow-hidden">
+      {/* LEAD CAPTURE FORM */}
+      <section id="book" className="pt-10 sm:pt-14 pb-12 sm:pb-16 px-4 sm:px-6 bg-[#040404] relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cf-red/[0.06] rounded-full blur-[180px] pointer-events-none glow-orb" />
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-lg mx-auto relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-6 sm:mb-10">
-              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">
-                Book Your <span className="gradient-text">Free Intro</span>
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="inline-flex items-center gap-2 bg-white/[0.04] border border-white/[0.06] rounded-full px-4 py-1.5 mb-4 sm:mb-5">
+                <span className="w-5 h-5 bg-cf-red rounded-full flex items-center justify-center text-[10px] font-bold">1</span>
+                <span className="text-white/40 text-[10px] sm:text-xs tracking-wider uppercase">Step 1 of 2</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+                Get Your <span className="gradient-text">Free Intro</span>
               </h2>
-              <p className="text-gray-500 text-xs sm:text-base max-w-md mx-auto font-light mt-2 sm:mt-3">
-                Pick a time below. It only takes 30 seconds.
+              <p className="text-gray-500 text-xs sm:text-sm max-w-sm mx-auto font-light mt-2 sm:mt-3">
+                Enter your details below and we&apos;ll take you to pick a time.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="relative group">
+            <div className="relative">
               <div className="absolute -inset-[1px] bg-gradient-to-b from-cf-red/10 via-transparent to-cf-red/5 rounded-2xl" />
-              <div className="relative bg-[#0a0a0a] border border-white/[0.06] rounded-2xl p-1 sm:p-6 shadow-2xl">
-                <iframe
-                  src="https://api.leadconnectorhq.com/widget/booking/4MLW8Kg9AL4vM8CI9L2E"
-                  style={{ width: "100%", height: "700px", border: "none" }}
-                  scrolling="no"
-                  id="msgsndr-calendar"
-                  title="Book Your First Step Intro"
-                />
+              <div className="relative bg-[#0a0a0a] border border-white/[0.06] rounded-2xl p-6 sm:p-8 shadow-2xl">
+                <LeadForm />
               </div>
             </div>
           </ScrollReveal>
@@ -222,7 +221,7 @@ export default function Home() {
               "100% Free",
               "No Commitment",
               "30 Minutes",
-              "Personalised Plan Included",
+              "Personalised Plan",
             ].map((text) => (
               <div key={text} className="flex items-center gap-1.5 justify-center">
                 <svg className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-cf-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
