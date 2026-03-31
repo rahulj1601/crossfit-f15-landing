@@ -1,22 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "CrossFit F15 | Book Your First Step Intro",
+  title: "CrossFit F15 | The 28-Day Strong Start",
   description:
-    "Your journey at CrossFit F15 starts with a 30-minute First Step Intro. Book your free consultation today.",
+    "The only gym in Malta that doesn't let you start alone. A structured 28-day coaching system designed to build confidence, technique, and real results.",
   openGraph: {
-    title: "CrossFit F15 | Book Your First Step Intro",
+    title: "CrossFit F15 | The 28-Day Strong Start",
     description:
-      "Your journey at CrossFit F15 starts with a 30-minute First Step Intro. Book your free consultation today.",
+      "The only gym in Malta that doesn't let you start alone. Book your free consultation today.",
     images: [
-      "https://assets.cdn.filesafe.space/PE8avF50BBboGGbRC0bY/media/69cbcaa408fd234632ffd1ee.jpg",
+      "https://crossfitf15.com/wp-content/uploads/2024/07/High-Five-Time-683x1024.webp",
     ],
   },
 };
@@ -27,11 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className="min-h-screen bg-black text-white font-[family-name:var(--font-inter)]">
+    <html lang="en" className="antialiased">
+      <body className="min-h-screen bg-black text-white" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif" }}>
         {children}
       </body>
     </html>
