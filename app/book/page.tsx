@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CursorGlow } from "../cursor-glow";
+import { CalendarEmbed } from "./calendar-embed";
 
 export default function BookPage() {
   return (
@@ -35,7 +36,7 @@ export default function BookPage() {
       <section className="flex-1 pt-8 sm:pt-12 pb-12 sm:pb-16 px-3 sm:px-6 bg-[#040404] relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cf-red/[0.06] rounded-full blur-[180px] pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-6 sm:mb-8">
             <div className="inline-flex items-center gap-2 mb-3 sm:mb-4">
               <svg
@@ -67,13 +68,7 @@ export default function BookPage() {
           <div className="relative">
             <div className="absolute -inset-[1px] bg-gradient-to-b from-cf-red/10 via-transparent to-cf-red/5 rounded-2xl" />
             <div className="relative bg-[#0a0a0a] border border-white/[0.06] rounded-2xl p-1 sm:p-6 shadow-2xl">
-              <iframe
-                src="https://api.leadconnectorhq.com/widget/booking/4MLW8Kg9AL4vM8CI9L2E"
-                style={{ width: "100%", height: "700px", border: "none" }}
-                scrolling="no"
-                id="msgsndr-calendar"
-                title="Book Your First Step Intro"
-              />
+              <CalendarEmbed />
             </div>
           </div>
 
