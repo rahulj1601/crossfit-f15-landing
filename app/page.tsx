@@ -26,7 +26,7 @@ export default function Home() {
               alt="Crossfit F15 Logo"
               width={180}
               height={50}
-              className="h-10 sm:h-12 w-auto"
+              className="h-5 sm:h-6 w-auto"
             />
           </a>
 
