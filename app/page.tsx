@@ -19,14 +19,14 @@ export default function Home() {
 
       {/* HEADER - Exact match to crossfitf15.com */}
       <header className="bg-black sticky top-0 z-50 border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between">
           <a href="https://crossfitf15.com/">
             <Image
               src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
               alt="Crossfit F15 Logo"
               width={180}
               height={50}
-              className="h-5 sm:h-6 w-auto"
+              className="h-6 sm:h-7 w-auto"
             />
           </a>
 
