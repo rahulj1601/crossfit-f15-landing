@@ -18,8 +18,8 @@ export default function Home() {
       <CursorGlow />
 
       {/* HEADER - Exact match to crossfitf15.com */}
-      <header className="bg-white sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <header className="bg-black sticky top-0 z-50 border-b border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
           <a href="https://crossfitf15.com/">
             <Image
               src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
@@ -36,7 +36,7 @@ export default function Home() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[#4B4C4D] text-sm font-medium hover:text-black transition-colors"
+                className="text-white/60 text-xs font-medium hover:text-white transition-colors"
               >
                 {link.label}
               </a>
@@ -46,20 +46,20 @@ export default function Home() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="https://momence.com/sign-in?hostId=36119"
-              className="text-[#4B4C4D] text-sm font-medium hover:text-black transition-colors"
+              className="text-white/60 text-xs font-medium hover:text-white transition-colors"
             >
               my account
             </a>
             <a
               href="https://momence.com/sign-up/member?hostId=36119"
-              className="bg-black text-white text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-[#333] transition-colors"
+              className="bg-white text-black text-xs font-semibold px-5 py-2 rounded-full hover:bg-white/90 transition-colors"
             >
               join us
             </a>
           </div>
 
           {/* Mobile menu button */}
-          <button className="lg:hidden text-[#4B4C4D] p-2" aria-label="Menu">
+          <button className="lg:hidden text-white/60 p-2" aria-label="Menu">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -68,7 +68,7 @@ export default function Home() {
       </header>
 
       {/* 1. HERO */}
-      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[75vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://crossfitf15.com/wp-content/uploads/2024/07/High-Five-Time-683x1024.webp"
@@ -90,7 +90,7 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="animate-fade-up-delay text-[2rem] leading-[1.1] sm:text-5xl md:text-7xl font-extrabold tracking-tight sm:leading-[1.05] mb-4 sm:mb-5">
+          <h1 className="animate-fade-up-delay text-[2rem] leading-[1.1] sm:text-5xl md:text-6xl font-extrabold tracking-tight sm:leading-[1.05] mb-4 sm:mb-5">
             The Only Gym in Malta That
             <br />
             <span className="gradient-text">Doesn&apos;t Let You Start Alone</span>
@@ -148,12 +148,12 @@ export default function Home() {
       </section>
 
       {/* 2. THE PAIN */}
-      <section className="py-16 sm:py-24 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-cf-red/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
         <div className="max-w-3xl mx-auto relative z-10 text-center">
           <ScrollReveal>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight mb-6 sm:mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-6 sm:mb-8 leading-tight">
               Most People Don&apos;t Fail the Gym...
               <br />
               <span className="text-white/40">They Just Never Get Properly Started</span>
@@ -162,7 +162,7 @@ export default function Home() {
 
           <ScrollReveal>
             <p className="text-white/50 text-base sm:text-lg mb-6 sm:mb-8 font-light">You walk in...</p>
-            <div className="space-y-3 sm:space-y-4 max-w-md mx-auto text-left mb-8 sm:mb-10">
+            <div className="space-y-3 sm:space-y-4 max-w-md mx-auto text-left mb-6 sm:mb-8">
               {["You don't know what you're doing", "You feel behind everyone", "You lose confidence"].map((pain) => (
                 <div key={pain} className="flex items-center gap-3 text-white/60 text-sm sm:text-base">
                   <span className="w-1.5 h-1.5 bg-cf-red rounded-full flex-shrink-0" />
@@ -170,11 +170,11 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <p className="text-white/50 text-base sm:text-lg font-light mb-10 sm:mb-12">So you stop.</p>
+            <p className="text-white/50 text-base sm:text-lg font-light mb-6 sm:mb-8">So you stop.</p>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="w-16 h-[1px] bg-cf-red/30 mx-auto mb-8 sm:mb-10" />
+            <div className="w-16 h-[1px] bg-cf-red/30 mx-auto mb-6 sm:mb-8" />
             <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold gradient-text">
               That&apos;s exactly what we fix.
             </p>
@@ -183,13 +183,13 @@ export default function Home() {
       </section>
 
       {/* 3. THE BIG IDEA */}
-      <section className="py-16 sm:py-24 px-5 sm:px-6 bg-black relative overflow-hidden">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-black relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cf-red/[0.04] rounded-full blur-[150px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <ScrollReveal direction="left">
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-h-[500px]">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-h-[400px]">
                 <Image
                   src="https://crossfitf15.com/wp-content/uploads/2024/07/explanation-demo.webp"
                   alt="Coach explaining technique"
@@ -202,7 +202,7 @@ export default function Home() {
             <ScrollReveal direction="right">
               <div>
                 <p className="text-cf-red text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-3">Your Unique Starting Point</p>
-                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4">
                   The 28-Day Strong Start
                 </h2>
 
@@ -242,12 +242,12 @@ export default function Home() {
       </section>
 
       {/* 4. HOW IT WORKS */}
-      <section className="py-16 sm:py-24 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
         <div className="max-w-5xl mx-auto relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-10 sm:mb-14">
+            <div className="text-center mb-6 sm:mb-8">
               <p className="text-cf-red text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-3">Simple Process</p>
-              <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
                 Here&apos;s How You Start
               </h2>
             </div>
@@ -261,7 +261,7 @@ export default function Home() {
             ].map((card) => (
               <ScrollReveal key={card.step} delay={card.delay}>
                 <div className="group bg-gradient-to-b from-[#111] to-[#0a0a0a] border border-white/[0.04] rounded-2xl overflow-hidden hover:border-cf-red/20 transition-all duration-500 h-full">
-                  <div className="relative h-48 sm:h-56 overflow-hidden">
+                  <div className="relative h-40 sm:h-48 overflow-hidden">
                     <Image src={card.img} alt={card.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
                     <div className="absolute bottom-4 left-4 w-10 h-10 bg-cf-red text-white rounded-full flex items-center justify-center text-lg font-bold">
@@ -278,7 +278,7 @@ export default function Home() {
           </div>
 
           <ScrollReveal>
-            <div className="text-center mt-10 sm:mt-12">
+            <div className="text-center mt-6 sm:mt-8">
               <a href="#book" className="inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-10 sm:px-12 py-3.5 sm:py-4 rounded-full transition-all duration-300 text-sm sm:text-base tracking-wider uppercase active:scale-95 hover:scale-105">
                 Book Your Free Consultation
               </a>
@@ -288,19 +288,19 @@ export default function Home() {
       </section>
 
       {/* 5. FOR WHO */}
-      <section className="py-16 sm:py-24 px-5 sm:px-6 bg-black relative overflow-hidden">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-black relative overflow-hidden">
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-cf-red/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
         <div className="max-w-3xl mx-auto relative z-10 text-center">
           <ScrollReveal>
             <p className="text-cf-red text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-3">Is This For You?</p>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-6 sm:mb-8">
               This Is For You If...
             </h2>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="space-y-3 sm:space-y-4 max-w-lg mx-auto text-left mb-10 sm:mb-12">
+            <div className="space-y-3 sm:space-y-4 max-w-lg mx-auto text-left mb-6 sm:mb-8">
               {["You've tried gyms before and stopped", "You feel lost in group classes", "You want real coaching, not guessing", "You want to feel confident training", "You want to get the results you never got"].map((point) => (
                 <div key={point} className="flex items-center gap-3 sm:gap-4">
                   <svg className="w-4 sm:w-5 h-4 sm:h-5 text-cf-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -322,10 +322,10 @@ export default function Home() {
       </section>
 
       {/* 6. SOCIAL PROOF */}
-      <section className="py-16 sm:py-24 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-10 sm:mb-14">
+            <div className="text-center mb-6 sm:mb-8">
               <p className="text-cf-red text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-3">Testimonials</p>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
                 Real People. Real Confidence. Real Change.
@@ -357,14 +357,14 @@ export default function Home() {
       </section>
 
       {/* 7. DIFFERENTIATION */}
-      <section className="py-16 sm:py-24 px-5 sm:px-6 bg-black relative overflow-hidden">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-black relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-cf-red/[0.04] rounded-full blur-[150px] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <ScrollReveal direction="left">
               <div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-4 sm:mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-3 sm:mb-4">
                   Why This Works
                   <br />
                   <span className="text-white/40">(When Everything Else Didn&apos;t)</span>
@@ -387,7 +387,7 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-h-[450px]">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-h-[350px]">
                 <Image
                   src="https://crossfitf15.com/wp-content/uploads/2024/07/Cool-Down-545x1024.webp"
                   alt="Cool down and coaching"
@@ -401,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* 8. URGENCY */}
-      <section className="py-16 sm:py-20 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
         <div className="max-w-2xl mx-auto relative z-10 text-center">
           <ScrollReveal>
             <p className="text-cf-red text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-3">Limited Availability</p>
@@ -410,7 +410,7 @@ export default function Home() {
             </h2>
             <p className="text-white/50 text-sm sm:text-base font-light mb-2 max-w-md mx-auto">This is a coached onboarding system.</p>
             <p className="text-white/50 text-sm sm:text-base font-light mb-6 sm:mb-8 max-w-md mx-auto">We limit spots to maintain quality and attention.</p>
-            <p className="text-white font-bold text-base sm:text-lg mb-8 sm:mb-10">If you&apos;re serious about changing, apply.</p>
+            <p className="text-white font-bold text-base sm:text-lg mb-6 sm:mb-8">If you&apos;re serious about changing, apply.</p>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -422,12 +422,12 @@ export default function Home() {
       </section>
 
       {/* 9. FINAL CLOSE + FORM */}
-      <section id="book" className="py-16 sm:py-24 px-4 sm:px-6 bg-black relative overflow-hidden">
+      <section id="book" className="py-10 sm:py-14 px-4 sm:px-6 bg-black relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cf-red/[0.06] rounded-full blur-[180px] pointer-events-none glow-orb" />
 
         <div className="max-w-lg mx-auto relative z-10">
           <ScrollReveal>
-            <div className="text-center mb-8 sm:mb-10">
+            <div className="text-center mb-6 sm:mb-8">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-3 sm:mb-4">
                 This Isn&apos;t a Gym Trial.
                 <br />
@@ -458,9 +458,9 @@ export default function Home() {
       </section>
 
       {/* FOOTER - Exact match to crossfitf15.com */}
-      <footer className="bg-[#1a1a1a] text-white/60 pt-12 sm:pt-16 pb-6 sm:pb-8 px-5 sm:px-6">
+      <footer className="bg-[#1a1a1a] text-white/60 pt-8 sm:pt-10 pb-5 sm:pb-6 px-5 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
             {/* Menu */}
             <div>
               <h4 className="text-white font-semibold text-sm mb-4">Menu</h4>
