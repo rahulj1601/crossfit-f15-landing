@@ -83,7 +83,7 @@ export default function Home() {
 
         <div className="absolute top-1/4 left-1/4 w-48 sm:w-64 h-48 sm:h-64 bg-cf-red/[0.07] rounded-full blur-[100px] glow-orb pointer-events-none" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center pt-8 sm:pt-16 pb-8">
+        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 text-center pt-8 sm:pt-16 pb-8">
           <div className="animate-fade-up">
             <span className="inline-block bg-white/[0.08] text-cf-red font-semibold text-[9px] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] uppercase px-3 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 border border-cf-red/20 backdrop-blur-sm">
               Limited to 10 Onboarding Spots Per Month
@@ -96,7 +96,7 @@ export default function Home() {
             <span className="gradient-text">Doesn&apos;t Let You Start Alone</span>
           </h1>
 
-          <p className="animate-fade-up-delay-2 text-sm sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed font-light">
+          <p className="animate-fade-up-delay-2 text-sm sm:text-lg md:text-xl text-white/60 max-w-4xl mx-auto mb-6 sm:mb-8 leading-relaxed font-light">
             A structured 28-day coaching system designed to build confidence,
             technique, and real results before you ever join classes.
           </p>
@@ -151,7 +151,7 @@ export default function Home() {
       <section className="py-10 sm:py-14 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-cf-red/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="max-w-3xl mx-auto relative z-10 text-center">
+        <div className="max-w-5xl mx-auto relative z-10 text-center">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-6 sm:mb-8 leading-tight">
               Most People Don&apos;t Fail the Gym...
@@ -186,7 +186,7 @@ export default function Home() {
       <section className="py-10 sm:py-14 px-5 sm:px-6 bg-black relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cf-red/[0.04] rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <ScrollReveal direction="left">
               <div className="relative rounded-2xl overflow-hidden aspect-[3/4] max-h-[400px]">
@@ -291,7 +291,7 @@ export default function Home() {
       <section className="py-10 sm:py-14 px-5 sm:px-6 bg-black relative overflow-hidden">
         <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-cf-red/[0.03] rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="max-w-3xl mx-auto relative z-10 text-center">
+        <div className="max-w-5xl mx-auto relative z-10 text-center">
           <ScrollReveal>
             <p className="text-cf-red text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-3">Is This For You?</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-6 sm:mb-8">
@@ -300,7 +300,7 @@ export default function Home() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="space-y-3 sm:space-y-4 max-w-lg mx-auto text-left mb-6 sm:mb-8">
+            <div className="space-y-3 sm:space-y-4 max-w-xl mx-auto text-left mb-6 sm:mb-8">
               {["You've tried gyms before and stopped", "You feel lost in group classes", "You want real coaching, not guessing", "You want to feel confident training", "You want to get the results you never got"].map((point) => (
                 <div key={point} className="flex items-center gap-3 sm:gap-4">
                   <svg className="w-4 sm:w-5 h-4 sm:h-5 text-cf-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -323,7 +323,7 @@ export default function Home() {
 
       {/* 6. SOCIAL PROOF */}
       <section className="py-10 sm:py-14 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center mb-6 sm:mb-8">
               <p className="text-cf-red text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-3">Testimonials</p>
@@ -360,7 +360,7 @@ export default function Home() {
       <section className="py-10 sm:py-14 px-5 sm:px-6 bg-black relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-cf-red/[0.04] rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <ScrollReveal direction="left">
               <div>
@@ -402,7 +402,7 @@ export default function Home() {
 
       {/* 8. URGENCY */}
       <section className="py-10 sm:py-14 px-5 sm:px-6 bg-[#060606] relative overflow-hidden">
-        <div className="max-w-2xl mx-auto relative z-10 text-center">
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
           <ScrollReveal>
             <p className="text-cf-red text-[10px] sm:text-xs font-semibold tracking-[0.3em] uppercase mb-3">Limited Availability</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-4 sm:mb-6">
@@ -425,7 +425,7 @@ export default function Home() {
       <section id="book" className="py-10 sm:py-14 px-4 sm:px-6 bg-black relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cf-red/[0.06] rounded-full blur-[180px] pointer-events-none glow-orb" />
 
-        <div className="max-w-lg mx-auto relative z-10">
+        <div className="max-w-xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center mb-6 sm:mb-8">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-3 sm:mb-4">
