@@ -55,7 +55,7 @@ export default function HowToStart() {
       {/* ===== HERO ===== */}
       <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          {/* SWAP: Replace with community/friendly people image */}
+          {/* Community photo */}
           <Image
             src="/images/IMG_6936-2.jpg"
             alt="CrossFit F15 community"
@@ -63,7 +63,7 @@ export default function HowToStart() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/75" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#0a0a0a]" />
         </div>
 
@@ -136,9 +136,9 @@ export default function HowToStart() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="inline-block bg-cf-red text-white font-extrabold text-lg sm:text-xl px-8 py-3 rounded-full">
+            <a href="#book" className="inline-block bg-cf-red hover:bg-cf-red-dark text-white font-extrabold text-lg sm:text-xl px-8 py-3.5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95">
               That&apos;s exactly what we fix.
-            </div>
+            </a>
           </ScrollReveal>
         </div>
       </section>
@@ -151,7 +151,7 @@ export default function HowToStart() {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <ScrollReveal>
-            <p className="text-cf-red text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-3 text-center sm:text-left">Your Unique Starting Point</p>
+            <p className="text-cf-red text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-3">Your Unique Starting Point</p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -195,7 +195,7 @@ export default function HowToStart() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              {/* SWAP: Replace with coaching image from client */}
+              {/* Coaching photo */}
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
                   src="/images/final-64.JPG"
@@ -223,9 +223,9 @@ export default function HowToStart() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { step: "01", img: "https://crossfitf15.com/wp-content/uploads/2024/07/warm-up-scaled.webp", title: "Book Your Free Consultation", desc: "We understand your goals, your past struggles, and your starting point." },
-              { step: "02", img: "https://crossfitf15.com/wp-content/uploads/2024/07/skill-scaled.webp", title: "Get Your Personal Plan", desc: "We show you exactly how you'll build strength, confidence, and results." },
-              { step: "03", img: "https://crossfitf15.com/wp-content/uploads/2024/07/workout-683x1024.webp", title: "Start Your Fully Guided Journey", desc: "You're guided step-by-step until you feel ready, confident, and fully integrated." },
+              { step: "01", img: "/images/IMG_6936-2.jpg", title: "Book Your Free Consultation", desc: "We understand your goals, your past struggles, and your starting point." },
+              { step: "02", img: "/images/final-64.JPG", title: "Get Your Personal Plan", desc: "We show you exactly how you'll build strength, confidence, and results." },
+              { step: "03", img: "/images/IMG_5410.JPG", title: "Start Your Fully Guided Journey", desc: "You're guided step-by-step until you feel ready, confident, and fully integrated." },
             ].map((card, i) => (
               <ScrollReveal key={card.step} delay={i * 100}>
                 <div className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden h-full hover:border-white/20 transition-all duration-300">

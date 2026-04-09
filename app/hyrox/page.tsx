@@ -61,8 +61,8 @@ export default function HyroxPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/65" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#0a0a0a]" />
+          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-[#0a0a0a]" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center py-16 sm:py-20">
@@ -211,7 +211,7 @@ export default function HyroxPage() {
       </section>
 
       {/* ===== WHO IT'S FOR ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#0a0a0a]">
+      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#111111]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <ScrollReveal direction="left">
@@ -242,6 +242,14 @@ export default function HyroxPage() {
               </div>
             </ScrollReveal>
           </div>
+
+          <ScrollReveal>
+            <div className="text-center mt-10 sm:mt-12">
+              <a href="#consult" className="cta-glow inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-10 sm:px-12 py-3.5 sm:py-4 rounded-full transition-all duration-300 text-sm tracking-wider uppercase hover:scale-105 active:scale-95">
+                Book Your Consultation
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
