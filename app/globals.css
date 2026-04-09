@@ -197,6 +197,16 @@ iframe {
   animation: float 6s ease-in-out infinite;
 }
 
+/* Animated CTA glow */
+@keyframes cta-glow-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(217, 28, 28, 0.4), 0 0 40px rgba(217, 28, 28, 0.15), 0 0 80px rgba(217, 28, 28, 0.05); }
+  50% { box-shadow: 0 0 25px rgba(217, 28, 28, 0.6), 0 0 60px rgba(217, 28, 28, 0.25), 0 0 100px rgba(217, 28, 28, 0.1); }
+}
+
+.cta-glow {
+  animation: cta-glow-pulse 2.5s ease-in-out infinite;
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #D91C1C, #ff5555, #D91C1C);
