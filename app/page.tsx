@@ -11,9 +11,9 @@ export default function Home() {
           <Image
             src="/images/f15-logo.png"
             alt="F15 Training Centr Logo"
-            width={300}
-            height={300}
-            className="h-20 sm:h-24 w-auto"
+            width={633}
+            height={137}
+            className="h-10 sm:h-12 w-auto"
           />
         </div>
       </header>
@@ -274,9 +274,9 @@ export default function Home() {
           <Image
             src="/images/f15-logo.png"
             alt="F15 Training Centr Logo"
-            width={200}
-            height={200}
-            className="h-14 w-auto mx-auto opacity-40 mb-3"
+            width={633}
+            height={137}
+            className="h-8 w-auto mx-auto opacity-40 mb-3"
           />
           <p className="text-[#404040] text-[10px] leading-relaxed max-w-lg mx-auto">
             This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is not endorsed by Facebook in any way. Facebook is a trademark of Facebook, Inc.

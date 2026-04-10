@@ -261,10 +261,10 @@ export default function HyroxPage() {
               <div className="space-y-5">
                 {[
                   { bold: "You want to line up", rest: " for your first Hyrox race." },
-                  { bold: "You want to go faster", rest: " and race smarter than last time." },
-                  { bold: "You love endurance and strength", rest: " working together." },
-                  { bold: "You want real coaching,", rest: " not random workouts." },
-                  { bold: "You train better", rest: " when the community trains with you." },
+                  { bold: "You want to go faster", rest: " and race smarter than before." },
+                  { bold: "You enjoy the mix of endurance and strength", rest: " or you're ready to discover it." },
+                  { bold: "You want real coaching and a clear plan,", rest: " not random workouts." },
+                  { bold: "You train better", rest: " when you're part of a team that pushes you forward." },
                 ].map((item) => (
                   <div key={item.bold} className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-cf-red flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

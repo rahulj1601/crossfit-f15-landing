@@ -64,8 +64,8 @@ export default function HowToStart() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/85" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-[#0a0a0a]" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-[#0a0a0a]" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center py-16 sm:py-20">
@@ -83,8 +83,8 @@ export default function HowToStart() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <p className="text-white/85 text-base sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
-              A coaching system designed to build your confidence, your technique, and real results - so every rep brings you closer to your goals.
+            <p className="text-white/90 text-base sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
+              Your starting point with a dedicated coach and a fully personalised plan built around you, your goals, and your life.
             </p>
           </ScrollReveal>
 
@@ -93,11 +93,8 @@ export default function HowToStart() {
               href="#book"
               className="cta-glow inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-10 sm:px-14 py-4 sm:py-5 rounded-full transition-all duration-300 text-sm sm:text-lg tracking-wider uppercase hover:scale-105 active:scale-95"
             >
-              Book Your Free Consultation
+              Get in Touch
             </a>
-            <p className="text-white/70 text-sm sm:text-base font-medium mt-4">
-              30 minutes. No pressure. Just a plan.
-            </p>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -137,9 +134,11 @@ export default function HowToStart() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <a href="#book" className="inline-block bg-cf-red hover:bg-cf-red-dark text-white font-extrabold text-lg sm:text-xl px-8 py-3.5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95">
-              That&apos;s exactly what we fix.
-            </a>
+            <div className="text-center">
+              <a href="#book" className="inline-block bg-cf-red hover:bg-cf-red-dark text-white font-extrabold text-lg sm:text-xl px-8 py-3.5 rounded-full transition-all duration-300 hover:scale-105 active:scale-95">
+                That&apos;s exactly what we fix.
+              </a>
+            </div>
           </ScrollReveal>
         </div>
       </section>
