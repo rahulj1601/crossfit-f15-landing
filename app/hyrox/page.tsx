@@ -80,11 +80,11 @@ export default function HyroxPage() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <p className="text-white/80 text-base sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed font-medium">
-              Kick off with our guided coaching system
+            <p className="text-white/85 text-base sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed font-medium">
+              Kick off with our guided coaching system.
             </p>
-            <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-              Hyrox is a unique fitness race that combines endurance, strength, and functional fitness in one high-energy event. Participants complete a series of functional movements paired with running, making it an exciting challenge for all fitness levels.
+            <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+              Hyrox blends endurance, strength, and functional fitness into one unforgettable race. Whether you are lining up for your first event or chasing your fastest finish, our Hyrox program will get you there.
             </p>
           </ScrollReveal>
 
@@ -106,22 +106,22 @@ export default function HyroxPage() {
             <ScrollReveal direction="left">
               <div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-5 text-white">
-                  Our Hyrox Program{" "}
-                  <span className="text-cf-red">&amp; Classes</span>
+                  Built to Get You{" "}
+                  <span className="text-cf-red">Race Ready</span>
                 </h2>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-4">
-                  Whether you&apos;re aiming to compete or just looking to improve your overall fitness, our Hyrox classes in Malta are designed to push your limits and help you race to your fastest finish.
+                  At CrossFit F15, we have designed a Hyrox program that focuses on every part of your journey. Each class is tailored to improve your performance and help you prepare for race day with confidence.
                 </p>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-6">
-                  Our structured program covers all eight Hyrox workout stations, running conditioning, and race strategy so you show up prepared and confident on race day.
+                  From your first run to your final sled push, you will train every station, every muscle group, and every mindset you need to race your fastest finish.
                 </p>
 
                 <div className="space-y-3 mb-8">
                   {[
-                    "Expert coaching for all Hyrox stations",
-                    "Running and endurance programming",
-                    "Race strategy and pacing guidance",
-                    "Suitable for beginners and competitors",
+                    "Coached by a team that knows Hyrox inside out",
+                    "Structured running and conditioning work",
+                    "Race strategy, pacing and mindset prep",
+                    "Welcoming to beginners, challenging for athletes",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
                       <svg className="w-5 h-5 text-cf-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -201,29 +201,27 @@ export default function HyroxPage() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <ScrollReveal direction="left">
               <div>
-                <p className="text-cf-red text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-3">Weekly Schedule</p>
+                <p className="text-cf-red text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-3">Train With Us</p>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-5 text-white leading-tight">
-                  Train Hyrox{" "}
-                  <span className="text-cf-red">Every Week</span>
+                  Every Class Brings You{" "}
+                  <span className="text-cf-red">One Rep Closer</span>
                 </h2>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-6">
-                  Our Hyrox program runs multiple classes throughout the week so you can build strength, stamina, and race-day performance on your own schedule.
+                  Our Hyrox program is built around you. Whether you train before work, after work, or on the weekend, you will find a session that fits - and a community ready to push alongside you.
                 </p>
 
-                <div className="space-y-3 mb-8">
+                <div className="space-y-4 mb-8">
                   {[
-                    { day: "Monday", class: "Hyrox Strength", time: "4:45 PM" },
-                    { day: "Wednesday", class: "Hyrox Stamina", time: "6:30 AM + 5:50 PM" },
-                    { day: "Thursday", class: "Hyrox Baseline", time: "4:45 PM" },
-                    { day: "Saturday", class: "Hyrox Stamina", time: "10:30 AM" },
-                    { day: "Sunday", class: "Hyrox Performance", time: "9:00 AM" },
-                  ].map((s) => (
-                    <div key={s.day + s.class} className="flex items-center justify-between gap-3 bg-[#111] border border-white/[0.06] rounded-lg px-4 py-3">
-                      <div className="flex items-center gap-3">
-                        <span className="text-cf-red font-bold text-xs uppercase tracking-wider w-16 flex-shrink-0">{s.day.slice(0,3)}</span>
-                        <span className="text-white font-semibold text-sm">{s.class}</span>
+                    { title: "Train around your week", desc: "Mornings, evenings, weekends. Mix Strength, Stamina, Baseline and Performance to match your goals." },
+                    { title: "Coached every session", desc: "Our coaches guide every class, watching your form, pacing, and progress so you always know you are moving forward." },
+                    { title: "A community that shows up", desc: "You will train next to people who are chasing the same finish line. That is what makes F15 feel like home." },
+                  ].map((item) => (
+                    <div key={item.title} className="flex gap-3">
+                      <div className="w-1 bg-cf-red rounded-full flex-shrink-0" />
+                      <div>
+                        <h3 className="text-white font-bold text-base mb-1">{item.title}</h3>
+                        <p className="text-[#b0b0b0] text-sm leading-relaxed">{item.desc}</p>
                       </div>
-                      <span className="text-[#b0b0b0] text-xs font-medium text-right flex-shrink-0">{s.time}</span>
                     </div>
                   ))}
                 </div>
@@ -262,11 +260,11 @@ export default function HyroxPage() {
             <ScrollReveal direction="right">
               <div className="space-y-5">
                 {[
-                  { bold: "You want to compete", rest: " in your first Hyrox race." },
-                  { bold: "You want to improve your time", rest: " and race smarter." },
-                  { bold: "You love endurance + strength", rest: " combined training." },
-                  { bold: "You want structured coaching,", rest: " not random workouts." },
-                  { bold: "You thrive in a community", rest: " that pushes you forward." },
+                  { bold: "You want to line up", rest: " for your first Hyrox race." },
+                  { bold: "You want to go faster", rest: " and race smarter than last time." },
+                  { bold: "You love endurance and strength", rest: " working together." },
+                  { bold: "You want real coaching,", rest: " not random workouts." },
+                  { bold: "You train better", rest: " when the community trains with you." },
                 ].map((item) => (
                   <div key={item.bold} className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-cf-red flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -298,11 +296,11 @@ export default function HyroxPage() {
           <ScrollReveal>
             <div className="text-center mb-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3 leading-tight text-white uppercase">
-                Book Your{" "}
-                <span className="text-cf-red">Consultation</span>
+                Start Your{" "}
+                <span className="text-cf-red">Hyrox Journey</span>
               </h2>
               <p className="text-[#b0b0b0] text-base sm:text-lg">
-                Tell us about your goals and we&apos;ll get you started on your Hyrox journey.
+                Tell us about your goals and we will get you moving toward race day.
               </p>
             </div>
           </ScrollReveal>

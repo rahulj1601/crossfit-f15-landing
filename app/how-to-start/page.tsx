@@ -82,8 +82,8 @@ export default function HowToStart() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <p className="text-white/80 text-base sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
-              A structured coaching system designed to build confidence, technique, and real results before you ever join classes.
+            <p className="text-white/85 text-base sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
+              A coaching system designed to build your confidence, your technique, and real results - so every rep brings you closer to your goals.
             </p>
           </ScrollReveal>
 
@@ -119,14 +119,14 @@ export default function HowToStart() {
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-5 leading-tight text-white">
-              Most People Don&apos;t Fail the Gym...{" "}
+              Most People Don&apos;t Fail at the Gym...{" "}
               <span className="text-[#999]">They Just Never Get Properly Started</span>
             </h2>
           </ScrollReveal>
 
           <ScrollReveal>
             <div className="space-y-3 max-w-md mx-auto text-left mb-8">
-              {["You don't know what you're doing", "You feel behind everyone", "You lose confidence and stop"].map((pain) => (
+              {["You walk in not knowing where to start", "You feel behind the people around you", "You lose confidence and walk back out"].map((pain) => (
                 <div key={pain} className="flex items-center gap-3">
                   <span className="w-2 h-2 bg-cf-red rounded-full flex-shrink-0" />
                   <span className="text-[#c0c0c0] text-base sm:text-lg">{pain}</span>
@@ -163,17 +163,17 @@ export default function HowToStart() {
 
                 <div className="space-y-1.5 text-[#c0c0c0] text-base sm:text-lg mb-6">
                   <p>This is not a trial.</p>
-                  <p>This is not random classes.</p>
+                  <p>This is not a sink-or-swim group class.</p>
                 </div>
 
                 <p className="text-white text-base sm:text-lg font-semibold mb-5">
-                  This is a guided onboarding system that takes you from:
+                  This is a guided onboarding that takes you from:
                 </p>
 
                 <div className="space-y-2 mb-8">
-                  <p className="text-[#999] text-base italic">&ldquo;I have no idea what I&apos;m doing&rdquo;</p>
+                  <p className="text-[#999] text-base italic">&ldquo;I have no idea what I am doing&rdquo;</p>
                   <p className="text-[#666] text-sm">to</p>
-                  <p className="text-white font-bold text-base sm:text-lg">&ldquo;I actually feel confident here&rdquo;</p>
+                  <p className="text-white font-bold text-base sm:text-lg">&ldquo;I feel at home here&rdquo;</p>
                 </div>
 
                 <div className="space-y-3 mb-8">
@@ -267,11 +267,11 @@ export default function HowToStart() {
             <ScrollReveal direction="right">
               <div className="space-y-5">
                 {[
-                  { bold: "You've tried gyms before", rest: " and stopped." },
-                  { bold: "You feel lost", rest: " in group classes." },
-                  { bold: "You want real coaching,", rest: " not guessing." },
-                  { bold: "You want to feel confident", rest: " training." },
-                  { bold: "You want to get the results", rest: " you never got." },
+                  { bold: "You have tried gyms before", rest: " and stopped." },
+                  { bold: "You feel lost", rest: " in big group classes." },
+                  { bold: "You want real coaching,", rest: " not guesswork." },
+                  { bold: "You want to feel confident", rest: " every time you train." },
+                  { bold: "You want the results", rest: " you never got before." },
                 ].map((item) => (
                   <div key={item.bold} className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-cf-red flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
