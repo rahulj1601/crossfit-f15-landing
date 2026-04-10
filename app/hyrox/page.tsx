@@ -56,7 +56,7 @@ export default function HyroxPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/IMG_5410.JPG"
-            alt="Hyrox training at F15 Training Centr"
+            alt="Hyrox training at F15"
             fill
             className="object-cover"
             priority
@@ -91,7 +91,7 @@ export default function HyroxPage() {
               href="#consult"
               className="cta-glow inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-10 sm:px-14 py-4 sm:py-5 rounded-full transition-all duration-300 text-sm sm:text-lg tracking-wider uppercase hover:scale-105 active:scale-95"
             >
-              Book Your Consultation
+              Get Started
             </a>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function HyroxPage() {
                   <span className="text-cf-red">Race Ready</span>
                 </h2>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-4">
-                  At F15 Training Centr, we have designed a Hyrox program that focuses on every part of your journey. Each class is tailored to improve your performance and help you prepare for race day with confidence.
+                  At F15, we have designed a Hyrox program that focuses on every part of your journey. Each class is tailored to improve your performance and help you prepare for race day with confidence.
                 </p>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-6">
                   From your first run to your final sled push, you will train every station, every muscle group, and every mindset you need to race your fastest finish.
@@ -186,7 +186,7 @@ export default function HyroxPage() {
           <ScrollReveal>
             <div className="text-center mt-8 sm:mt-10">
               <a href="#consult" className="inline-block bg-white text-cf-red font-bold px-10 sm:px-12 py-3.5 sm:py-4 rounded-full text-sm tracking-wider uppercase hover:bg-white/90 transition-all duration-300 hover:scale-105 active:scale-95">
-                Book Your Consultation
+                Get Started
               </a>
             </div>
           </ScrollReveal>
@@ -234,7 +234,7 @@ export default function HyroxPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
                 <Image
                   src="/images/IMG_8316.JPG"
-                  alt="Hyrox Schedule at F15 Training Centr"
+                  alt="Hyrox Schedule at F15"
                   width={800}
                   height={1000}
                   className="w-full h-auto rounded-2xl"
@@ -281,7 +281,7 @@ export default function HyroxPage() {
           <ScrollReveal>
             <div className="text-center mt-10 sm:mt-12">
               <a href="#consult" className="cta-glow inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-10 sm:px-12 py-3.5 sm:py-4 rounded-full transition-all duration-300 text-sm tracking-wider uppercase hover:scale-105 active:scale-95">
-                Book Your Consultation
+                Get Started
               </a>
             </div>
           </ScrollReveal>
@@ -307,7 +307,7 @@ export default function HyroxPage() {
             <div className="relative">
               <div className="absolute -inset-[1px] bg-gradient-to-b from-cf-red/10 via-transparent to-cf-red/5 rounded-2xl" />
               <div className="relative bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-6 sm:p-8 shadow-2xl">
-                <LeadForm source="hyrox" submitText="Book Your Consultation" />
+                <LeadForm source="hyrox" submitText="Get Started" />
               </div>
             </div>
           </ScrollReveal>
@@ -403,7 +403,7 @@ export default function HyroxPage() {
           </div>
 
           <div className="border-t border-white/[0.06] pt-6 text-center">
-            <p className="text-white/30 text-xs">F15 Training Centr &copy; {new Date().getFullYear()}. All rights reserved.</p>
+            <p className="text-white/30 text-xs">F15 &copy; {new Date().getFullYear()}. All rights reserved.</p>
           </div>
         </div>
       </footer>
