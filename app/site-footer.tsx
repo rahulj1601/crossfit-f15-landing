@@ -7,8 +7,8 @@ export function SiteFooter() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-10">
           <div>
             <Image
-              src="/images/f15-logo.png"
-              alt="F15 Training Centr Logo"
+              src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
+              alt="Crossfit F15 Logo"
               width={160}
               height={45}
               className="h-6 w-auto mb-2"
