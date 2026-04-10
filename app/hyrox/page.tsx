@@ -52,7 +52,7 @@ export default function HyroxPage() {
       </header>
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/IMG_5410.JPG"
@@ -73,7 +73,7 @@ export default function HyroxPage() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white uppercase">
+            <h1 className="text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white uppercase">
               Ready to Start Your{" "}
               <span className="text-cf-red">Hyrox Journey?</span>
             </h1>
@@ -100,7 +100,7 @@ export default function HyroxPage() {
       </section>
 
       {/* ===== WHAT IS HYROX ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#111111]">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-[#111111]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <ScrollReveal direction="left">
@@ -154,7 +154,7 @@ export default function HyroxPage() {
       </section>
 
       {/* ===== OUR HYROX CLASSES (RED) ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-cf-red">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-cf-red">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-center mb-8 sm:mb-10 text-white">
@@ -196,7 +196,7 @@ export default function HyroxPage() {
       </section>
 
       {/* ===== SCHEDULE ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#0a0a0a]">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-[#0a0a0a]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <ScrollReveal direction="left">
@@ -250,7 +250,7 @@ export default function HyroxPage() {
       </section>
 
       {/* ===== WHO IT'S FOR ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#111111]">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-[#111111]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <ScrollReveal direction="left">
@@ -293,7 +293,7 @@ export default function HyroxPage() {
       </section>
 
       {/* ===== LEAD FORM ===== */}
-      <section id="consult" className="py-14 sm:py-20 px-4 sm:px-6 bg-[#111111]">
+      <section id="consult" className="py-10 sm:py-20 px-4 sm:px-6 bg-[#111111]">
         <div className="max-w-xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-8">

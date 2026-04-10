@@ -53,7 +53,7 @@ export default function HowToStart() {
       </header>
 
       {/* ===== HERO ===== */}
-      <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           {/* Community photo */}
           <Image
@@ -75,7 +75,7 @@ export default function HowToStart() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white">
+            <h1 className="text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white">
               The Only Gym in Malta That{" "}
               <span className="text-cf-red">Doesn&apos;t Let You Start Alone</span>
             </h1>
@@ -115,7 +115,7 @@ export default function HowToStart() {
       </section>
 
       {/* ===== PAIN POINT ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#111111]">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-[#111111]">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-5 leading-tight text-white">
@@ -144,7 +144,7 @@ export default function HowToStart() {
       </section>
 
       {/* ===== OUR PROVEN STRONG START PROGRAM ===== */}
-      <section className="relative py-14 sm:py-20 px-5 sm:px-6 overflow-hidden bg-black">
+      <section className="relative py-10 sm:py-20 px-5 sm:px-6 overflow-hidden bg-black">
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cf-red/30 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cf-red/30 to-transparent" />
 
@@ -210,7 +210,7 @@ export default function HowToStart() {
       </section>
 
       {/* ===== HOW TO START (RED BG) ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-cf-red">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-cf-red">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-8 sm:mb-10">
@@ -255,7 +255,7 @@ export default function HowToStart() {
       </section>
 
       {/* ===== THIS IS FOR YOU IF ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#111111]">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-[#111111]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <ScrollReveal direction="left">
@@ -297,7 +297,7 @@ export default function HowToStart() {
       </section>
 
       {/* ===== SOCIAL PROOF ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#0a0a0a]">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-[#0a0a0a]">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-center mb-8 sm:mb-10 text-white">
@@ -335,7 +335,7 @@ export default function HowToStart() {
       </section>
 
       {/* ===== WHY THIS WORKS ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#111111]">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-[#111111]">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <ScrollReveal direction="left">
@@ -376,7 +376,7 @@ export default function HowToStart() {
       </section>
 
       {/* ===== URGENCY (SOLID RED) ===== */}
-      <section className="py-14 sm:py-20 px-5 sm:px-6 bg-cf-red">
+      <section className="py-10 sm:py-20 px-5 sm:px-6 bg-cf-red">
         <div className="max-w-3xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 leading-tight text-white uppercase">
@@ -393,8 +393,8 @@ export default function HowToStart() {
       </section>
 
       {/* ===== FINAL CTA + BOOKING ===== */}
-      <section id="book" className="py-14 sm:py-20 px-4 sm:px-6 bg-[#0a0a0a]">
-        <div className="max-w-4xl mx-auto">
+      <section id="book" className="py-10 sm:py-20 px-2 sm:px-[10%] bg-[#0a0a0a]">
+        <div className="w-full mx-auto">
           <ScrollReveal>
             <div className="text-center mb-8 sm:mb-10">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3 leading-tight text-white">
