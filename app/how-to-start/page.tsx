@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ScrollReveal } from "../scroll-reveal";
+import { LeadForm } from "../lead-form";
 
 export default function HowToStart() {
   return (
@@ -392,9 +393,9 @@ export default function HowToStart() {
         </div>
       </section>
 
-      {/* ===== FINAL CTA + BOOKING ===== */}
-      <section id="book" className="py-10 sm:py-20 px-2 sm:px-[10%] bg-[#0a0a0a]">
-        <div className="w-full mx-auto">
+      {/* ===== FINAL CTA + LEAD FORM ===== */}
+      <section id="book" className="py-10 sm:py-20 px-4 sm:px-6 bg-[#0a0a0a]">
+        <div className="max-w-xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-8 sm:mb-10">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-3 leading-tight text-white">
@@ -406,16 +407,16 @@ export default function HowToStart() {
             </div>
           </ScrollReveal>
 
-          <div className="rounded-2xl overflow-hidden bg-[#0e0e0e] border border-white/10 p-1 sm:p-4 shadow-2xl">
-            <iframe
-              src="https://book.crossfitf15.com/widget/bookings/f15-first-step-intro"
-              style={{ width: "100%", height: "700px", border: "none" }}
-              scrolling="no"
-              title="Book Your Free Consultation"
-            />
-          </div>
+          <ScrollReveal>
+            <div className="relative">
+              <div className="absolute -inset-[1px] bg-gradient-to-b from-cf-red/10 via-transparent to-cf-red/5 rounded-2xl" />
+              <div className="relative bg-[#0e0e0e] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                <LeadForm source="how-to-start" submitText="Book Your Free Consultation" />
+              </div>
+            </div>
+          </ScrollReveal>
 
-          <div className="mt-5 flex items-center justify-center gap-2">
+          <div className="mt-6 flex items-center justify-center gap-2">
             <div className="flex -space-x-0.5">
               {[...Array(5)].map((_, i) => (
                 <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">

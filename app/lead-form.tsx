@@ -1,12 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
-export function LeadForm() {
-  const router = useRouter();
+type LeadFormProps = {
+  source?: string;
+  submitText?: string;
+  successMessage?: string;
+};
+
+export function LeadForm({
+  source = "website",
+  submitText = "Book Your Free Consultation Now",
+  successMessage = "Thanks! We'll be in touch shortly.",
+}: LeadFormProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -18,6 +27,7 @@ export function LeadForm() {
       name: (form.elements.namedItem("name") as HTMLInputElement).value.trim(),
       email: (form.elements.namedItem("email") as HTMLInputElement).value.trim(),
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value.trim(),
+      source,
     };
 
     try {
@@ -29,11 +39,26 @@ export function LeadForm() {
 
       if (!res.ok) throw new Error("Something went wrong");
 
-      router.push("/book");
+      setSuccess(true);
+      form.reset();
     } catch {
       setError("Something went wrong. Please try again.");
       setLoading(false);
     }
+  }
+
+  if (success) {
+    return (
+      <div className="text-center py-8">
+        <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className="text-white font-bold text-xl mb-2">You&apos;re in!</h3>
+        <p className="text-[#b0b0b0] text-sm sm:text-base">{successMessage}</p>
+      </div>
+    );
   }
 
   return (
@@ -85,7 +110,7 @@ export function LeadForm() {
               Submitting...
             </span>
           ) : (
-            "Book Your Free Consultation Now"
+            submitText
           )}
         </span>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
