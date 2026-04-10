@@ -58,7 +58,7 @@ export default function HyroxPage() {
             src="/images/hyrox-rower.jpg"
             alt="Hyrox training at F15"
             fill
-            className="object-cover"
+            className="object-cover object-[50%_20%] sm:object-[50%_30%]"
             priority
           />
           <div className="absolute inset-0 bg-black/80" />
