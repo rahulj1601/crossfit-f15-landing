@@ -55,7 +55,7 @@ export default function HyroxPage() {
       <section className="relative min-h-[60vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/IMG_5410.JPG"
+            src="/images/hyrox-rower.jpg"
             alt="Hyrox training at F15"
             fill
             className="object-cover"
