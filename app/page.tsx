@@ -9,11 +9,12 @@ export default function Home() {
       <header className="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/[0.06]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-center">
           <Image
-            src="/images/f15-logo.png"
+            src="/images/f15-logo.svg"
             alt="F15 Training Centr Logo"
-            width={633}
-            height={137}
+            width={1402}
+            height={559}
             className="h-10 sm:h-12 w-auto"
+            unoptimized
           />
         </div>
       </header>
@@ -272,11 +273,12 @@ export default function Home() {
       <footer className="py-6 px-4 sm:px-6 border-t border-white/[0.06]">
         <div className="max-w-3xl mx-auto text-center space-y-2">
           <Image
-            src="/images/f15-logo.png"
+            src="/images/f15-logo.svg"
             alt="F15 Training Centr Logo"
-            width={633}
-            height={137}
+            width={1402}
+            height={559}
             className="h-8 w-auto mx-auto opacity-40 mb-3"
+            unoptimized
           />
           <p className="text-[#404040] text-[10px] leading-relaxed max-w-lg mx-auto">
             This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is not endorsed by Facebook in any way. Facebook is a trademark of Facebook, Inc.
