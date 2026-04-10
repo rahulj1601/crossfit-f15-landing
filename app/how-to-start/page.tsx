@@ -13,9 +13,9 @@ export default function HowToStart() {
             <Image
               src="/images/f15-logo.png"
               alt="F15 Training Centr Logo"
-              width={180}
-              height={50}
-              className="h-6 sm:h-7 w-auto"
+              width={200}
+              height={200}
+              className="h-12 sm:h-14 w-auto"
             />
           </a>
 
