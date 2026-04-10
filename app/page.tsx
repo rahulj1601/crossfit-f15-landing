@@ -19,8 +19,19 @@ export default function Home() {
       </header>
 
       {/* ===== 1. HERO + VSL (BLACK) ===== */}
-      <section className="relative py-10 sm:py-16 px-5 sm:px-6 bg-black overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-cf-red/[0.04] rounded-full blur-[150px] pointer-events-none" />
+      <section className="relative py-10 sm:py-16 px-5 sm:px-6 overflow-hidden">
+        {/* Community background image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/IMG_6936-2.jpg"
+            alt="CrossFit F15 community"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black" />
+        </div>
 
         <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>

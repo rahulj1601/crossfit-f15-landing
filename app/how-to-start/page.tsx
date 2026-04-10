@@ -63,8 +63,8 @@ export default function HowToStart() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/75" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#0a0a0a]" />
+          <div className="absolute inset-0 bg-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-[#0a0a0a]" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center py-16 sm:py-20">
@@ -144,10 +144,9 @@ export default function HowToStart() {
       </section>
 
       {/* ===== OUR PROVEN STRONG START PROGRAM ===== */}
-      <section className="relative py-14 sm:py-20 px-5 sm:px-6 overflow-hidden bg-gradient-to-br from-[#0a0000] via-[#150505] to-[#0a0000]">
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cf-red/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cf-red/40 to-transparent" />
-        <div className="absolute top-0 left-0 w-[400px] h-[600px] bg-cf-red/[0.04] rounded-full blur-[180px] pointer-events-none" />
+      <section className="relative py-14 sm:py-20 px-5 sm:px-6 overflow-hidden bg-black">
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cf-red/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cf-red/30 to-transparent" />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <ScrollReveal>

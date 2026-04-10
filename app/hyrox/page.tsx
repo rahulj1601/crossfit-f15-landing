@@ -55,7 +55,7 @@ export default function HyroxPage() {
       <section className="relative min-h-[70vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/Hyrox-Stamina-cover.JPEG"
+            src="/images/IMG_5410.JPG"
             alt="Hyrox training at CrossFit F15"
             fill
             className="object-cover"
@@ -195,18 +195,57 @@ export default function HyroxPage() {
         </div>
       </section>
 
-      {/* ===== SCHEDULE IMAGE ===== */}
+      {/* ===== SCHEDULE ===== */}
       <section className="py-14 sm:py-20 px-5 sm:px-6 bg-[#0a0a0a]">
-        <div className="max-w-md mx-auto">
-          <ScrollReveal>
-            <Image
-              src="/images/IMG_8316.JPG"
-              alt="Hyrox Schedule at CrossFit F15"
-              width={800}
-              height={1000}
-              className="w-full h-auto rounded-2xl"
-            />
-          </ScrollReveal>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <ScrollReveal direction="left">
+              <div>
+                <p className="text-cf-red text-xs sm:text-sm font-bold tracking-[0.3em] uppercase mb-3">Weekly Schedule</p>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight mb-5 text-white leading-tight">
+                  Train Hyrox{" "}
+                  <span className="text-cf-red">Every Week</span>
+                </h2>
+                <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-6">
+                  Our Hyrox program runs multiple classes throughout the week so you can build strength, stamina, and race-day performance on your own schedule.
+                </p>
+
+                <div className="space-y-3 mb-8">
+                  {[
+                    { day: "Monday", class: "Hyrox Strength", time: "4:45 PM" },
+                    { day: "Wednesday", class: "Hyrox Stamina", time: "6:30 AM + 5:50 PM" },
+                    { day: "Thursday", class: "Hyrox Baseline", time: "4:45 PM" },
+                    { day: "Saturday", class: "Hyrox Stamina", time: "10:30 AM" },
+                    { day: "Sunday", class: "Hyrox Performance", time: "9:00 AM" },
+                  ].map((s) => (
+                    <div key={s.day + s.class} className="flex items-center justify-between gap-3 bg-[#111] border border-white/[0.06] rounded-lg px-4 py-3">
+                      <div className="flex items-center gap-3">
+                        <span className="text-cf-red font-bold text-xs uppercase tracking-wider w-16 flex-shrink-0">{s.day.slice(0,3)}</span>
+                        <span className="text-white font-semibold text-sm">{s.class}</span>
+                      </div>
+                      <span className="text-[#b0b0b0] text-xs font-medium text-right flex-shrink-0">{s.time}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a href="#consult" className="cta-glow inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-8 py-3.5 rounded-full transition-all duration-300 text-sm tracking-wider uppercase hover:scale-105 active:scale-95">
+                  Join a Class
+                </a>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="right">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
+                <Image
+                  src="/images/IMG_8316.JPG"
+                  alt="Hyrox Schedule at CrossFit F15"
+                  width={800}
+                  height={1000}
+                  className="w-full h-auto rounded-2xl"
+                />
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
