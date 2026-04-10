@@ -69,46 +69,40 @@ export default function HowToStart() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center py-16 sm:py-20">
-          <ScrollReveal>
+          <div className="animate-fade-up">
             <span className="inline-block bg-cf-red/20 text-white font-bold text-xs sm:text-sm tracking-[0.15em] uppercase px-4 sm:px-6 py-2 sm:py-2.5 rounded-full mb-5 sm:mb-6 border border-cf-red/30 backdrop-blur-sm">
               Limited to 10 Onboarding Spots Per Month
             </span>
-          </ScrollReveal>
+          </div>
 
-          <ScrollReveal>
-            <h1 className="text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white">
-              The Only Gym in Malta That{" "}
-              <span className="text-cf-red">Doesn&apos;t Let You Start Alone</span>
-            </h1>
-          </ScrollReveal>
+          <h1 className="animate-fade-up-delay text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white">
+            The Only Gym in Malta That{" "}
+            <span className="text-cf-red">Doesn&apos;t Let You Start Alone</span>
+          </h1>
 
-          <ScrollReveal>
-            <p className="text-white/90 text-base sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
-              Your starting point with a dedicated coach and a fully personalised plan built around you, your goals, and your life.
-            </p>
-          </ScrollReveal>
+          <p className="animate-fade-up-delay-2 text-white/90 text-base sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
+            Your starting point with a dedicated coach and a fully personalised plan built around you, your goals, and your life.
+          </p>
 
-          <ScrollReveal>
+          <div className="animate-fade-up-delay-3">
             <a
               href="#book"
               className="cta-glow inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-10 sm:px-14 py-4 sm:py-5 rounded-full transition-all duration-300 text-sm sm:text-lg tracking-wider uppercase hover:scale-105 active:scale-95"
             >
               Get in Touch
             </a>
-          </ScrollReveal>
+          </div>
 
-          <ScrollReveal>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-white/70 text-sm sm:text-base font-medium">
-              {["No experience needed", "Beginner to advanced", "Personal approach from day one"].map((t) => (
-                <div key={t} className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-cf-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{t}</span>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
+          <div className="animate-fade-up-delay-3 mt-8 flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-white/70 text-sm sm:text-base font-medium">
+            {["No experience needed", "Beginner to advanced", "Personal approach from day one"].map((t) => (
+              <div key={t} className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-cf-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{t}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

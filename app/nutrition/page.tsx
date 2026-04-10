@@ -24,31 +24,27 @@ export default function NutritionPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center py-16 sm:py-20">
-          <ScrollReveal>
+          <div className="animate-fade-up">
             <span className="inline-block bg-cf-red/20 text-white font-bold text-xs sm:text-sm tracking-[0.15em] uppercase px-4 sm:px-6 py-2 sm:py-2.5 rounded-full mb-5 sm:mb-6 border border-cf-red/30 backdrop-blur-sm">
               F15 Nutrition Challenge
             </span>
-          </ScrollReveal>
+          </div>
 
-          <ScrollReveal>
-            <h1 className="text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white uppercase">
-              Eat Better.{" "}
-              <span className="text-cf-red">Train Harder.</span>{" "}
-              Feel Amazing.
-            </h1>
-          </ScrollReveal>
+          <h1 className="animate-fade-up-delay text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white uppercase">
+            Eat Better.{" "}
+            <span className="text-cf-red">Train Harder.</span>{" "}
+            Feel Amazing.
+          </h1>
 
-          <ScrollReveal>
-            <p className="text-white/85 text-base sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
-              Training is only half the story. Fuel your progress with the F15 Nutrition Challenge and see what is really possible.
-            </p>
-          </ScrollReveal>
+          <p className="animate-fade-up-delay-2 text-white/85 text-base sm:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
+            Training is only half the story. Fuel your progress with the F15 Nutrition Challenge and see what is really possible.
+          </p>
 
-          <ScrollReveal>
+          <div className="animate-fade-up-delay-3">
             <a href="#consult" className="cta-glow inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-10 sm:px-14 py-4 sm:py-5 rounded-full transition-all duration-300 text-sm sm:text-lg tracking-wider uppercase hover:scale-105 active:scale-95">
               Join the Challenge
             </a>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 

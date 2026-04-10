@@ -66,36 +66,34 @@ export default function HyroxPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-6 text-center py-16 sm:py-20">
-          <ScrollReveal>
+          <div className="animate-fade-up">
             <span className="inline-block bg-cf-red/20 text-white font-bold text-xs sm:text-sm tracking-[0.15em] uppercase px-4 sm:px-6 py-2 sm:py-2.5 rounded-full mb-5 sm:mb-6 border border-cf-red/30 backdrop-blur-sm">
               Hyrox Training in Malta
             </span>
-          </ScrollReveal>
+          </div>
 
-          <ScrollReveal>
-            <h1 className="text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white uppercase">
-              Ready to Start Your{" "}
-              <span className="text-cf-red">Hyrox Journey?</span>
-            </h1>
-          </ScrollReveal>
+          <h1 className="animate-fade-up-delay text-[2rem] sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-5 text-white uppercase">
+            Ready to Start Your{" "}
+            <span className="text-cf-red">Hyrox Journey?</span>
+          </h1>
 
-          <ScrollReveal>
+          <div className="animate-fade-up-delay-2">
             <p className="text-white/85 text-base sm:text-xl max-w-2xl mx-auto mb-4 leading-relaxed font-medium">
               Kick off with our guided coaching system.
             </p>
             <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
               Hyrox blends endurance, strength, and functional fitness into one unforgettable race. Whether you are lining up for your first event or chasing your fastest finish, our Hyrox program will get you there.
             </p>
-          </ScrollReveal>
+          </div>
 
-          <ScrollReveal>
+          <div className="animate-fade-up-delay-3">
             <a
               href="#consult"
               className="cta-glow inline-block bg-cf-red hover:bg-cf-red-dark text-white font-bold px-10 sm:px-14 py-4 sm:py-5 rounded-full transition-all duration-300 text-sm sm:text-lg tracking-wider uppercase hover:scale-105 active:scale-95"
             >
               Book Your Consultation
             </a>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 
