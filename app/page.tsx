@@ -9,8 +9,8 @@ export default function Home() {
       <header className="bg-black/90 backdrop-blur-xl sticky top-0 z-50 border-b border-white/[0.06]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-center">
           <Image
-            src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
-            alt="Crossfit F15 Logo"
+            src="/images/f15-logo.png"
+            alt="F15 Training Centr Logo"
             width={180}
             height={50}
             className="h-6 sm:h-7 w-auto"
@@ -24,7 +24,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <Image
             src="/images/IMG_6936-2.jpg"
-            alt="CrossFit F15 community"
+            alt="F15 Training Centr community"
             fill
             className="object-cover"
             priority
@@ -36,10 +36,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-center leading-tight mb-3 text-white">
-              Your Free <span className="text-cf-red">No Sweat Intro</span>
+              Book Your Free <span className="text-cf-red">No Sweat Intro</span>
             </h1>
-            <p className="text-[#b0b0b0] text-base sm:text-lg text-center mb-8 sm:mb-10">
-              See what makes CrossFit F15 different. No commitment, just clarity.
+            <p className="text-[#b0b0b0] text-base sm:text-lg text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
+              We&apos;ll talk about you and your goals, and together we&apos;ll find out if F15 is the right match for you.
             </p>
           </ScrollReveal>
 
@@ -97,12 +97,29 @@ export default function Home() {
                 <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-5 text-white">
                   What Is a No Sweat Intro?
                 </h2>
-                <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-4">
-                  A free, no-pressure consultation with one of our coaches. We sit down with you, understand your goals, and show you exactly how CrossFit F15 can help you get there.
-                </p>
-                <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-6">
-                  Whether you have never set foot in a gym or you have been training for years, this is your personalised starting point.
-                </p>
+                <div className="space-y-4 text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-6">
+                  <p>
+                    There&apos;s no one-size-fits-all when it comes to training. Your goals, lifestyle, and starting point are unique.
+                  </p>
+                  <p>
+                    That&apos;s why everything at F15 begins with a free, no-pressure consultation.
+                  </p>
+                  <p>
+                    We sit down with you, take the time to understand you, your goals, your routine, and where you are right now, then show you exactly how we&apos;ll help you get to where you want to be.
+                  </p>
+                  <p>
+                    Whether your goal is weight loss, building muscle, improving fitness, or simply feeling better, this is your personalised starting point.
+                  </p>
+                  <p>
+                    From there, you&apos;re guided every step of the way with a dedicated coach and structured goal-setting sessions every 3 months, so your training keeps evolving as your life does, and you keep moving forward.
+                  </p>
+                  <p>
+                    If you&apos;re curious about how we at F15 can help you achieve your goals, a No Sweat Intro is the best place to start.
+                  </p>
+                  <p className="text-white font-semibold">
+                    Book a time that fits your calendar. We look forward to meeting you.
+                  </p>
+                </div>
                 <div className="flex flex-wrap gap-3">
                   {["30 Minutes", "No Pressure", "100% Free"].map((label) => (
                     <div key={label} className="flex items-center gap-2 bg-white/[0.06] border border-white/[0.08] rounded-full px-4 py-2">
@@ -124,7 +141,7 @@ export default function Home() {
                 <div className="space-y-5">
                   {[
                     { step: "1", title: "Book your free intro below", desc: "Pick a time that suits you. Takes 30 seconds." },
-                    { step: "2", title: "Chat with a coach", desc: "We learn about your goals and what hasn't worked before." },
+                    { step: "2", title: "Chat with a coach", desc: "We learn about you, your goals and how we can help you." },
                     { step: "3", title: "Get your personalised plan", desc: "Leave with a clear roadmap to start with confidence." },
                   ].map((item) => (
                     <div key={item.step} className="flex gap-4 items-start">
@@ -255,8 +272,8 @@ export default function Home() {
       <footer className="py-6 px-4 sm:px-6 border-t border-white/[0.06]">
         <div className="max-w-3xl mx-auto text-center space-y-2">
           <Image
-            src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
-            alt="Crossfit F15 Logo"
+            src="/images/f15-logo.png"
+            alt="F15 Training Centr Logo"
             width={120}
             height={35}
             className="h-4 w-auto mx-auto opacity-40 mb-3"
@@ -265,7 +282,7 @@ export default function Home() {
             This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is not endorsed by Facebook in any way. Facebook is a trademark of Facebook, Inc.
           </p>
           <p className="text-[#505050] text-xs">
-            &copy; {new Date().getFullYear()} CrossFit F15. All rights reserved.
+            &copy; {new Date().getFullYear()} F15 Training Centr. All rights reserved.
           </p>
         </div>
       </footer>

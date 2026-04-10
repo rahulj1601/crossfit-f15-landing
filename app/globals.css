@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-cf-red: #D91C1C;
-  --color-cf-red-dark: #B01515;
+  --color-cf-red: #B81C1C;
+  --color-cf-red-dark: #951313;
   --color-cf-green: #37ca37;
   --color-cf-black: #000000;
   --color-cf-dark: #0a0a0a;
@@ -32,7 +32,7 @@ iframe {
   background: #0a0a0a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D91C1C;
+  background: #B81C1C;
   border-radius: 3px;
 }
 
@@ -174,7 +174,7 @@ iframe {
 }
 
 .gradient-border {
-  background: linear-gradient(135deg, #D91C1C, #ff4444, #D91C1C);
+  background: linear-gradient(135deg, #B81C1C, #ff4444, #B81C1C);
   background-size: 200% 200%;
   animation: gradient-shift 3s ease infinite;
 }
@@ -209,7 +209,7 @@ iframe {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #D91C1C, #ff5555, #D91C1C);
+  background: linear-gradient(135deg, #B81C1C, #ff5555, #B81C1C);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

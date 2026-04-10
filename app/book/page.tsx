@@ -14,7 +14,7 @@ export default function BookPage() {
             <div className="relative h-7 sm:h-8 w-24 sm:w-28 overflow-hidden my-2.5 sm:my-3">
               <Image
                 src="https://assets.cdn.filesafe.space/PE8avF50BBboGGbRC0bY/media/69cbcbb15472d488619ed18e.jpg"
-                alt="CrossFit F15"
+                alt="F15 Training Centr"
                 width={300}
                 height={300}
                 className="absolute inset-0 w-full h-[200%] object-cover object-center -top-[50%]"
@@ -100,7 +100,7 @@ export default function BookPage() {
       <footer className="py-4 px-4 sm:px-6 bg-black border-t border-white/[0.04]">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-gray-700 text-[9px] sm:text-xs tracking-wide">
-            &copy; {new Date().getFullYear()} CrossFit F15. All rights reserved.
+            &copy; {new Date().getFullYear()} F15 Training Centr. All rights reserved.
           </p>
         </div>
       </footer>

@@ -14,7 +14,7 @@ export default function NutritionPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/IMG_6936-2.jpg"
-            alt="Nutrition at CrossFit F15"
+            alt="Nutrition at F15 Training Centr"
             fill
             className="object-cover"
             priority

@@ -7,8 +7,8 @@ export function SiteFooter() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-10">
           <div>
             <Image
-              src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
-              alt="Crossfit F15 Logo"
+              src="/images/f15-logo.png"
+              alt="F15 Training Centr Logo"
               width={160}
               height={45}
               className="h-6 w-auto mb-2"
@@ -79,7 +79,7 @@ export function SiteFooter() {
         </div>
 
         <div className="border-t border-white/[0.06] pt-6 text-center">
-          <p className="text-white/30 text-xs">CrossFit F15 &copy; {new Date().getFullYear()}. All rights reserved.</p>
+          <p className="text-white/30 text-xs">F15 Training Centr &copy; {new Date().getFullYear()}. All rights reserved.</p>
         </div>
       </div>
     </footer>

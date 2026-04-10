@@ -14,7 +14,7 @@ export default function PTPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/IMG_5410.JPG"
-            alt="Personal training at CrossFit F15"
+            alt="Personal training at F15 Training Centr"
             fill
             className="object-cover"
             priority
@@ -64,7 +64,7 @@ export default function PTPage() {
                   <span className="text-cf-red">You</span>
                 </h2>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-4">
-                  Classes are powerful. But sometimes you need something built just for you. Personal training at F15 is for anyone who wants a plan that fits their body, their schedule, and their goals.
+                  Classes are powerful. But sometimes you need something built just for you. Personal training at F15 Training Centr is for anyone who wants a plan that fits their body, their schedule, and their goals.
                 </p>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-6">
                   Whether you are coming back from an injury, preparing for a competition, or want to fast-track results, your coach will guide every session.

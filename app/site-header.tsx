@@ -6,8 +6,8 @@ export function SiteHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between">
         <a href="https://crossfitf15.com/">
           <Image
-            src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
-            alt="Crossfit F15 Logo"
+            src="/images/f15-logo.png"
+            alt="F15 Training Centr Logo"
             width={180}
             height={50}
             className="h-6 sm:h-7 w-auto"

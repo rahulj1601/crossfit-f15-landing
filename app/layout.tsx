@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "CrossFit F15 | Free No Sweat Intro",
+  title: "F15 Training Centr | Free No Sweat Intro",
   description:
-    "Book your free, no-pressure consultation at CrossFit F15 Malta. Meet a coach, see the gym, and get a personalised plan to start with confidence.",
+    "Book your free, no-pressure consultation at F15 Training Centr in Malta. Meet a coach, see the gym, and get a personalised plan to start with confidence.",
   openGraph: {
-    title: "CrossFit F15 | Free No Sweat Intro",
+    title: "F15 Training Centr | Free No Sweat Intro",
     description:
-      "Book your free, no-pressure consultation at CrossFit F15 Malta. Meet a coach and get started.",
+      "Book your free, no-pressure consultation at F15 Training Centr in Malta. Meet a coach and get started.",
     images: [
       "https://crossfitf15.com/wp-content/uploads/2024/07/High-Five-Time-683x1024.webp",
     ],

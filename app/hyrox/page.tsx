@@ -11,8 +11,8 @@ export default function HyroxPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between">
           <a href="https://crossfitf15.com/">
             <Image
-              src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
-              alt="Crossfit F15 Logo"
+              src="/images/f15-logo.png"
+              alt="F15 Training Centr Logo"
               width={180}
               height={50}
               className="h-6 sm:h-7 w-auto"
@@ -56,7 +56,7 @@ export default function HyroxPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/IMG_5410.JPG"
-            alt="Hyrox training at CrossFit F15"
+            alt="Hyrox training at F15 Training Centr"
             fill
             className="object-cover"
             priority
@@ -110,7 +110,7 @@ export default function HyroxPage() {
                   <span className="text-cf-red">Race Ready</span>
                 </h2>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-4">
-                  At CrossFit F15, we have designed a Hyrox program that focuses on every part of your journey. Each class is tailored to improve your performance and help you prepare for race day with confidence.
+                  At F15 Training Centr, we have designed a Hyrox program that focuses on every part of your journey. Each class is tailored to improve your performance and help you prepare for race day with confidence.
                 </p>
                 <p className="text-[#c0c0c0] text-base sm:text-lg leading-relaxed mb-6">
                   From your first run to your final sled push, you will train every station, every muscle group, and every mindset you need to race your fastest finish.
@@ -236,7 +236,7 @@ export default function HyroxPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50">
                 <Image
                   src="/images/IMG_8316.JPG"
-                  alt="Hyrox Schedule at CrossFit F15"
+                  alt="Hyrox Schedule at F15 Training Centr"
                   width={800}
                   height={1000}
                   className="w-full h-auto rounded-2xl"
@@ -333,8 +333,8 @@ export default function HyroxPage() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-10">
             <div>
               <Image
-                src="https://crossfitf15.com/wp-content/uploads/2024/06/a96482e43b89d93241c81979f0e4551c.png"
-                alt="Crossfit F15 Logo"
+                src="/images/f15-logo.png"
+                alt="F15 Training Centr Logo"
                 width={160}
                 height={45}
                 className="h-6 w-auto mb-2"
@@ -405,7 +405,7 @@ export default function HyroxPage() {
           </div>
 
           <div className="border-t border-white/[0.06] pt-6 text-center">
-            <p className="text-white/30 text-xs">CrossFit F15 &copy; {new Date().getFullYear()}. All rights reserved.</p>
+            <p className="text-white/30 text-xs">F15 Training Centr &copy; {new Date().getFullYear()}. All rights reserved.</p>
           </div>
         </div>
       </footer>
