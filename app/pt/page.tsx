@@ -269,7 +269,7 @@ export default function PTPage() {
             <div className="relative">
               <div className="absolute -inset-[1px] bg-gradient-to-b from-cf-red/10 via-transparent to-cf-red/5 rounded-2xl" />
               <div className="relative bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-6 sm:p-8 shadow-2xl">
-                <LeadForm source="pt" submitText="Book Your Free Consultation" />
+                <LeadForm source="pt" submitText="Book Your Free Consultation" calendarUrl="https://book.crossfitf15.com/widget/bookings/personal-training-intro" />
               </div>
             </div>
           </ScrollReveal>

@@ -404,7 +404,7 @@ export default function HowToStart() {
             <div className="relative">
               <div className="absolute -inset-[1px] bg-gradient-to-b from-cf-red/10 via-transparent to-cf-red/5 rounded-2xl" />
               <div className="relative bg-[#0e0e0e] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl">
-                <LeadForm source="how-to-start" submitText="Book Your Free Consultation" />
+                <LeadForm source="how-to-start" submitText="Book Your Free Consultation" calendarUrl="https://book.crossfitf15.com/widget/bookings/f15-first-step-intro" />
               </div>
             </div>
           </ScrollReveal>

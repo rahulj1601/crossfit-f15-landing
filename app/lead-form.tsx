@@ -1,21 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type LeadFormProps = {
   source?: string;
   submitText?: string;
   successMessage?: string;
+  calendarUrl?: string;
 };
 
 export function LeadForm({
   source = "website",
   submitText = "Book Your Free Consultation Now",
   successMessage = "Thanks! We'll be in touch shortly.",
+  calendarUrl,
 }: LeadFormProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+
+  // Load the GHL embed script when calendar is shown so the iframe resizes correctly
+  useEffect(() => {
+    if (success && calendarUrl) {
+      const existing = document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]');
+      if (!existing) {
+        const script = document.createElement("script");
+        script.src = "https://link.msgsndr.com/js/form_embed.js";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    }
+  }, [success, calendarUrl]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -45,6 +60,31 @@ export function LeadForm({
       setError("Something went wrong. Please try again.");
       setLoading(false);
     }
+  }
+
+  if (success && calendarUrl) {
+    return (
+      <div className="-mx-6 sm:-mx-8 -mb-6 sm:-mb-8">
+        <div className="px-6 sm:px-8 pb-6 text-center">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-green-400 text-sm font-semibold">Details saved</span>
+          </div>
+          <h3 className="text-white font-bold text-xl sm:text-2xl mb-1">Now Pick a Time</h3>
+          <p className="text-[#b0b0b0] text-sm">Choose a slot below and we&apos;ll confirm right away.</p>
+        </div>
+        <div className="bg-[#0a0a0a] rounded-b-2xl overflow-hidden">
+          <iframe
+            src={calendarUrl}
+            style={{ width: "100%", height: "720px", border: "none" }}
+            scrolling="no"
+            title="Book your consultation"
+          />
+        </div>
+      </div>
+    );
   }
 
   if (success) {
