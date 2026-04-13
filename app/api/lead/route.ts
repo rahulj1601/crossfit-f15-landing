@@ -3,9 +3,21 @@ import { NextResponse } from "next/server";
 const GHL_API_BASE = "https://services.leadconnectorhq.com";
 const GHL_API_VERSION = "2021-07-28";
 
-// Acquisition Pipeline (read from GHL)
-const ACQUISITION_PIPELINE_ID = "HpZymvQIQsXH4QR6Nf7I";
-const NEW_LEAD_STAGE_ID = "8c869c1e-fdf0-4aef-80c1-9cd1a2406c40";
+// Pipeline routing per source
+const PIPELINE_ROUTING: Record<string, { pipelineId: string; stageId: string }> = {
+  "nutrition": {
+    pipelineId: "D674AJvIaG06OUxSqyjT",  // Nutrition Pipeline
+    stageId: "5d0d06c2-0889-4795-bf1e-3deefdef84f2",  // New Lead
+  },
+  "pt": {
+    pipelineId: "07GbZl0n9tJpB53krOKT",  // Personal Training Pipeline
+    stageId: "3491b572-db2d-4618-8370-242d9f83192a",  // New Lead
+  },
+};
+
+// Default: Acquisition Pipeline
+const DEFAULT_PIPELINE_ID = "HpZymvQIQsXH4QR6Nf7I";
+const DEFAULT_STAGE_ID = "8c869c1e-fdf0-4aef-80c1-9cd1a2406c40";
 
 // Map source -> tags to apply
 const SOURCE_TAGS: Record<string, string[]> = {
@@ -14,6 +26,11 @@ const SOURCE_TAGS: Record<string, string[]> = {
   "nutrition": ["Website_Form", "Nutrition_Landing"],
   "how-to-start": ["Website_Form", "How_To_Start_Landing"],
   "no-sweat-intro": ["Website_Form", "No_Sweat_Intro_Landing"],
+  "kids": ["Website_Form", "Kids_Landing"],
+  "classes": ["Website_Form", "Classes_Landing"],
+  "gym-247": ["Website_Form", "Gym_247_Landing"],
+  "contact": ["Website_Form", "Contact_Page"],
+  "blog": ["Website_Form", "Blog_Lead"],
 };
 
 // Map source -> opportunity name prefix
@@ -23,6 +40,11 @@ const SOURCE_LABEL: Record<string, string> = {
   "nutrition": "Nutrition Challenge",
   "how-to-start": "How To Start Consultation",
   "no-sweat-intro": "No Sweat Intro",
+  "kids": "Kids Free Trial",
+  "classes": "Classes Enquiry",
+  "gym-247": "24/7 Gym Enquiry",
+  "contact": "Contact Form",
+  "blog": "Blog Lead",
 };
 
 export async function POST(request: Request) {
@@ -37,7 +59,6 @@ export async function POST(request: Request) {
     const locationId = process.env.GHL_LOCATION_ID;
 
     if (!apiKey || !locationId) {
-      // Fail gracefully if not configured - still return success to user
       console.error("GHL credentials missing");
       return NextResponse.json({ success: true });
     }
@@ -57,8 +78,26 @@ export async function POST(request: Request) {
       Accept: "application/json",
     };
 
-    // 1. Create or upsert contact
-    const contactRes = await fetch(`${GHL_API_BASE}/contacts/upsert`, {
+    // 1. Check if contact already exists (by email)
+    const searchRes = await fetch(
+      `${GHL_API_BASE}/contacts/search/duplicate?locationId=${locationId}&email=${encodeURIComponent(email)}`,
+      { headers }
+    );
+    const searchData = await searchRes.json();
+    const existingContact = searchData?.contact;
+
+    if (existingContact) {
+      // Contact exists - just add tags, don't create opportunity
+      await fetch(`${GHL_API_BASE}/contacts/${existingContact.id}/tags`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ tags }),
+      });
+      return NextResponse.json({ success: true, existing: true });
+    }
+
+    // 2. Contact doesn't exist - create them
+    const contactRes = await fetch(`${GHL_API_BASE}/contacts/`, {
       method: "POST",
       headers,
       body: JSON.stringify({
@@ -74,38 +113,35 @@ export async function POST(request: Request) {
     });
 
     if (!contactRes.ok) {
-      const err = await contactRes.text();
-      console.error("GHL contact upsert failed:", contactRes.status, err);
+      console.error("GHL contact create failed:", contactRes.status);
       return NextResponse.json({ success: true });
     }
 
     const contactData = await contactRes.json();
-    const contactId = contactData?.contact?.id || contactData?.id;
+    const contactId = contactData?.contact?.id;
 
     if (!contactId) {
       console.error("GHL contact created but no ID returned");
       return NextResponse.json({ success: true });
     }
 
-    // 2. Create opportunity in Acquisition Pipeline at "New Lead - To Call" stage
-    const oppRes = await fetch(`${GHL_API_BASE}/opportunities/`, {
+    // 3. Create opportunity in the correct pipeline
+    const routing = PIPELINE_ROUTING[sourceKey];
+    const pipelineId = routing ? routing.pipelineId : DEFAULT_PIPELINE_ID;
+    const stageId = routing ? routing.stageId : DEFAULT_STAGE_ID;
+
+    await fetch(`${GHL_API_BASE}/opportunities/`, {
       method: "POST",
       headers,
       body: JSON.stringify({
-        pipelineId: ACQUISITION_PIPELINE_ID,
-        pipelineStageId: NEW_LEAD_STAGE_ID,
+        pipelineId,
+        pipelineStageId: stageId,
         locationId,
         contactId,
         name: `${sourceLabel} - ${name.trim()}`,
         status: "open",
       }),
     });
-
-    if (!oppRes.ok) {
-      const err = await oppRes.text();
-      console.error("GHL opportunity create failed:", oppRes.status, err);
-      // Contact is still created, so return success
-    }
 
     return NextResponse.json({ success: true });
   } catch (e) {
