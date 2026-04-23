@@ -31,6 +31,8 @@ const SOURCE_TAGS: Record<string, string[]> = {
   "gym-247": ["Website_Form", "Gym_247_Landing"],
   "contact": ["Website_Form", "Contact_Page"],
   "blog": ["Website_Form", "Blog_Lead"],
+  "hyrox-landing": ["Website_Form", "Hyrox_Landing"],
+  "conversion-landing": ["Website_Form", "CrossFit_Landing"],
 };
 
 // Map source -> opportunity name prefix
@@ -45,6 +47,8 @@ const SOURCE_LABEL: Record<string, string> = {
   "gym-247": "24/7 Gym Enquiry",
   "contact": "Contact Form",
   "blog": "Blog Lead",
+  "hyrox-landing": "Hyrox Consultation",
+  "conversion-landing": "CrossFit Consultation",
 };
 
 export async function POST(request: Request) {
