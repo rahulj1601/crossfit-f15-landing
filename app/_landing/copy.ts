@@ -90,6 +90,8 @@ export const WOMEN: LandingCopy = {
       "Without crash diets, extreme routines or making fitness take over your life.",
     image: {
       src: "/images/landing/f15-team-posed.jpg",
+      width: 1280,
+      height: 1145,
       alt: "F15 Training CENTR members in Msida",
       slotNote:
         "Replace with the strongest real female before and after when available. Pick someone relatable, not your most advanced athlete.",
@@ -175,6 +177,8 @@ export const WOMEN: LandingCopy = {
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
       src: "/images/landing/f15-community.jpg",
+      width: 1306,
+      height: 1400,
       alt: "The F15 Training CENTR community in Msida",
       slotNote:
         "Replace with a female after state photo in normal clothes when available. That connects directly to the fit your clothes better promise.",
@@ -200,6 +204,8 @@ export const MEN: LandingCopy = {
       "Without wasting months on random workouts or spending your life in the gym.",
     image: {
       src: "/images/landing/transformation-men-1.jpg",
+      width: 1445,
+      height: 1088,
       alt: "Real F15 Training CENTR member before and after his transformation",
       slotNote:
         "Strongest real male before and after. Should read fit, strong, athletic and attainable, not competitive bodybuilder.",
@@ -288,6 +294,8 @@ export const MEN: LandingCopy = {
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
       src: "/images/landing/transformation-men-2.jpg",
+      width: 1448,
+      height: 1086,
       alt: "Real F15 Training CENTR member before and after his transformation",
       slotNote:
         "After state image. Replace with a confident portrait in normal clothes if one is shot.",

@@ -159,7 +159,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           {/* Transformation. Second on mobile, right hand side on desktop. */}
           <div className="order-2 lg:order-2 lg:row-span-2">
             <ScrollReveal>
-              <TransformationShot image={hero.image} aspect="aspect-[4/5]" priority />
+              <TransformationShot image={hero.image} priority />
             </ScrollReveal>
           </div>
 
@@ -197,11 +197,11 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
       {/* ============ 2. PROOF: can someone like me actually do this ============ */}
       <SectionDivider />
-      <section className="px-5 sm:px-6 py-14 sm:py-20 bg-[#0d0d0d]">
+      <section className="px-5 sm:px-6 py-14 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <SectionHeader number="01" label="Real members, real results" />
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white text-center mb-10 sm:mb-14 leading-[1.1]">
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#0a0a0a] text-center mb-10 sm:mb-14 leading-[1.1]">
               {proof.headline.map((line, index) => (
                 <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
                   {line}
@@ -216,36 +216,37 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
                 src={proof.feature.video.src}
                 poster={proof.feature.video.poster}
                 slotNote={proof.feature.video.slotNote}
+                tone="light"
               />
             </ScrollReveal>
 
             <ScrollReveal direction="right">
               <div className="flex flex-col gap-3">
-                <p className="text-white font-extrabold text-xl sm:text-2xl tracking-tight">
+                <p className="text-[#0a0a0a] font-extrabold text-xl sm:text-2xl tracking-tight">
                   {proof.feature.name ?? <SlotText>Client name</SlotText>}
                 </p>
                 <p className="text-cf-red font-extrabold text-lg sm:text-xl tracking-[0.06em] uppercase">
                   {proof.feature.result ?? <SlotText>Verified result</SlotText>}
                 </p>
                 {proof.feature.secondaryResult !== undefined && (
-                  <p className="text-white/70 font-bold text-sm sm:text-base tracking-[0.06em] uppercase">
+                  <p className="text-[#333] font-bold text-sm sm:text-base tracking-[0.06em] uppercase">
                     {proof.feature.secondaryResult ?? <SlotText>Verified performance result</SlotText>}
                   </p>
                 )}
 
                 {proof.feature.story && (
-                  <p className="text-[#b8b8b8] text-sm sm:text-base leading-relaxed mt-1">
+                  <p className="text-[#4a4a4a] text-sm sm:text-base leading-relaxed mt-1">
                     {proof.feature.story}
                   </p>
                 )}
 
                 {proof.feature.today && (
-                  <p className="text-white text-sm sm:text-base leading-relaxed font-medium">
+                  <p className="text-[#0a0a0a] text-sm sm:text-base leading-relaxed font-medium">
                     {proof.feature.today}
                   </p>
                 )}
 
-                <blockquote className="text-white text-base sm:text-lg leading-relaxed border-l-2 border-cf-red pl-4 mt-2">
+                <blockquote className="text-[#0a0a0a] text-base sm:text-lg leading-relaxed border-l-2 border-cf-red pl-4 mt-2">
                   {proof.feature.quote ? (
                     `“${proof.feature.quote}”`
                   ) : (
@@ -259,14 +260,14 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-6 mb-10 sm:mb-14">
             {proof.cards.map((item) => (
               <ScrollReveal key={item.name}>
-                <ProofItemCard item={item} />
+                <ProofItemCard item={item} tone="light" />
               </ScrollReveal>
             ))}
           </div>
 
           <div className="text-center">
             <QualifyButton source="proof" />
-            <p className="text-white/45 text-xs sm:text-sm mt-4">{proof.ctaMicrocopy}</p>
+            <p className="text-black/50 text-xs sm:text-sm mt-4">{proof.ctaMicrocopy}</p>
           </div>
         </div>
       </section>
@@ -308,11 +309,11 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
       {/* ============ 4. WHY THIS TIME COULD BE DIFFERENT ============ */}
       <SectionDivider />
-      <section className="px-5 sm:px-6 py-14 sm:py-20 bg-[#0d0d0d]">
+      <section className="px-5 sm:px-6 py-14 sm:py-20 bg-white">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
             <SectionHeader number="03" label="Why this time is different" />
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white text-center mb-9 sm:mb-14 leading-[1.1]">
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#0a0a0a] text-center mb-9 sm:mb-14 leading-[1.1]">
               {different.headline.map((line, index) => (
                 <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
                   {line}
@@ -327,10 +328,10 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
                 <div className="flex items-start gap-3.5">
                   <Tick />
                   <div>
-                    <p className="text-white font-extrabold text-sm sm:text-lg tracking-[0.06em] uppercase mb-1.5">
+                    <p className="text-[#0a0a0a] font-extrabold text-sm sm:text-lg tracking-[0.06em] uppercase mb-1.5">
                       {row.title}
                     </p>
-                    <p className="text-[#b0b0b0] text-sm sm:text-base leading-relaxed">{row.body}</p>
+                    <p className="text-[#4a4a4a] text-sm sm:text-base leading-relaxed">{row.body}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -338,13 +339,13 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           </div>
 
           <ScrollReveal>
-            <p className="text-[#c4c4c4] text-base sm:text-lg leading-relaxed text-center mb-10 sm:mb-12">
+            <p className="text-[#4a4a4a] text-base sm:text-lg leading-relaxed text-center mb-10 sm:mb-12">
               {different.bridge}
             </p>
           </ScrollReveal>
 
           <ScrollReveal>
-            <p className="text-center text-white text-xl sm:text-3xl font-extrabold tracking-tight leading-[1.2]">
+            <p className="text-center text-[#0a0a0a] text-xl sm:text-3xl font-extrabold tracking-tight leading-[1.2]">
               {different.closing.map((line, index) => (
                 <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
                   {line}
@@ -362,7 +363,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
         <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-9 lg:gap-14 items-center">
           <ScrollReveal>
-            <TransformationShot image={close.image} aspect="aspect-[4/5]" />
+            <TransformationShot image={close.image} />
           </ScrollReveal>
 
           <div className="text-center lg:text-left">
