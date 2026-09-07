@@ -259,7 +259,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
             </ScrollReveal>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5 sm:gap-6 mb-10 sm:mb-14 [&>*]:min-w-0">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-10 sm:mb-14 [&>*]:min-w-0">
             {proof.cards.map((item) => (
               <ScrollReveal key={item.name}>
                 <ProofItemCard item={item} tone="light" />

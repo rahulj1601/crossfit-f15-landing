@@ -144,27 +144,27 @@ export function ProofItemCard({ item, tone = "dark" }: { item: ProofItem; tone?:
       }`}
     >
       {item.kind === "filmed" && (
-        <div className="p-4 pb-0">
+        <div className="p-2.5 sm:p-4 pb-0 sm:pb-0">
           <video
             src={item.video}
             poster={item.poster}
             controls
             playsInline
             preload="metadata"
-            className="mx-auto block w-full max-w-[180px] h-auto rounded-xl"
+            className="mx-auto block w-full max-w-[150px] sm:max-w-[180px] h-auto rounded-xl"
           />
         </div>
       )}
 
-      <div className="p-5 sm:p-6 flex flex-col gap-2 flex-1">
+      <div className="p-3.5 sm:p-6 flex flex-col gap-1.5 sm:gap-2 flex-1">
         <div className="flex items-center justify-between gap-3">
-          <p className={`font-bold text-base tracking-tight ${light ? "text-[#0a0a0a]" : "text-white"}`}>
+          <p className={`font-bold text-sm sm:text-base tracking-tight ${light ? "text-[#0a0a0a]" : "text-white"}`}>
             {item.name}
           </p>
           {item.kind === "review" && <Stars tone={tone} />}
         </div>
-        <p className="text-cf-red font-bold text-sm tracking-[0.08em] uppercase">{item.result}</p>
-        <p className={`text-sm leading-relaxed ${light ? "text-[#4a4a4a]" : "text-[#b0b0b0]"}`}>
+        <p className="text-cf-red font-bold text-[11px] sm:text-sm tracking-[0.06em] uppercase leading-snug">{item.result}</p>
+        <p className={`text-[12px] sm:text-sm leading-relaxed ${light ? "text-[#4a4a4a]" : "text-[#b0b0b0]"}`}>
           &ldquo;{item.quote}&rdquo;
         </p>
         {item.kind === "review" && (

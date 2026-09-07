@@ -32,7 +32,7 @@ export type LandingCopy = {
   proof: {
     headline: string[];
     feature: FeatureClient;
-    cards: [ProofItem, ProofItem];
+    cards: ProofItem[];
     ctaMicrocopy: string;
   };
 
@@ -101,35 +101,55 @@ export const WOMEN: LandingCopy = {
   proof: {
     headline: ["REAL WOMEN.", "REAL TRANSFORMATIONS."],
     feature: {
-      name: "Olga",
-      result: "Fitter body, better mind",
-      story:
-        "She started training just to stay fit. Over time her goals changed, and so did more than her fitness.",
+      name: "Maria",
+      result: "Lost the weight, gained the confidence",
+      story: "She started at 28 wanting to lose weight.",
       today:
-        "Today she is fitter, sharper mentally, and part of a community she sees outside the gym too.",
+        "Today she says it gave her confidence she never knew she needed, discipline, and belief in herself.",
       quote:
-        "Since I joined the gym, I improved my physical fitness, I improved my mental health. I actually improved the quality of my social life as well.",
+        "I started CrossFit when I was 28, with the original scope of losing weight, but it actually gave me much more than that. It gave me the confidence I never knew I needed.",
       video: {
-        src: "/videos/testimonial-1.mp4",
-        poster: "/images/video-posters/testimonial-1.jpg",
-        slotNote:
-          "Replace with a female before and after transformation video when one is filmed.",
+        src: "/videos/testimonial-maria.mp4",
+        poster: "/images/video-posters/testimonial-maria.jpg",
+        slotNote: "Strongest female transformation video.",
       },
     },
     cards: [
       {
-        kind: "review",
-        name: "Titina T",
-        result: "More consistent, more confident",
+        kind: "filmed",
+        name: "Cheyenne",
+        result: "A year in, stronger and surer of herself",
         quote:
-          "Since I joined, I've become more consistent, and much more confident in my fitness journey.",
+          "I was very conscious about myself. I decided to start something new. My goal was to get stronger.",
+        poster: "/images/video-posters/testimonial-cheyenne.jpg",
+        video: "/videos/testimonial-cheyenne.mp4",
       },
       {
-        kind: "review",
-        name: "Alisa Gaci",
-        result: "Found results after other gyms",
+        kind: "filmed",
+        name: "Aliza",
+        result: "From half a squat to real progress",
         quote:
-          "After spending lots of time going into boring gym and the results were not the one I was looking forward to, found F15.",
+          "I couldn't even do half a squat. They told me you are not weak, you just need patience. After three months I can see the progress.",
+        poster: "/images/video-posters/testimonial-aliza.jpg",
+        video: "/videos/testimonial-aliza.mp4",
+      },
+      {
+        kind: "filmed",
+        name: "Olga",
+        result: "Fitter body, better mind",
+        quote:
+          "Since I joined the gym, I improved my physical fitness, I improved my mental health.",
+        poster: "/images/video-posters/testimonial-1.jpg",
+        video: "/videos/testimonial-1.mp4",
+      },
+      {
+        kind: "filmed",
+        name: "Diana",
+        result: "Three years, way stronger and happier",
+        quote:
+          "I decided I wanted to do something more challenging. I feel way stronger, and overall I'm so much happier now.",
+        poster: "/images/video-posters/testimonial-diana.jpg",
+        video: "/videos/testimonial-diana.mp4",
       },
     ],
     ctaMicrocopy: "See if F15 could be the right fit for your goal.",
@@ -233,12 +253,12 @@ export const MEN: LandingCopy = {
     cards: [
       {
         kind: "filmed",
-        name: "Keith, 41",
-        result: "Fitter at 41 than in his twenties",
+        name: "Alex",
+        result: "Four months, doing what he could not before",
         quote:
-          "I did the leap and it was the best thing I ever did in my life. I feel fitter than I was when I was younger.",
-        poster: "/images/video-posters/testimonial-2.jpg",
-        video: "/videos/testimonial-2.mp4",
+          "When I started gymnastics over here, there were stuff that I couldn't do. Four months later, I started managing to do some stuff.",
+        poster: "/images/video-posters/testimonial-alex.jpg",
+        video: "/videos/testimonial-alex.mp4",
       },
       {
         kind: "filmed",
@@ -248,6 +268,15 @@ export const MEN: LandingCopy = {
           "After retiring from football I was a bit confused of what I was doing. F15 was something that triggered me again, helped me keep fit.",
         poster: "/images/video-posters/testimonial-andre.jpg",
         video: "/videos/testimonial-andre.mp4",
+      },
+      {
+        kind: "filmed",
+        name: "Keith, 41",
+        result: "Fitter at 41 than in his twenties",
+        quote:
+          "I did the leap and it was the best thing I ever did in my life. I feel fitter than I was when I was younger.",
+        poster: "/images/video-posters/testimonial-2.jpg",
+        video: "/videos/testimonial-2.mp4",
       },
     ],
     ctaMicrocopy: "See if F15 could be the right fit for your goal.",
