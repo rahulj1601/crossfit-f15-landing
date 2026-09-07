@@ -66,6 +66,41 @@ function LocationLine({ className = "" }: { className?: string }) {
   );
 }
 
+/**
+ * Section separation.
+ *
+ * The five blocks were reading as one long scroll. Each one now opens with a
+ * full-width red edge, a numbered label saying where you are, and its own
+ * surface tone, so the structure is obvious without reading a word.
+ */
+function SectionDivider() {
+  return <div className="h-1 w-full bg-cf-red" aria-hidden="true" />;
+}
+
+function SectionHeader({
+  number,
+  label,
+  align = "center",
+}: {
+  number: string;
+  label: string;
+  /** "split" centres on mobile and left-aligns from lg up. */
+  align?: "center" | "split";
+}) {
+  return (
+    <div
+      className={`flex items-center gap-3 mb-4 ${
+        align === "center" ? "justify-center" : "justify-center lg:justify-start"
+      }`}
+    >
+      <span className="h-[2px] w-8 bg-cf-red" aria-hidden="true" />
+      <span className="text-cf-red text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase">
+        {number} · {label}
+      </span>
+    </div>
+  );
+}
+
 function Tick() {
   return (
     <svg
@@ -101,7 +136,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       </header>
 
       {/* ============ 1. HERO: the dream outcome ============ */}
-      <section className="relative px-5 sm:px-6 pt-8 sm:pt-14 pb-10 sm:pb-16 overflow-hidden">
+      <section className="relative px-5 sm:px-6 pt-8 sm:pt-14 pb-12 sm:pb-20 overflow-hidden bg-black border-b border-white/[0.09]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cf-red/[0.07] rounded-full blur-[180px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
@@ -161,9 +196,11 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       </section>
 
       {/* ============ 2. PROOF: can someone like me actually do this ============ */}
-      <section className="px-5 sm:px-6 py-12 sm:py-20 bg-[#080808] border-y border-white/[0.05]">
+      <SectionDivider />
+      <section className="px-5 sm:px-6 py-14 sm:py-20 bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
+            <SectionHeader number="01" label="Real members, real results" />
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white text-center mb-10 sm:mb-14 leading-[1.1]">
               {proof.headline.map((line, index) => (
                 <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
@@ -235,9 +272,11 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       </section>
 
       {/* ============ 3. MAKE THE OUTCOME TANGIBLE ============ */}
-      <section className="px-5 sm:px-6 py-12 sm:py-20">
+      <SectionDivider />
+      <section className="px-5 sm:px-6 py-14 sm:py-20 bg-black">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
+            <SectionHeader number="02" label="What could change" />
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white text-center mb-9 sm:mb-12 leading-[1.1]">
               {tangible.headline}
             </h2>
@@ -268,12 +307,14 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       </section>
 
       {/* ============ 4. WHY THIS TIME COULD BE DIFFERENT ============ */}
-      <section className="px-5 sm:px-6 py-12 sm:py-20 bg-[#080808] border-y border-white/[0.05]">
+      <SectionDivider />
+      <section className="px-5 sm:px-6 py-14 sm:py-20 bg-[#0d0d0d]">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
+            <SectionHeader number="03" label="Why this time is different" />
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white text-center mb-9 sm:mb-14 leading-[1.1]">
               {different.headline.map((line, index) => (
-                <span key={line} className={index === 1 ? "block text-white/55" : "block"}>
+                <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
                   {line}
                 </span>
               ))}
@@ -315,7 +356,8 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       </section>
 
       {/* ============ 5. FINAL CLOSE ============ */}
-      <section className="relative px-5 sm:px-6 py-12 sm:py-20 overflow-hidden">
+      <SectionDivider />
+      <section className="relative px-5 sm:px-6 py-14 sm:py-20 overflow-hidden bg-black">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cf-red/[0.07] rounded-full blur-[180px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-9 lg:gap-14 items-center">
@@ -325,6 +367,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
           <div className="text-center lg:text-left">
             <ScrollReveal>
+              <SectionHeader number="04" label="Your next step" align="split" />
               <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-[1.1] mb-5">
                 {close.headline}
               </h2>
