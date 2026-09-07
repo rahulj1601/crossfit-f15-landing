@@ -227,12 +227,13 @@ export const MEN: LandingCopy = {
     effortReduction:
       "Without wasting months on random workouts or spending your life in the gym.",
     image: {
-      src: "/images/landing/f15-members-men.jpg",
-      width: 790,
-      height: 1400,
-      alt: "F15 Training CENTR members in Msida",
+      src: "/images/landing/transformation-men-1.jpg",
+      width: 1445,
+      height: 1088,
+      alt: "Jake Tabone before and after his transformation at F15 Training CENTR",
+      credit: { name: "Jake Tabone, 33", result: "Lost 12 kg in 12 weeks" },
       slotNote:
-        "Hero cover for the men's page. Swap for a stronger cover shot whenever one is available.",
+        "Strongest real male before and after, leading the page.",
     },
   },
 
@@ -326,13 +327,12 @@ export const MEN: LandingCopy = {
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
-      src: "/images/landing/transformation-men-1.jpg",
-      width: 1445,
-      height: 1088,
-      alt: "Jake Tabone before and after his transformation at F15 Training CENTR",
-      credit: { name: "Jake Tabone, 33", result: "Lost 12 kg in 12 weeks" },
+      src: "/images/landing/f15-members-men.jpg",
+      width: 790,
+      height: 1400,
+      alt: "F15 Training CENTR members in Msida",
       slotNote:
-        "Strongest real male before and after, used as the closing proof before the final CTA.",
+        "Closing image. A second credited before and after would be stronger here.",
     },
   },
 };
