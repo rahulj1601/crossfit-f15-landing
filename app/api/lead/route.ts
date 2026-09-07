@@ -19,20 +19,23 @@ const PIPELINE_ROUTING: Record<string, { pipelineId: string; stageId: string }> 
 const DEFAULT_PIPELINE_ID = "HpZymvQIQsXH4QR6Nf7I";
 const DEFAULT_STAGE_ID = "8c869c1e-fdf0-4aef-80c1-9cd1a2406c40";
 
-// Map source -> tags to apply
+// book.f15trainingcentr.com is the Facebook Ads landing subdomain.
+// Tags here exclude Website_Form (that's only for main f15trainingcentr.com leads)
+// and include Facebook_Ad to mark the FB origin.
 const SOURCE_TAGS: Record<string, string[]> = {
-  "hyrox": ["Website_Form", "Hyrox_Landing"],
-  "pt": ["Website_Form", "PT_Landing"],
-  "nutrition": ["Website_Form", "Nutrition_Landing"],
-  "how-to-start": ["Website_Form", "How_To_Start_Landing"],
-  "no-sweat-intro": ["Website_Form", "No_Sweat_Intro_Landing"],
-  "kids": ["Website_Form", "Kids_Landing"],
-  "classes": ["Website_Form", "Classes_Landing"],
-  "gym-247": ["Website_Form", "Gym_247_Landing"],
-  "contact": ["Website_Form", "Contact_Page"],
-  "blog": ["Website_Form", "Blog_Lead"],
-  "hyrox-landing": ["Website_Form", "Hyrox_Landing"],
-  "conversion-landing": ["Website_Form", "CrossFit_Landing"],
+  "website": ["Book_Landing", "Facebook_Ad"],
+  "hyrox": ["Hyrox_Landing", "Facebook_Ad"],
+  "pt": ["PT_Landing", "Facebook_Ad"],
+  "nutrition": ["Nutrition_Landing", "Facebook_Ad"],
+  "how-to-start": ["How_To_Start_Landing", "Facebook_Ad"],
+  "no-sweat-intro": ["No_Sweat_Intro_Landing", "Facebook_Ad"],
+  "kids": ["Kids_Landing", "Facebook_Ad"],
+  "classes": ["Classes_Landing", "Facebook_Ad"],
+  "gym-247": ["Gym_247_Landing", "Facebook_Ad"],
+  "contact": ["Contact_Page", "Facebook_Ad"],
+  "blog": ["Blog_Lead", "Facebook_Ad"],
+  "hyrox-landing": ["Hyrox_Landing"],
+  "conversion-landing": ["CrossFit_Landing"],
 };
 
 // Map source -> opportunity name prefix
@@ -49,6 +52,7 @@ const SOURCE_LABEL: Record<string, string> = {
   "blog": "Blog Lead",
   "hyrox-landing": "Hyrox Consultation",
   "conversion-landing": "CrossFit Consultation",
+  "website": "Facebook Ad Landing",
 };
 
 export async function POST(request: Request) {
@@ -57,6 +61,20 @@ export async function POST(request: Request) {
 
     if (!name || !email || !phone) {
       return NextResponse.json({ error: "All fields required" }, { status: 400 });
+    }
+
+    // Email sanity check
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+    }
+
+    // Phone validation - E.164 format (7-15 digits, optional +, country code cannot start with 0)
+    const cleanedPhone = String(phone).replace(/[\s\-().]/g, "");
+    if (!/^\+?[1-9]\d{6,12}$/.test(cleanedPhone)) {
+      return NextResponse.json(
+        { error: "Invalid phone number. Please enter a valid international phone number." },
+        { status: 400 }
+      );
     }
 
     const apiKey = process.env.GHL_API_KEY;
@@ -72,8 +90,9 @@ export async function POST(request: Request) {
     const lastName = parts.slice(1).join(" ") || "";
 
     const sourceKey = (source || "").toLowerCase();
-    const tags = SOURCE_TAGS[sourceKey] || ["Website_Form"];
-    const sourceLabel = SOURCE_LABEL[sourceKey] || "Website Form";
+    // Fallback for unmapped sources on book subdomain - still treated as Facebook Ad landing
+    const tags = SOURCE_TAGS[sourceKey] || ["Book_Landing", "Facebook_Ad"];
+    const sourceLabel = SOURCE_LABEL[sourceKey] || "Facebook Ad Landing";
 
     const headers = {
       Authorization: `Bearer ${apiKey}`,
@@ -109,7 +128,7 @@ export async function POST(request: Request) {
         lastName,
         name: name.trim(),
         email,
-        phone,
+        phone: cleanedPhone,
         locationId,
         source: sourceLabel,
         tags,

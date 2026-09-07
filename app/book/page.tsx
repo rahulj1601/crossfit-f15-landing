@@ -43,6 +43,15 @@ export default function BookPage() {
             <p className="text-white font-bold text-sm sm:text-base mt-4">
               You&apos;ll leave knowing exactly what we would recommend as your next step.
             </p>
+
+            {/* Location stated before the slot is chosen, not after. */}
+            <p className="inline-flex items-center gap-2 mt-5 rounded-full border border-cf-red/30
+                          bg-cf-red/[0.08] px-4 py-2 text-white text-xs sm:text-sm font-semibold">
+              <svg className="w-4 h-4 text-cf-red flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
+              </svg>
+              In person at F15 Training CENTR, 58 Triq L-Universita, <span className="text-cf-red">MSIDA</span>
+            </p>
           </div>
 
           <div className="relative">

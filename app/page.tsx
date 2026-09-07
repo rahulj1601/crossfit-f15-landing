@@ -45,15 +45,15 @@ export default function Home() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="rounded-2xl overflow-hidden aspect-video bg-[#111] border border-white/10 flex items-center justify-center shadow-2xl shadow-black/50">
-              <div className="text-center p-8">
-                <div className="w-20 h-20 rounded-full bg-cf-red/20 flex items-center justify-center mx-auto mb-4 pulse-glow">
-                  <svg className="w-8 h-8 text-cf-red ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <p className="text-white/30 text-sm">Video embed goes here</p>
-              </div>
+            <div className="rounded-2xl overflow-hidden aspect-video bg-[#111] border border-white/10 shadow-2xl shadow-black/50">
+              <video
+                src="/videos/vsl-f15.mp4"
+                poster="/images/video-posters/vsl-f15-poster.jpg"
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover"
+              />
             </div>
           </ScrollReveal>
 
@@ -247,10 +247,11 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/10 p-1 sm:p-4 shadow-2xl shadow-black/50">
+          <div className="rounded-2xl bg-[#0a0a0a] border border-white/10 p-1 sm:p-4 shadow-2xl shadow-black/50">
             <iframe
-              src="https://book.crossfitf15.com/widget/bookings/f15-first-step-intro"
-              style={{ width: "100%", height: "700px", border: "none" }}
+              src="https://api.leadconnectorhq.com/widget/booking/4MLW8Kg9AL4vM8CI9L2E"
+              id="msgsndr-calendar-home"
+              style={{ width: "100%", minHeight: "1700px", border: "none", display: "block" }}
               scrolling="no"
               title="Book Your No Sweat Intro"
             />
@@ -288,6 +289,8 @@ export default function Home() {
           </p>
         </div>
       </footer>
+      {/* GHL form_embed for iframe auto-resize */}
+      <script src="https://link.msgsndr.com/js/form_embed.js" async />
     </div>
   );
 }

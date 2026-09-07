@@ -31,16 +31,37 @@ function Stars() {
 }
 
 async function SocialProofLine({ className = "" }: { className?: string }) {
-  const { reviews, rating, members } = await getSocialProof();
+  const { reviews, rating, transformations } = await getSocialProof();
   return (
     <p className={`flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm sm:text-base ${className}`}>
       <Stars />
-      <span className="text-white/80 font-semibold">
-        {reviews}+ Google Reviews
-      </span>
+      <span className="text-white/80 font-semibold">{reviews}+ Google Reviews</span>
       <span className="text-white/25" aria-hidden="true">|</span>
-      <span className="text-white/80 font-semibold">{members}+ F15 Members</span>
+      <span className="text-white/80 font-semibold">
+        {transformations.toLocaleString("en-GB")}+ Transformations in Malta
+      </span>
       <span className="sr-only">Rated {rating} out of 5</span>
+    </p>
+  );
+}
+
+/**
+ * Where the gym actually is.
+ *
+ * Leads were dropping off after the form because they only discovered the
+ * location at the end. It is now stated before anyone applies, next to every
+ * CTA, so distance is self-selected up front rather than discovered too late.
+ */
+function LocationLine({ className = "" }: { className?: string }) {
+  return (
+    <p
+      className={`inline-flex items-center gap-2 rounded-full border border-cf-red/30 bg-cf-red/[0.08]
+                  px-4 py-2 text-white text-xs sm:text-sm font-semibold tracking-wide ${className}`}
+    >
+      <svg className="w-4 h-4 text-cf-red flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
+      </svg>
+      Train with us in <span className="text-cf-red">MSIDA</span>, Malta
     </p>
   );
 }
@@ -109,15 +130,21 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
           {/* Sub, effort reduction, CTA, proof. */}
           <div className="order-3 lg:order-3 flex flex-col lg:-mt-6">
+            <p className="animate-fade-up-delay-2 text-white text-xl sm:text-3xl font-extrabold tracking-tight leading-[1.15] mb-3">
+              {hero.imagineLead}
+            </p>
+
             <p className="animate-fade-up-delay-2 text-[#c4c4c4] text-base sm:text-lg leading-relaxed mb-4">
               {hero.subheadline}
             </p>
 
-            <p className="animate-fade-up-delay-2 text-white/70 text-sm sm:text-base italic mb-7">
+            <p className="animate-fade-up-delay-2 text-white/70 text-sm sm:text-base italic mb-6">
               {hero.effortReduction}
             </p>
 
             <div className="animate-fade-up-delay-3">
+              <LocationLine className="mb-5" />
+
               <QualifyButton source="hero" id={HERO_CTA_ID} />
 
               <p className="text-white/50 text-xs sm:text-sm mt-4 font-medium">{CTA_SUBLINE}</p>
@@ -310,6 +337,8 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
             </ScrollReveal>
 
             <ScrollReveal>
+              <LocationLine className="mb-5" />
+
               <QualifyButton source="final" />
 
               <p className="text-white/50 text-xs sm:text-sm mt-4 font-medium">{CTA_SUBLINE}</p>

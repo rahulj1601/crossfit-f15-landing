@@ -11,14 +11,14 @@ const WIDGET_URL =
 const FALLBACK_REVIEWS = 650;
 const FALLBACK_RATING = 5;
 
-// No public API returns the live member count, so this stays a manual figure.
-// Update it here when the real number moves.
-export const MEMBER_COUNT = 350;
+// Transformations delivered in Malta. Supplied by F15 and not exposed by any
+// API, so it stays a manual figure. Update it here when the real number moves.
+export const TRANSFORMATION_COUNT = 2000;
 
 export type SocialProof = {
   reviews: number;
   rating: number;
-  members: number;
+  transformations: number;
 };
 
 // Round down to the nearest ten so the claim is always provable, and so the
@@ -44,9 +44,9 @@ export async function getSocialProof(): Promise<SocialProof> {
         ? roundDownToTen(totalReviews)
         : FALLBACK_REVIEWS,
       rating: Number.isFinite(totalRating) && totalRating > 0 ? totalRating : FALLBACK_RATING,
-      members: MEMBER_COUNT,
+      transformations: TRANSFORMATION_COUNT,
     };
   } catch {
-    return { reviews: FALLBACK_REVIEWS, rating: FALLBACK_RATING, members: MEMBER_COUNT };
+    return { reviews: FALLBACK_REVIEWS, rating: FALLBACK_RATING, transformations: TRANSFORMATION_COUNT };
   }
 }

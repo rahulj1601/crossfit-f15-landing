@@ -22,6 +22,8 @@ export type LandingCopy = {
   hero: {
     eyebrow: string;
     headline: string[];
+    /** Rendered large and white: this is the promise, not body copy. */
+    imagineLead: string;
     subheadline: string;
     effortReduction: string;
     image: TransformationImage;
@@ -81,8 +83,9 @@ export const WOMEN: LandingCopy = {
   hero: {
     eyebrow: "FOR WOMEN IN MSIDA WHO WANT TO FEEL GOOD IN THEIR BODY",
     headline: ["LOSE UNWANTED WEIGHT.", "FIT YOUR CLOTHES BETTER.", "FEEL CONFIDENT AGAIN."],
+    imagineLead: "Imagine what could change in the next 90 days.",
     subheadline:
-      "Imagine what could change in the next 90 days: feeling leaner, stronger and more toned, having more energy, and finally feeling good in the clothes you actually want to wear.",
+      "Feeling leaner, stronger and more toned, having more energy, and finally feeling good in the clothes you actually want to wear.",
     effortReduction:
       "Without crash diets, extreme routines or making fitness take over your life.",
     image: {
@@ -190,53 +193,55 @@ export const MEN: LandingCopy = {
   hero: {
     eyebrow: "FOR MEN IN MSIDA WHO WANT TO GET BACK IN SHAPE AND FEEL LIKE THEMSELVES AGAIN",
     headline: ["GET BACK IN SHAPE.", "FEEL STRONGER.", "HAVE MORE ENERGY AGAIN."],
+    imagineLead: "Imagine where you could be 12 weeks from now.",
     subheadline:
-      "Imagine where you could be 12 weeks from now: noticeably fitter, stronger and leaner, with more energy and confidence in what your body can do again.",
+      "Noticeably fitter, stronger and leaner, with more energy and confidence in what your body can do again.",
     effortReduction:
       "Without wasting months on random workouts or spending your life in the gym.",
     image: {
-      src: "/images/landing/f15-members-men.jpg",
-      alt: "F15 Training CENTR members in Msida",
+      src: "/images/landing/transformation-men-1.jpg",
+      alt: "Real F15 Training CENTR member before and after his transformation",
       slotNote:
-        "Replace with the strongest real male before and after when available. Should read fit, strong, athletic and attainable, not competitive bodybuilder.",
+        "Strongest real male before and after. Should read fit, strong, athletic and attainable, not competitive bodybuilder.",
     },
   },
 
   proof: {
     headline: ["RESULTS YOU CAN SEE.", "PROGRESS YOU CAN MEASURE."],
     feature: {
-      name: "Keith, 41",
-      result: "Fitter at 41 than in his twenties",
-      secondaryResult: "Training at F15 for almost two years",
+      name: "Patrick",
+      result: "From avoiding the gym to two HYROX races",
+      secondaryResult: "More work done, not less",
       story:
-        "He started wanting to get back in shape and rebuild his strength, without needing to already be fit to begin.",
+        "He started out anxious about walking in at all, and worried that training would cost him working hours.",
       today:
-        "After almost two years at F15, he says he feels fitter at 41 than he did in his twenties.",
+        "Today he has two HYROX races behind him, and says training improved both the quality and the quantity of his work.",
       quote:
-        "I did the leap and it was the best thing I ever did in my life. I am now 41 years old and I feel fitter than I was when I was younger.",
+        "Without knowing, coming to F15 has actually changed my lifestyle completely. If you're scared to start, don't think, just start.",
       video: {
-        src: "/videos/testimonial-2.mp4",
-        poster: "/images/video-posters/testimonial-2.jpg",
-        slotNote:
-          "Replace with a male before and after transformation video when one is filmed.",
+        src: "/videos/testimonial-patrick.mp4",
+        poster: "/images/video-posters/testimonial-patrick.jpg",
+        slotNote: "Strongest male transformation video.",
       },
     },
     cards: [
       {
         kind: "filmed",
-        name: "Jan, 31",
-        result: "Four years, new skills",
+        name: "Keith, 41",
+        result: "Fitter at 41 than in his twenties",
         quote:
-          "It helps you get out of your comfort zone. Here I acquired so many new skills and with patience you'll get there.",
-        poster: "/images/video-posters/testimonial-3.jpg",
-        video: "/videos/testimonial-3.mp4",
+          "I did the leap and it was the best thing I ever did in my life. I feel fitter than I was when I was younger.",
+        poster: "/images/video-posters/testimonial-2.jpg",
+        video: "/videos/testimonial-2.mp4",
       },
       {
-        kind: "review",
-        name: "Marton V",
-        result: "A year and a half, after never lasting two weeks",
+        kind: "filmed",
+        name: "Andre Cacchia, 47",
+        result: "Back in shape after football",
         quote:
-          "I'd never lasted more than two weeks at any gym because I always felt like it just wasn't for me. This place has completely changed that.",
+          "After retiring from football I was a bit confused of what I was doing. F15 was something that triggered me again, helped me keep fit.",
+        poster: "/images/video-posters/testimonial-andre.jpg",
+        video: "/videos/testimonial-andre.mp4",
       },
     ],
     ctaMicrocopy: "See if F15 could be the right fit for your goal.",
@@ -282,10 +287,10 @@ export const MEN: LandingCopy = {
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
-      src: "/images/landing/f15-member-strong.jpg",
-      alt: "F15 Training CENTR member in Msida",
+      src: "/images/landing/transformation-men-2.jpg",
+      alt: "Real F15 Training CENTR member before and after his transformation",
       slotNote:
-        "Replace with a male after state photo, confident portrait in normal clothes, when available.",
+        "After state image. Replace with a confident portrait in normal clothes if one is shot.",
     },
   },
 };

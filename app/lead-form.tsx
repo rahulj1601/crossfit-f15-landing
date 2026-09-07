@@ -38,10 +38,19 @@ export function LeadForm({
     setError("");
 
     const form = e.currentTarget;
+    const rawPhone = (form.elements.namedItem("phone") as HTMLInputElement).value.trim();
+    const cleanedPhone = rawPhone.replace(/[\s\-().]/g, "");
+
+    if (!/^\+?[1-9]\d{6,12}$/.test(cleanedPhone)) {
+      setError("Please enter a valid phone number (with country code, e.g. +356 1234 5678).");
+      setLoading(false);
+      return;
+    }
+
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value.trim(),
       email: (form.elements.namedItem("email") as HTMLInputElement).value.trim(),
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value.trim(),
+      phone: cleanedPhone,
       source,
     };
 
@@ -52,12 +61,16 @@ export function LeadForm({
         body: JSON.stringify(data),
       });
 
-      if (!res.ok) throw new Error("Something went wrong");
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body?.error || "Something went wrong");
+      }
 
       setSuccess(true);
       form.reset();
-    } catch {
-      setError("Something went wrong. Please try again.");
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : "Something went wrong. Please try again.";
+      setError(msg);
       setLoading(false);
     }
   }
@@ -75,10 +88,11 @@ export function LeadForm({
           <h3 className="text-white font-bold text-xl sm:text-2xl mb-1">Now Pick a Time</h3>
           <p className="text-[#b0b0b0] text-sm">Choose a slot below and we&apos;ll confirm right away.</p>
         </div>
-        <div className="bg-[#0a0a0a] rounded-b-2xl overflow-hidden">
+        <div className="bg-[#0a0a0a] rounded-b-2xl">
           <iframe
             src={calendarUrl}
-            style={{ width: "100%", height: "720px", border: "none" }}
+            id="msgsndr-calendar"
+            style={{ width: "100%", minHeight: "1700px", border: "none", display: "block" }}
             scrolling="no"
             title="Book your consultation"
           />
@@ -126,7 +140,11 @@ export function LeadForm({
           type="tel"
           name="phone"
           required
-          placeholder="Phone Number"
+          inputMode="tel"
+          autoComplete="tel"
+          pattern="^\+?[\s\-().0-9]{7,20}$"
+          title="Please enter a valid phone number with country code (e.g. +356 1234 5678)"
+          placeholder="Phone Number (with country code, e.g. +356…)"
           className="w-full bg-white/[0.06] border border-white/[0.08] rounded-xl px-5 py-3.5 sm:py-4 text-white text-sm sm:text-base placeholder:text-white/30 focus:outline-none focus:border-cf-red/50 focus:ring-1 focus:ring-cf-red/30 transition-all duration-300"
         />
       </div>

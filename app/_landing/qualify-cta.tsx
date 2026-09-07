@@ -160,6 +160,15 @@ export function ApplicationModal() {
             <p className="text-white/45 text-xs sm:text-sm mt-1">
               60 seconds. No obligation.
             </p>
+            {/* Stated up front: leads were dropping out on discovering the
+                location only after completing the form. */}
+            <p className="inline-flex items-center gap-1.5 mt-3 rounded-full border border-cf-red/30
+                          bg-cf-red/[0.08] px-3 py-1.5 text-white text-[11px] sm:text-xs font-semibold">
+              <svg className="w-3.5 h-3.5 text-cf-red flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
+              </svg>
+              We train in <span className="text-cf-red">MSIDA</span>, Malta
+            </p>
           </div>
           <button
             type="button"
