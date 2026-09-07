@@ -1,4 +1,4 @@
-import type { ProofClient, TransformationImage } from "./media";
+import type { FeatureClient, ProofItem, TransformationImage } from "./media";
 
 /**
  * All copy and assets for the men and women landing pages.
@@ -29,9 +29,8 @@ export type LandingCopy = {
 
   proof: {
     headline: string[];
-    video: { src: string | null; poster: string | null; slotNote: string };
-    feature: ProofClient;
-    cards: [ProofClient, ProofClient];
+    feature: FeatureClient;
+    cards: [ProofItem, ProofItem];
     ctaMicrocopy: string;
   };
 
@@ -87,55 +86,43 @@ export const WOMEN: LandingCopy = {
     effortReduction:
       "Without crash diets, extreme routines or making fitness take over your life.",
     image: {
-      src: null,
-      alt: "F15 Training Centr member before and after",
+      src: "/images/landing/f15-team-posed.jpg",
+      alt: "F15 Training Centr members in Msida",
       slotNote:
-        "Strongest real female before and after. Pick someone relatable, not your most advanced athlete. The after state should read leaner, toned, confident and attainable. Not a photo of her exercising.",
+        "Replace with the strongest real female before and after when available. Pick someone relatable, not your most advanced athlete.",
     },
   },
 
   proof: {
     headline: ["REAL WOMEN.", "REAL TRANSFORMATIONS."],
-    video: {
-      src: null,
-      poster: null,
-      slotNote:
-        "Best real female transformation video. Thumbnail should show the before and after result, not a random frame of someone exercising.",
-    },
     feature: {
-      name: null,
-      result: null,
+      name: "Olga",
+      result: "Fitter body, better mind",
       story:
-        "She started wanting to lose weight, feel better in her clothes and stop starting over.",
-      quote: null,
-      image: {
-        src: null,
-        alt: "F15 Training Centr member transformation",
-        slotNote: "Feature client photo, used only if the video is not ready.",
+        "She started training to stay fit, and found the change went further than that.",
+      quote:
+        "Since I joined the gym, I improved my physical fitness, I improved my mental health. I actually improved the quality of my social life as well.",
+      video: {
+        src: "/videos/testimonial-1.mp4",
+        poster: "/images/video-posters/testimonial-1.jpg",
+        slotNote:
+          "Replace with a female before and after transformation video when one is filmed.",
       },
     },
     cards: [
       {
-        name: null,
-        result: null,
-        quote: null,
-        image: {
-          src: null,
-          alt: "F15 Training Centr member transformation",
-          slotNote:
-            "Second female proof photo. Priority order: visible body change, clothes fitting, consistency, strength.",
-        },
+        kind: "review",
+        name: "Titina T",
+        result: "More consistent, more confident",
+        quote:
+          "Since I joined, I've become more consistent, and much more confident in my fitness journey.",
       },
       {
-        name: null,
-        result: null,
-        quote: null,
-        image: {
-          src: null,
-          alt: "F15 Training Centr member transformation",
-          slotNote:
-            "Third female proof photo. Avoid generic praise like great atmosphere or lovely coaches.",
-        },
+        kind: "review",
+        name: "Juliette M",
+        result: "Boost of self confidence",
+        quote:
+          "Boost of self confidence, coaches always there for you, each class is different and will focus on your progress.",
       },
     ],
     ctaMicrocopy: "See if F15 could be the right fit for your goal.",
@@ -182,10 +169,10 @@ export const WOMEN: LandingCopy = {
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
-      src: null,
-      alt: "F15 Training Centr member after her transformation",
+      src: "/images/landing/f15-community.jpg",
+      alt: "The F15 Training Centr community in Msida",
       slotNote:
-        "After state photo. A transformed female member looking confident outside the training moment. Normal clothes work best here because it connects to the fit your clothes better promise.",
+        "Replace with a female after state photo in normal clothes when available. That connects directly to the fit your clothes better promise.",
     },
   },
 };
@@ -206,56 +193,46 @@ export const MEN: LandingCopy = {
     effortReduction:
       "Without wasting months on random workouts or spending your life in the gym.",
     image: {
-      src: null,
-      alt: "F15 Training Centr member before and after",
+      src: "/images/landing/f15-members-men.jpg",
+      alt: "F15 Training Centr members in Msida",
       slotNote:
-        "Strongest real male before and after. Should read fit, strong, athletic and attainable, not competitive bodybuilder. Best case is a client with both a visible change and a measurable performance improvement.",
+        "Replace with the strongest real male before and after when available. Should read fit, strong, athletic and attainable, not competitive bodybuilder.",
     },
   },
 
   proof: {
     headline: ["RESULTS YOU CAN SEE.", "PROGRESS YOU CAN MEASURE."],
-    video: {
-      src: null,
-      poster: null,
-      slotNote:
-        "Strongest real male transformation video. Thumbnail should show the before and after result.",
-    },
     feature: {
-      name: null,
-      result: null,
-      secondaryResult: null,
+      name: "Keith, 41",
+      result: "Fitter at 41 than in his twenties",
+      secondaryResult: "Training at F15 for almost two years",
       story:
-        "He started wanting to get back in shape, rebuild his strength and stop training without seeing meaningful progress.",
-      quote: null,
-      image: {
-        src: null,
-        alt: "F15 Training Centr member transformation",
-        slotNote: "Feature client photo, used only if the video is not ready.",
+        "He wanted to get back in shape without needing to already be an athlete to start.",
+      quote:
+        "I did the leap and it was the best thing I ever did in my life. I am now 41 years old and I feel fitter than I was when I was younger.",
+      video: {
+        src: "/videos/testimonial-2.mp4",
+        poster: "/images/video-posters/testimonial-2.jpg",
+        slotNote:
+          "Replace with a male before and after transformation video when one is filmed.",
       },
     },
     cards: [
       {
-        name: null,
-        result: null,
-        quote: null,
-        image: {
-          src: null,
-          alt: "F15 Training Centr member transformation",
-          slotNote:
-            "Second male proof photo. Priority: physical transformation, body composition, strength, benchmark improvement.",
-        },
+        kind: "filmed",
+        name: "Jan, 31",
+        result: "Four years, new skills",
+        quote:
+          "It helps you get out of your comfort zone. Here I acquired so many new skills and with patience you'll get there.",
+        poster: "/images/video-posters/testimonial-3.jpg",
+        video: "/videos/testimonial-3.mp4",
       },
       {
-        name: null,
-        result: null,
-        quote: null,
-        image: {
-          src: null,
-          alt: "F15 Training Centr member transformation",
-          slotNote:
-            "Third male proof photo. A benchmark number such as 12:23 to 6:55 is powerful, but only if it belongs to that client.",
-        },
+        kind: "review",
+        name: "Elton Lee Abela",
+        result: "Coached properly, start to finish",
+        quote:
+          "The trainers know what they are doing and they train themselves. I'm really happy here.",
       },
     ],
     ctaMicrocopy: "See if F15 could be the right fit for your goal.",
@@ -301,10 +278,10 @@ export const MEN: LandingCopy = {
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
-      src: null,
-      alt: "F15 Training Centr member after his transformation",
+      src: "/images/landing/f15-member-strong.jpg",
+      alt: "F15 Training Centr member in Msida",
       slotNote:
-        "After state photo. The transformed member looking confident, normal clothes or a confident portrait. Do not finish the page with someone collapsed over a rower.",
+        "Replace with a male after state photo, confident portrait in normal clothes, when available.",
     },
   },
 };

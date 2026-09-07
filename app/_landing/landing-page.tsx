@@ -7,7 +7,7 @@ import {
   StickyQualifyBar,
 } from "./qualify-cta";
 import {
-  ProofCard,
+  ProofItemCard,
   ProofVideo,
   SlotText,
   TransformationShot,
@@ -146,9 +146,13 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
             </h2>
           </ScrollReveal>
 
-          <div className="grid lg:grid-cols-[1.35fr_1fr] gap-8 lg:gap-12 items-center mb-10 sm:mb-14">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10 sm:mb-14">
             <ScrollReveal>
-              <ProofVideo src={proof.video.src} poster={proof.video.poster} slotNote={proof.video.slotNote} />
+              <ProofVideo
+                src={proof.feature.video.src}
+                poster={proof.feature.video.poster}
+                slotNote={proof.feature.video.slotNote}
+              />
             </ScrollReveal>
 
             <ScrollReveal direction="right">
@@ -173,7 +177,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
                 <blockquote className="text-white text-base sm:text-lg leading-relaxed border-l-2 border-cf-red pl-4 mt-2">
                   {proof.feature.quote ? (
-                    `"${proof.feature.quote}"`
+                    `“${proof.feature.quote}”`
                   ) : (
                     <SlotText>Their strongest real quote, one or two sentences</SlotText>
                   )}
@@ -183,9 +187,9 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           </div>
 
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-6 mb-10 sm:mb-14">
-            {proof.cards.map((client, index) => (
-              <ScrollReveal key={index}>
-                <ProofCard client={client} />
+            {proof.cards.map((item) => (
+              <ScrollReveal key={item.name}>
+                <ProofItemCard item={item} />
               </ScrollReveal>
             ))}
           </div>

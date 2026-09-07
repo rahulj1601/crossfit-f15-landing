@@ -1,30 +1,51 @@
 import Image from "next/image";
 
 /**
- * Transformation media.
+ * Proof media.
  *
- * Every slot on these pages must hold a real F15 member. Until the verified
- * file is dropped in and wired up in copy.ts, the slot renders as an obvious
- * empty frame rather than a stock photo or a stand-in gym shot. That keeps the
- * page honest and makes the missing asset impossible to ship by accident.
+ * Every person shown or quoted here is a real F15 member. Names and quotes come
+ * either from their own filmed testimonial or from their public Google review.
+ * A face is never paired with someone else's words: a photo slot and a quote
+ * slot only share a card when they belong to the same person.
+ *
+ * Any slot without a verified asset renders as an obvious empty frame rather
+ * than a stock photo, so a missing asset cannot ship by accident.
  */
 
 export type TransformationImage = {
-  /** Path under /public once the real file is added. */
+  /** Path under /public. Null renders the empty state. */
   src: string | null;
   alt: string;
   /** What belongs here, shown in the empty state. */
   slotNote: string;
 };
 
-export type ProofClient = {
+/** A filmed member testimonial: the video and the words are the same person. */
+export type FeatureClient = {
   name: string | null;
   result: string | null;
   secondaryResult?: string | null;
   story?: string;
   quote: string | null;
-  image: TransformationImage;
+  video: { src: string | null; poster: string | null; slotNote: string };
 };
+
+/** Secondary proof: either a filmed member, or a public Google review. */
+export type ProofItem =
+  | {
+      kind: "filmed";
+      name: string;
+      result: string;
+      quote: string;
+      poster: string;
+      video: string;
+    }
+  | {
+      kind: "review";
+      name: string;
+      result: string;
+      quote: string;
+    };
 
 function EmptySlot({ note, aspect }: { note: string; aspect: string }) {
   return (
@@ -65,6 +86,7 @@ export function TransformationShot({
   );
 }
 
+/** Member testimonials are filmed vertically, so the frame follows the footage. */
 export function ProofVideo({
   src,
   poster,
@@ -74,10 +96,10 @@ export function ProofVideo({
   poster: string | null;
   slotNote: string;
 }) {
-  if (!src) return <EmptySlot note={slotNote} aspect="aspect-video" />;
+  if (!src) return <EmptySlot note={slotNote} aspect="aspect-[9/16]" />;
 
   return (
-    <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl shadow-black/50">
+    <div className="mx-auto w-full max-w-[22rem] aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl shadow-black/50">
       <video
         src={src}
         poster={poster ?? undefined}
@@ -90,21 +112,40 @@ export function ProofVideo({
   );
 }
 
-/** One of the two smaller proof cards under the main transformation. */
-export function ProofCard({ client }: { client: ProofClient }) {
+function Stars() {
   return (
-    <div className="bg-[#0d0d0d] border border-white/[0.07] rounded-2xl overflow-hidden flex flex-col">
-      <TransformationShot image={client.image} aspect="aspect-[4/3]" />
-      <div className="p-5 sm:p-6 flex flex-col gap-2">
-        <p className="text-white font-bold text-base tracking-tight">
-          {client.name ?? <SlotText>Client name</SlotText>}
-        </p>
-        <p className="text-cf-red font-bold text-sm tracking-[0.08em] uppercase">
-          {client.result ?? <SlotText>Verified result</SlotText>}
-        </p>
-        <p className="text-[#b0b0b0] text-sm leading-relaxed">
-          {client.quote ? `"${client.quote}"` : <SlotText>One sentence from their real testimonial</SlotText>}
-        </p>
+    <span className="text-cf-red text-sm tracking-[0.15em]" aria-hidden="true">
+      &#9733;&#9733;&#9733;&#9733;&#9733;
+    </span>
+  );
+}
+
+export function ProofItemCard({ item }: { item: ProofItem }) {
+  return (
+    <div className="bg-[#0d0d0d] border border-white/[0.07] rounded-2xl overflow-hidden flex flex-col h-full">
+      {item.kind === "filmed" && (
+        <div className="aspect-[9/16] max-h-[26rem] w-full bg-[#111]">
+          <video
+            src={item.video}
+            poster={item.poster}
+            controls
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
+      <div className="p-5 sm:p-6 flex flex-col gap-2 flex-1">
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-white font-bold text-base tracking-tight">{item.name}</p>
+          {item.kind === "review" && <Stars />}
+        </div>
+        <p className="text-cf-red font-bold text-sm tracking-[0.08em] uppercase">{item.result}</p>
+        <p className="text-[#b0b0b0] text-sm leading-relaxed">&ldquo;{item.quote}&rdquo;</p>
+        {item.kind === "review" && (
+          <p className="text-white/30 text-[11px] mt-auto pt-2">Google review</p>
+        )}
       </div>
     </div>
   );
