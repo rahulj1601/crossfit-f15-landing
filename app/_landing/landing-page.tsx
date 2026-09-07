@@ -286,7 +286,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           </ScrollReveal>
 
           <ScrollReveal>
-            <ul className="flex flex-col gap-4 sm:gap-5 mb-10 sm:mb-14">
+            <ul className="flex flex-col gap-4 sm:gap-5 mb-8 sm:mb-10">
               {tangible.ticks.map((tick) => (
                 <li key={tick} className="flex items-start gap-3.5">
                   <Tick />
@@ -295,6 +295,14 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
               ))}
             </ul>
           </ScrollReveal>
+
+          {tangible.image && (
+            <ScrollReveal>
+              <div className="mb-10 sm:mb-14">
+                <TransformationShot image={tangible.image} />
+              </div>
+            </ScrollReveal>
+          )}
 
           <ScrollReveal>
             <div className="text-center border-t border-white/[0.07] pt-9 sm:pt-12">

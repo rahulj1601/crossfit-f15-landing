@@ -41,6 +41,8 @@ export type LandingCopy = {
     ticks: [string, string, string, string];
     punchline: string;
     support: string;
+    /** Optional transformation shown alongside the outcome list. */
+    image?: TransformationImage;
   };
 
   different: {
@@ -89,12 +91,13 @@ export const WOMEN: LandingCopy = {
     effortReduction:
       "Without crash diets, extreme routines or making fitness take over your life.",
     image: {
-      src: "/images/landing/f15-team-posed.jpg",
-      width: 1280,
-      height: 1145,
-      alt: "F15 Training CENTR members in Msida",
+      src: "/images/landing/transformation-francesca.jpg",
+      width: 1448,
+      height: 1086,
+      alt: "Francesca Ellul before and after her transformation at F15 Training CENTR",
+      credit: { name: "Francesca Ellul, 31", result: "Lost 12 kg in 12 weeks" },
       slotNote:
-        "Replace with the strongest real female before and after when available. Pick someone relatable, not your most advanced athlete.",
+        "Strongest real female before and after, leading the page.",
     },
   },
 
@@ -166,6 +169,10 @@ export const WOMEN: LandingCopy = {
     punchline: "THE SCALE IS ONLY ONE PART OF THE TRANSFORMATION.",
     support:
       "The real win is looking better, feeling stronger and no longer feeling like you have to keep starting over.",
+    // Mirrors the men's page, which shows a transformation beside this list.
+    // Drop a third female before and after in here when one is shot.
+    // image: { src: "/images/landing/transformation-women-2.jpg", width: 1448,
+    //   height: 1086, alt: "...", slotNote: "..." },
   },
 
   different: {
@@ -196,16 +203,12 @@ export const WOMEN: LandingCopy = {
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
-      src: "/images/landing/f15-community.jpg",
-      width: 1306,
-      height: 1400,
-      alt: "The F15 Training CENTR community in Msida",
-      // Francesca Ellul's before and after replaces this the moment the file
-      // lands in public/images/landing/transformation-women-1.jpg. Then set
-      // width 1445, height 1088 and the credit below.
-      // credit: { name: "Francesca Ellul, 31", result: "Lost 12 kg in 12 weeks" },
+      src: "/images/landing/f15-team-posed.jpg",
+      width: 1280,
+      height: 1145,
+      alt: "F15 Training CENTR members in Msida",
       slotNote:
-        "Francesca Ellul's before and after goes here, credited Lost 12 kg in 12 weeks.",
+        "NEEDS a second credited female before and after, to mirror Jake Tabone closing the men's page.",
     },
   },
 };
@@ -227,11 +230,11 @@ export const MEN: LandingCopy = {
     effortReduction:
       "Without wasting months on random workouts or spending your life in the gym.",
     image: {
-      src: "/images/landing/transformation-men-1.jpg",
-      width: 1445,
-      height: 1088,
-      alt: "Jake Tabone before and after his transformation at F15 Training CENTR",
-      credit: { name: "Jake Tabone, 33", result: "Lost 12 kg in 12 weeks" },
+      src: "/images/landing/transformation-kurt.jpg",
+      width: 1448,
+      height: 1086,
+      alt: "Kurt Wright before and after his transformation at F15 Training CENTR",
+      credit: { name: "Kurt Wright, 34", result: "Lost 10 kg in 9 weeks" },
       slotNote:
         "Strongest real male before and after, leading the page.",
     },
@@ -297,6 +300,13 @@ export const MEN: LandingCopy = {
     ],
     punchline: "THE GOAL ISN'T JUST TO EXERCISE MORE.",
     support: "It's to feel like you're actually moving forward again.",
+    image: {
+      src: "/images/landing/transformation-men-2.jpg",
+      width: 1448,
+      height: 1086,
+      alt: "An F15 Training CENTR member before and after his transformation",
+      slotNote: "Transformation shown beside the twelve week outcome list.",
+    },
   },
 
   different: {
@@ -327,12 +337,13 @@ export const MEN: LandingCopy = {
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
-      src: "/images/landing/f15-members-men.jpg",
-      width: 790,
-      height: 1400,
-      alt: "F15 Training CENTR members in Msida",
+      src: "/images/landing/transformation-men-1.jpg",
+      width: 1445,
+      height: 1088,
+      alt: "Jake Tabone before and after his transformation at F15 Training CENTR",
+      credit: { name: "Jake Tabone, 33", result: "Lost 12 kg in 12 weeks" },
       slotNote:
-        "Closing image. A second credited before and after would be stronger here.",
+        "Closing before and after, shown right before the final CTA.",
     },
   },
 };
