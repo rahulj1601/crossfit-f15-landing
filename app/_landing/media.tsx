@@ -109,6 +109,9 @@ export function ProofVideo({
 }) {
   if (!src) return <EmptySlot note={slotNote} />;
 
+  // Testimonials are filmed 9:16. At full column width that is roughly 765px
+  // tall on a phone, which pushes everything after it off the screen. Capping
+  // the width brings the height down proportionally, with nothing cropped.
   return (
     <video
       src={src}
@@ -116,7 +119,7 @@ export function ProofVideo({
       controls
       playsInline
       preload="metadata"
-      className={`w-full h-auto rounded-2xl border shadow-2xl ${
+      className={`mx-auto block w-full max-w-[210px] sm:max-w-[240px] h-auto rounded-2xl border shadow-2xl ${
         tone === "light" ? "border-black/10 shadow-black/10" : "border-white/10 shadow-black/50"
       }`}
     />
@@ -141,14 +144,16 @@ export function ProofItemCard({ item, tone = "dark" }: { item: ProofItem; tone?:
       }`}
     >
       {item.kind === "filmed" && (
-        <video
-          src={item.video}
-          poster={item.poster}
-          controls
-          playsInline
-          preload="metadata"
-          className="w-full h-auto block"
-        />
+        <div className="p-4 pb-0">
+          <video
+            src={item.video}
+            poster={item.poster}
+            controls
+            playsInline
+            preload="metadata"
+            className="mx-auto block w-full max-w-[180px] h-auto rounded-xl"
+          />
+        </div>
       )}
 
       <div className="p-5 sm:p-6 flex flex-col gap-2 flex-1">

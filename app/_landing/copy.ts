@@ -203,12 +203,12 @@ export const MEN: LandingCopy = {
     effortReduction:
       "Without wasting months on random workouts or spending your life in the gym.",
     image: {
-      src: "/images/landing/transformation-men-1.jpg",
-      width: 1445,
-      height: 1088,
-      alt: "Real F15 Training CENTR member before and after his transformation",
+      src: "/images/landing/f15-members-men.jpg",
+      width: 790,
+      height: 1400,
+      alt: "F15 Training CENTR members in Msida",
       slotNote:
-        "Strongest real male before and after. Should read fit, strong, athletic and attainable, not competitive bodybuilder.",
+        "Hero cover for the men's page. Swap for a stronger cover shot whenever one is available.",
     },
   },
 
@@ -293,12 +293,12 @@ export const MEN: LandingCopy = {
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
-      src: "/images/landing/transformation-men-2.jpg",
-      width: 1448,
-      height: 1086,
+      src: "/images/landing/transformation-men-1.jpg",
+      width: 1445,
+      height: 1088,
       alt: "Real F15 Training CENTR member before and after his transformation",
       slotNote:
-        "After state image. Replace with a confident portrait in normal clothes if one is shot.",
+        "Strongest real male before and after, used as the closing proof before the final CTA.",
     },
   },
 };
