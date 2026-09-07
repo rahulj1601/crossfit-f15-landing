@@ -58,7 +58,7 @@ export function AppointmentDetails() {
         </p>
       )}
 
-      <p className="text-white/55 text-sm sm:text-base mt-3">F15 Training Centr · Msida</p>
+      <p className="text-white/55 text-sm sm:text-base mt-3">F15 Training CENTR · Msida</p>
     </div>
   );
 }

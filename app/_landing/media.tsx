@@ -26,6 +26,8 @@ export type FeatureClient = {
   result: string | null;
   secondaryResult?: string | null;
   story?: string;
+  /** The "today / after X" line the spec asks for, in the member's own terms. */
+  today?: string;
   quote: string | null;
   video: { src: string | null; poster: string | null; slotNote: string };
 };

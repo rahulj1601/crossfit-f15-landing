@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AppointmentDetails } from "./appointment-details";
 
 export const metadata = {
-  title: "F15 Training Centr | Your consultation is booked",
+  title: "F15 Training CENTR | Your consultation is booked",
   description: "Your private F15 consultation is confirmed.",
 };
 
@@ -21,7 +21,7 @@ export default function BookedPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-center">
           <Image
             src="/images/f15-logo.svg"
-            alt="F15 Training Centr"
+            alt="F15 Training CENTR"
             width={1402}
             height={559}
             className="h-8 sm:h-10 w-auto"
@@ -70,7 +70,7 @@ export default function BookedPage() {
       <footer className="py-5 px-4 sm:px-6 bg-black border-t border-white/[0.05]">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-white/30 text-[10px] sm:text-xs tracking-wide">
-            F15 Training Centr · 58 Triq L-Universita, Msida · +356 9979 1664
+            F15 Training CENTR · 58 Triq L-Universita, Msida · +356 9979 1664
           </p>
         </div>
       </footer>

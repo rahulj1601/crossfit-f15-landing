@@ -2,9 +2,9 @@ import Image from "next/image";
 import { CalendarEmbed } from "./calendar-embed";
 
 export const metadata = {
-  title: "F15 Training Centr | Choose your consultation time",
+  title: "F15 Training CENTR | Choose your consultation time",
   description:
-    "Choose a time for your private F15 transformation consultation at F15 Training Centr, Msida.",
+    "Choose a time for your private F15 transformation consultation at F15 Training CENTR, Msida.",
 };
 
 export default function BookPage() {
@@ -15,7 +15,7 @@ export default function BookPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
           <Image
             src="/images/f15-logo.svg"
-            alt="F15 Training Centr"
+            alt="F15 Training CENTR"
             width={1402}
             height={559}
             className="h-7 sm:h-9 w-auto"
@@ -75,7 +75,7 @@ export default function BookPage() {
       <footer className="py-5 px-4 sm:px-6 bg-black border-t border-white/[0.05]">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-white/30 text-[10px] sm:text-xs tracking-wide">
-            F15 Training Centr · 58 Triq L-Universita, Msida · +356 9979 1664
+            F15 Training CENTR · 58 Triq L-Universita, Msida · +356 9979 1664
           </p>
         </div>
       </footer>

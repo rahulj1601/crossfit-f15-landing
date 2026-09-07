@@ -73,9 +73,9 @@ export const SCARCITY =
 export const WOMEN: LandingCopy = {
   audience: "women",
   meta: {
-    title: "F15 Training Centr | Lose weight and feel confident again",
+    title: "F15 Training CENTR | Lose weight and feel confident again",
     description:
-      "For women in Msida who want to feel good in their body. See if you qualify for a free private consultation at F15 Training Centr.",
+      "For women in Msida who want to feel good in their body. See if you qualify for a free private consultation at F15 Training CENTR.",
   },
 
   hero: {
@@ -87,7 +87,7 @@ export const WOMEN: LandingCopy = {
       "Without crash diets, extreme routines or making fitness take over your life.",
     image: {
       src: "/images/landing/f15-team-posed.jpg",
-      alt: "F15 Training Centr members in Msida",
+      alt: "F15 Training CENTR members in Msida",
       slotNote:
         "Replace with the strongest real female before and after when available. Pick someone relatable, not your most advanced athlete.",
     },
@@ -99,7 +99,9 @@ export const WOMEN: LandingCopy = {
       name: "Olga",
       result: "Fitter body, better mind",
       story:
-        "She started training to stay fit, and found the change went further than that.",
+        "She started training just to stay fit. Over time her goals changed, and so did more than her fitness.",
+      today:
+        "Today she is fitter, sharper mentally, and part of a community she sees outside the gym too.",
       quote:
         "Since I joined the gym, I improved my physical fitness, I improved my mental health. I actually improved the quality of my social life as well.",
       video: {
@@ -119,10 +121,10 @@ export const WOMEN: LandingCopy = {
       },
       {
         kind: "review",
-        name: "Juliette M",
-        result: "Boost of self confidence",
+        name: "Alisa Gaci",
+        result: "Found results after other gyms",
         quote:
-          "Boost of self confidence, coaches always there for you, each class is different and will focus on your progress.",
+          "After spending lots of time going into boring gym and the results were not the one I was looking forward to, found F15.",
       },
     ],
     ctaMicrocopy: "See if F15 could be the right fit for your goal.",
@@ -170,7 +172,7 @@ export const WOMEN: LandingCopy = {
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
       src: "/images/landing/f15-community.jpg",
-      alt: "The F15 Training Centr community in Msida",
+      alt: "The F15 Training CENTR community in Msida",
       slotNote:
         "Replace with a female after state photo in normal clothes when available. That connects directly to the fit your clothes better promise.",
     },
@@ -180,9 +182,9 @@ export const WOMEN: LandingCopy = {
 export const MEN: LandingCopy = {
   audience: "men",
   meta: {
-    title: "F15 Training Centr | Get back in shape and feel strong again",
+    title: "F15 Training CENTR | Get back in shape and feel strong again",
     description:
-      "For men in Msida who want to get back in shape and feel like themselves again. See if you qualify for a free private consultation at F15 Training Centr.",
+      "For men in Msida who want to get back in shape and feel like themselves again. See if you qualify for a free private consultation at F15 Training CENTR.",
   },
 
   hero: {
@@ -194,7 +196,7 @@ export const MEN: LandingCopy = {
       "Without wasting months on random workouts or spending your life in the gym.",
     image: {
       src: "/images/landing/f15-members-men.jpg",
-      alt: "F15 Training Centr members in Msida",
+      alt: "F15 Training CENTR members in Msida",
       slotNote:
         "Replace with the strongest real male before and after when available. Should read fit, strong, athletic and attainable, not competitive bodybuilder.",
     },
@@ -207,7 +209,9 @@ export const MEN: LandingCopy = {
       result: "Fitter at 41 than in his twenties",
       secondaryResult: "Training at F15 for almost two years",
       story:
-        "He wanted to get back in shape without needing to already be an athlete to start.",
+        "He started wanting to get back in shape and rebuild his strength, without needing to already be fit to begin.",
+      today:
+        "After almost two years at F15, he says he feels fitter at 41 than he did in his twenties.",
       quote:
         "I did the leap and it was the best thing I ever did in my life. I am now 41 years old and I feel fitter than I was when I was younger.",
       video: {
@@ -229,10 +233,10 @@ export const MEN: LandingCopy = {
       },
       {
         kind: "review",
-        name: "Elton Lee Abela",
-        result: "Coached properly, start to finish",
+        name: "Marton V",
+        result: "A year and a half, after never lasting two weeks",
         quote:
-          "The trainers know what they are doing and they train themselves. I'm really happy here.",
+          "I'd never lasted more than two weeks at any gym because I always felt like it just wasn't for me. This place has completely changed that.",
       },
     ],
     ctaMicrocopy: "See if F15 could be the right fit for your goal.",
@@ -279,7 +283,7 @@ export const MEN: LandingCopy = {
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
     image: {
       src: "/images/landing/f15-member-strong.jpg",
-      alt: "F15 Training Centr member in Msida",
+      alt: "F15 Training CENTR member in Msida",
       slotNote:
         "Replace with a male after state photo, confident portrait in normal clothes, when available.",
     },

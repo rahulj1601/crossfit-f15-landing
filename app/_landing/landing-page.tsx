@@ -69,7 +69,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center">
           <Image
             src="/images/f15-logo.svg"
-            alt="F15 Training Centr"
+            alt="F15 Training CENTR"
             width={1402}
             height={559}
             className="h-8 sm:h-10 w-auto"
@@ -172,6 +172,12 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
                 {proof.feature.story && (
                   <p className="text-[#b8b8b8] text-sm sm:text-base leading-relaxed mt-1">
                     {proof.feature.story}
+                  </p>
+                )}
+
+                {proof.feature.today && (
+                  <p className="text-white text-sm sm:text-base leading-relaxed font-medium">
+                    {proof.feature.today}
                   </p>
                 )}
 
@@ -323,10 +329,10 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       <footer className="py-6 px-5 sm:px-6 bg-black border-t border-white/[0.05] pb-24 sm:pb-6">
         <div className="max-w-5xl mx-auto text-center space-y-1.5">
           <p className="text-white/35 text-[11px] sm:text-xs">
-            F15 Training Centr · 58 Triq L-Universita, Msida · +356 9979 1664
+            F15 Training CENTR · 58 Triq L-Universita, Msida · +356 9979 1664
           </p>
           <p className="text-white/20 text-[10px] sm:text-xs">
-            &copy; {new Date().getFullYear()} F15 Training Centr ·{" "}
+            &copy; {new Date().getFullYear()} F15 Training CENTR ·{" "}
             <a href="https://crossfitf15.com/privacy-policy" className="hover:text-white/40 transition-colors">
               Privacy
             </a>
