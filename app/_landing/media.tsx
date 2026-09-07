@@ -21,6 +21,8 @@ export type TransformationImage = {
   /** True pixel size, so the image is never squeezed into a fixed frame. */
   width: number;
   height: number;
+  /** Who this is and what they achieved, shown beneath the image. */
+  credit?: { name: string; result: string };
   /** What belongs here, shown in the empty state. */
   slotNote: string;
 };
@@ -81,17 +83,33 @@ export function TransformationShot({
   if (!image.src) return <EmptySlot note={image.slotNote} />;
 
   return (
-    <Image
-      src={image.src}
-      alt={image.alt}
-      width={image.width}
-      height={image.height}
-      priority={priority}
-      sizes="(max-width: 1024px) 100vw, 50vw"
-      className={`w-full max-w-full h-auto rounded-2xl border ${
-        tone === "light" ? "border-black/10" : "border-white/10"
-      }`}
-    />
+    <figure className="m-0">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        priority={priority}
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className={`w-full max-w-full h-auto rounded-2xl border ${
+          tone === "light" ? "border-black/10" : "border-white/10"
+        }`}
+      />
+      {image.credit && (
+        <figcaption className="mt-3 text-center">
+          <span
+            className={`block font-bold text-sm sm:text-base tracking-tight ${
+              tone === "light" ? "text-[#0a0a0a]" : "text-white"
+            }`}
+          >
+            {image.credit.name}
+          </span>
+          <span className="block text-cf-red font-bold text-xs sm:text-sm tracking-[0.08em] uppercase mt-0.5">
+            {image.credit.result}
+          </span>
+        </figcaption>
+      )}
+    </figure>
   );
 }
 

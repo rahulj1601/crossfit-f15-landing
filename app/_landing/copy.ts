@@ -200,8 +200,12 @@ export const WOMEN: LandingCopy = {
       width: 1306,
       height: 1400,
       alt: "The F15 Training CENTR community in Msida",
+      // Francesca Ellul's before and after replaces this the moment the file
+      // lands in public/images/landing/transformation-women-1.jpg. Then set
+      // width 1445, height 1088 and the credit below.
+      // credit: { name: "Francesca Ellul, 31", result: "Lost 12 kg in 12 weeks" },
       slotNote:
-        "Replace with a female after state photo in normal clothes when available. That connects directly to the fit your clothes better promise.",
+        "Francesca Ellul's before and after goes here, credited Lost 12 kg in 12 weeks.",
     },
   },
 };
@@ -235,7 +239,7 @@ export const MEN: LandingCopy = {
   proof: {
     headline: ["RESULTS YOU CAN SEE.", "PROGRESS YOU CAN MEASURE."],
     feature: {
-      name: "Patrick",
+      name: "Patrick Debattista, 32",
       result: "From avoiding the gym to two HYROX races",
       secondaryResult: "More work done, not less",
       story:
@@ -253,7 +257,7 @@ export const MEN: LandingCopy = {
     cards: [
       {
         kind: "filmed",
-        name: "Alex",
+        name: "Alex Ferrante, 35",
         result: "Four months, doing what he could not before",
         quote:
           "When I started gymnastics over here, there were stuff that I couldn't do. Four months later, I started managing to do some stuff.",
@@ -262,7 +266,7 @@ export const MEN: LandingCopy = {
       },
       {
         kind: "filmed",
-        name: "Andre Cacchia, 47",
+        name: "Andre Cachia, 47",
         result: "Back in shape after football",
         quote:
           "After retiring from football I was a bit confused of what I was doing. F15 was something that triggered me again, helped me keep fit.",
@@ -271,7 +275,7 @@ export const MEN: LandingCopy = {
       },
       {
         kind: "filmed",
-        name: "Keith, 41",
+        name: "Keith Abela, 41",
         result: "Fitter at 41 than in his twenties",
         quote:
           "I did the leap and it was the best thing I ever did in my life. I feel fitter than I was when I was younger.",
@@ -325,7 +329,8 @@ export const MEN: LandingCopy = {
       src: "/images/landing/transformation-men-1.jpg",
       width: 1445,
       height: 1088,
-      alt: "Real F15 Training CENTR member before and after his transformation",
+      alt: "Jake Tabone before and after his transformation at F15 Training CENTR",
+      credit: { name: "Jake Tabone, 33", result: "Lost 12 kg in 12 weeks" },
       slotNote:
         "Strongest real male before and after, used as the closing proof before the final CTA.",
     },
