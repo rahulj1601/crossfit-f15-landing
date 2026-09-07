@@ -1,67 +1,47 @@
 import Image from "next/image";
-import { CursorGlow } from "../cursor-glow";
 import { CalendarEmbed } from "./calendar-embed";
+
+export const metadata = {
+  title: "F15 Training Centr | Choose your consultation time",
+  description:
+    "Choose a time for your private F15 transformation consultation at F15 Training Centr, Msida.",
+};
 
 export default function BookPage() {
   return (
     <div className="flex flex-col min-h-screen bg-black">
-      <CursorGlow />
-
-      {/* Nav - minimal */}
-      <nav className="bg-black/90 backdrop-blur-xl border-b border-white/[0.03]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex items-center justify-between">
-          <a href="/">
-            <div className="relative h-7 sm:h-8 w-24 sm:w-28 overflow-hidden my-2.5 sm:my-3">
-              <Image
-                src="https://assets.cdn.filesafe.space/PE8avF50BBboGGbRC0bY/media/69cbcbb15472d488619ed18e.jpg"
-                alt="F15 Training Centr"
-                width={300}
-                height={300}
-                className="absolute inset-0 w-full h-[200%] object-cover object-center -top-[50%]"
-              />
-            </div>
-          </a>
-          <div className="inline-flex items-center gap-2 bg-white/[0.04] border border-white/[0.06] rounded-full px-4 py-1.5">
-            <span className="w-5 h-5 bg-cf-red rounded-full flex items-center justify-center text-[10px] font-bold text-white">
-              2
-            </span>
-            <span className="text-white/40 text-[10px] sm:text-xs tracking-wider uppercase">
-              Step 2 of 2
-            </span>
-          </div>
+      {/* Logo only. Nothing here should compete with picking a time. */}
+      <nav className="bg-black/90 backdrop-blur-xl border-b border-white/[0.05] sticky top-0 z-30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+          <Image
+            src="/images/f15-logo.svg"
+            alt="F15 Training Centr"
+            width={1402}
+            height={559}
+            className="h-7 sm:h-9 w-auto"
+            unoptimized
+            priority
+          />
+          <span className="text-white/45 text-[10px] sm:text-xs tracking-[0.18em] uppercase whitespace-nowrap">
+            Step 3 of 3 · Book your slot
+          </span>
         </div>
       </nav>
 
-      {/* Calendar section */}
-      <section className="flex-1 pt-8 sm:pt-12 pb-12 sm:pb-16 px-3 sm:px-6 bg-[#040404] relative overflow-hidden">
+      <section className="flex-1 pt-8 sm:pt-12 pb-12 sm:pb-16 px-3 sm:px-6 bg-[#040404] relative overflow-x-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cf-red/[0.06] rounded-full blur-[180px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-6 sm:mb-8">
-            <div className="inline-flex items-center gap-2 mb-3 sm:mb-4">
-              <svg
-                className="w-5 h-5 text-green-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span className="text-green-400 text-xs sm:text-sm font-medium">
-                Details saved
-              </span>
-            </div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
-              Now Pick a <span className="gradient-text">Time</span>
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-7 sm:mb-9 px-2">
+            <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-[1.1] mb-4">
+              CHOOSE A TIME FOR YOUR F15 TRANSFORMATION CONSULTATION.
             </h1>
-            <p className="text-gray-500 text-xs sm:text-sm max-w-md mx-auto font-light mt-2 sm:mt-3">
-              Choose a time that works for you. We&apos;ll confirm your booking
-              right away.
+            <p className="text-[#b8b8b8] text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              This private 30-minute consultation is about you: where you are now, what you want to
+              achieve, what&apos;s been holding you back, and the clearest path forward.
+            </p>
+            <p className="text-white font-bold text-sm sm:text-base mt-4">
+              You&apos;ll leave knowing exactly what we would recommend as your next step.
             </p>
           </div>
 
@@ -72,35 +52,30 @@ export default function BookPage() {
             </div>
           </div>
 
-          {/* Trust signals */}
-          <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-white/30 text-[10px] sm:text-xs tracking-wide">
-            {["100% Free", "No Commitment", "30 Minutes"].map((text) => (
-              <div key={text} className="flex items-center gap-1.5">
-                <svg
-                  className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-cf-red flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span>{text}</span>
-              </div>
-            ))}
+          {/* The human element sits after the calendar card, where it can lift
+              show rate without getting between the visitor and a time slot. */}
+          <div className="mt-10 sm:mt-14">
+            <p className="text-center text-white/45 text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-4">
+              A word from Yann before you come in
+            </p>
+            <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl shadow-black/50">
+              <video
+                src="/videos/vsl-f15.mp4"
+                poster="/images/video-posters/vsl-f15-poster.jpg"
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Minimal footer */}
-      <footer className="py-4 px-4 sm:px-6 bg-black border-t border-white/[0.04]">
+      <footer className="py-5 px-4 sm:px-6 bg-black border-t border-white/[0.05]">
         <div className="max-w-5xl mx-auto text-center">
-          <p className="text-gray-700 text-[9px] sm:text-xs tracking-wide">
-            &copy; {new Date().getFullYear()} F15 Training Centr. All rights reserved.
+          <p className="text-white/30 text-[10px] sm:text-xs tracking-wide">
+            F15 Training Centr · 58 Triq L-Universita, Msida · +356 9979 1664
           </p>
         </div>
       </footer>
