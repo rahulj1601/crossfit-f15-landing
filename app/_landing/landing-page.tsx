@@ -144,12 +144,12 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
         <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           {/* Copy. On mobile the eyebrow and headline come first, then the
               transformation, so she sees the outcome before anything else. */}
-          <div className="order-1 flex flex-col">
+          <div className="order-1 flex flex-col min-w-0">
             <p className="animate-fade-up text-cf-red text-[10px] sm:text-xs font-bold tracking-[0.22em] uppercase leading-relaxed mb-4">
               {hero.eyebrow}
             </p>
 
-            <h1 className="animate-fade-up-delay text-[2rem] sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight leading-[1.05] text-white">
+            <h1 className="animate-fade-up-delay text-[1.65rem] min-[400px]:text-[1.9rem] sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight leading-[1.08] text-white text-balance">
               {hero.headline.map((line) => (
                 <span key={line} className="block">
                   {line}
@@ -159,14 +159,14 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           </div>
 
           {/* Transformation. Second on mobile, right hand side on desktop. */}
-          <div className="order-2 lg:order-2 lg:row-span-2">
+          <div className="order-2 lg:order-2 lg:row-span-2 min-w-0">
             <ScrollReveal>
               <TransformationShot image={hero.image} priority />
             </ScrollReveal>
           </div>
 
           {/* Sub, effort reduction, CTA, proof. */}
-          <div className="order-3 lg:order-3 flex flex-col lg:-mt-6">
+          <div className="order-3 lg:order-3 flex flex-col min-w-0 lg:-mt-6">
             <p className="animate-fade-up-delay-2 text-white text-xl sm:text-3xl font-extrabold tracking-tight leading-[1.15] mb-3">
               {hero.imagineLead}
             </p>
@@ -212,7 +212,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
             </h2>
           </ScrollReveal>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10 sm:mb-14">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10 sm:mb-14 [&>*]:min-w-0">
             <ScrollReveal>
               <ProofVideo
                 src={proof.feature.video.src}
@@ -259,7 +259,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
             </ScrollReveal>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5 sm:gap-6 mb-10 sm:mb-14">
+          <div className="grid sm:grid-cols-2 gap-5 sm:gap-6 mb-10 sm:mb-14 [&>*]:min-w-0">
             {proof.cards.map((item) => (
               <ScrollReveal key={item.name}>
                 <ProofItemCard item={item} tone="light" />
@@ -363,7 +363,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       <section className="relative px-5 sm:px-6 py-14 sm:py-20 overflow-hidden bg-black">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cf-red/[0.07] rounded-full blur-[180px] pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-9 lg:gap-14 items-center">
+        <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-9 lg:gap-14 items-center [&>*]:min-w-0">
           <ScrollReveal>
             <TransformationShot image={close.image} />
           </ScrollReveal>

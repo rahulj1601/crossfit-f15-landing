@@ -57,15 +57,26 @@ export function QualifyButton({
  * stays until the visitor opens the application.
  */
 export function StickyQualifyBar({ heroButtonId }: { heroButtonId: string }) {
-  const [visible, setVisible] = useState(false);
+  const [scrolledPast, setScrolledPast] = useState(false);
   const [applicationOpen, setApplicationOpen] = useState(false);
 
   useEffect(() => {
     const hero = document.getElementById(heroButtonId);
     if (!hero) return;
 
+    // The bar appears only once the hero CTA has been seen and then scrolled
+    // away. On a tall hero the button starts below the fold, so reacting to
+    // "not visible" alone would show the bar before the visitor ever saw it.
+    let hasBeenSeen = false;
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          hasBeenSeen = true;
+          setScrolledPast(false);
+          return;
+        }
+        if (hasBeenSeen && entry.boundingClientRect.bottom < 0) setScrolledPast(true);
+      },
       { threshold: 0 }
     );
     observer.observe(hero);
@@ -80,7 +91,7 @@ export function StickyQualifyBar({ heroButtonId }: { heroButtonId: string }) {
     return () => window.removeEventListener(STATE_EVENT, onState);
   }, []);
 
-  const shown = visible && !applicationOpen;
+  const shown = scrolledPast && !applicationOpen;
 
   return (
     <div

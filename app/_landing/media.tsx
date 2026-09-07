@@ -88,7 +88,7 @@ export function TransformationShot({
       height={image.height}
       priority={priority}
       sizes="(max-width: 1024px) 100vw, 50vw"
-      className={`w-full h-auto rounded-2xl border ${
+      className={`w-full max-w-full h-auto rounded-2xl border ${
         tone === "light" ? "border-black/10" : "border-white/10"
       }`}
     />
