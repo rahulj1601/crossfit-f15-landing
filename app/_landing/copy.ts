@@ -130,12 +130,12 @@ export const WOMEN: LandingCopy = {
       },
       {
         kind: "filmed",
-        name: "Aliza",
+        name: "Eliza",
         result: "From half a squat to real progress",
         quote:
           "I couldn't even do half a squat. They told me you are not weak, you just need patience. After three months I can see the progress.",
-        poster: "/images/video-posters/testimonial-aliza.jpg",
-        video: "/videos/testimonial-aliza.mp4",
+        poster: "/images/video-posters/testimonial-eliza.jpg",
+        video: "/videos/testimonial-eliza.mp4",
       },
       {
         kind: "filmed",
