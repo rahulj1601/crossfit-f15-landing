@@ -170,14 +170,6 @@ export const WOMEN: LandingCopy = {
     punchline: "THE SCALE IS ONLY ONE PART OF THE TRANSFORMATION.",
     support:
       "The real win is looking better, feeling stronger and no longer feeling like you have to keep starting over.",
-    image: {
-      src: "/images/landing/transformation-sarah.jpg",
-      width: 1448,
-      height: 1086,
-      alt: "Sarah Attard before and after her transformation at F15 Training CENTR",
-      credit: { name: "Sarah Attard, 34", result: "Lost 10 kg in 9 weeks" },
-      slotNote: "Transformation shown beside the ninety day outcome list.",
-    },
   },
 
   different: {
@@ -297,14 +289,6 @@ export const MEN: LandingCopy = {
     ],
     punchline: "THE GOAL ISN'T JUST TO EXERCISE MORE.",
     support: "It's to feel like you're actually moving forward again.",
-    image: {
-      src: "/images/landing/transformation-kurt.jpg",
-      width: 1448,
-      height: 1086,
-      alt: "Kurt Wright before and after his transformation at F15 Training CENTR",
-      credit: { name: "Kurt Wright, 34", result: "Lost 10 kg in 9 weeks" },
-      slotNote: "Transformation shown beside the twelve week outcome list.",
-    },
   },
 
   different: {
