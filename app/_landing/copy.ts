@@ -170,10 +170,14 @@ export const WOMEN: LandingCopy = {
     punchline: "THE SCALE IS ONLY ONE PART OF THE TRANSFORMATION.",
     support:
       "The real win is looking better, feeling stronger and no longer feeling like you have to keep starting over.",
-    // Mirrors the men's page, which shows a transformation beside this list.
-    // Drop a third female before and after in here when one is shot.
-    // image: { src: "/images/landing/transformation-women-2.jpg", width: 1448,
-    //   height: 1086, alt: "...", slotNote: "..." },
+    image: {
+      src: "/images/landing/transformation-sarah.jpg",
+      width: 1448,
+      height: 1086,
+      alt: "Sarah Attard before and after her transformation at F15 Training CENTR",
+      credit: { name: "Sarah Attard, 34", result: "Lost 10 kg in 9 weeks" },
+      slotNote: "Transformation shown beside the ninety day outcome list.",
+    },
   },
 
   different: {
