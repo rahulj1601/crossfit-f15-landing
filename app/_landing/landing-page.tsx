@@ -371,14 +371,22 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       <section className="relative px-5 sm:px-6 py-14 sm:py-20 overflow-hidden bg-black">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cf-red/[0.07] rounded-full blur-[180px] pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto relative z-10 grid lg:grid-cols-2 gap-9 lg:gap-14 items-center [&>*]:min-w-0">
-          <ScrollReveal>
-            <TransformationShot image={close.image} />
-          </ScrollReveal>
-
-          <div className="text-center lg:text-left">
+        <div
+          className={`relative z-10 mx-auto ${
+            close.image
+              ? "max-w-6xl grid lg:grid-cols-2 gap-9 lg:gap-14 items-center [&>*]:min-w-0"
+              : "max-w-2xl"
+          }`}
+        >
+          {close.image && (
             <ScrollReveal>
-              <SectionHeader number="04" label="Your next step" align="split" />
+              <TransformationShot image={close.image} />
+            </ScrollReveal>
+          )}
+
+          <div className={close.image ? "text-center lg:text-left" : "text-center"}>
+            <ScrollReveal>
+              <SectionHeader number="04" label="Your next step" align={close.image ? "split" : "center"} />
               <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-[1.1] mb-5">
                 {close.headline}
               </h2>
@@ -396,11 +404,11 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
               <QualifyButton source="final" />
 
               <p className="text-white/50 text-xs sm:text-sm mt-4 font-medium">{CTA_SUBLINE}</p>
-              <p className="text-white/40 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-md mx-auto lg:mx-0">
+              <p className={`text-white/40 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-md mx-auto ${close.image ? "lg:mx-0" : ""}`}>
                 {CTA_FINAL_DETAIL}
               </p>
 
-              <p className="text-white/55 text-xs sm:text-sm mt-6 pt-5 border-t border-white/[0.07] leading-relaxed max-w-md mx-auto lg:mx-0">
+              <p className={`text-white/55 text-xs sm:text-sm mt-6 pt-5 border-t border-white/[0.07] leading-relaxed max-w-md mx-auto ${close.image ? "lg:mx-0" : ""}`}>
                 {SCARCITY}
               </p>
             </ScrollReveal>

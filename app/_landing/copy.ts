@@ -60,7 +60,8 @@ export type LandingCopy = {
     headline: string;
     subheadline: string;
     lead: string;
-    image: TransformationImage;
+    /** Optional: both pages close on copy alone. */
+    image?: TransformationImage;
   };
 };
 
@@ -202,14 +203,6 @@ export const WOMEN: LandingCopy = {
       "You can spend them thinking about changing again, or find out what could happen if this time you actually follow through.",
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
-    image: {
-      src: "/images/landing/f15-team-posed.jpg",
-      width: 1280,
-      height: 1145,
-      alt: "F15 Training CENTR members in Msida",
-      slotNote:
-        "NEEDS a second credited female before and after, to mirror Jake Tabone closing the men's page.",
-    },
   },
 };
 
@@ -230,11 +223,11 @@ export const MEN: LandingCopy = {
     effortReduction:
       "Without wasting months on random workouts or spending your life in the gym.",
     image: {
-      src: "/images/landing/transformation-kurt.jpg",
-      width: 1448,
-      height: 1086,
-      alt: "Kurt Wright before and after his transformation at F15 Training CENTR",
-      credit: { name: "Kurt Wright, 34", result: "Lost 10 kg in 9 weeks" },
+      src: "/images/landing/transformation-men-1.jpg",
+      width: 1445,
+      height: 1088,
+      alt: "Jake Tabone before and after his transformation at F15 Training CENTR",
+      credit: { name: "Jake Tabone, 33", result: "Lost 12 kg in 12 weeks" },
       slotNote:
         "Strongest real male before and after, leading the page.",
     },
@@ -301,10 +294,11 @@ export const MEN: LandingCopy = {
     punchline: "THE GOAL ISN'T JUST TO EXERCISE MORE.",
     support: "It's to feel like you're actually moving forward again.",
     image: {
-      src: "/images/landing/transformation-men-2.jpg",
+      src: "/images/landing/transformation-kurt.jpg",
       width: 1448,
       height: 1086,
-      alt: "An F15 Training CENTR member before and after his transformation",
+      alt: "Kurt Wright before and after his transformation at F15 Training CENTR",
+      credit: { name: "Kurt Wright, 34", result: "Lost 10 kg in 9 weeks" },
       slotNote: "Transformation shown beside the twelve week outcome list.",
     },
   },
@@ -336,14 +330,5 @@ export const MEN: LandingCopy = {
       "Or you could still be telling yourself you'll get back in shape when life becomes less busy.",
     lead:
       "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
-    image: {
-      src: "/images/landing/transformation-men-1.jpg",
-      width: 1445,
-      height: 1088,
-      alt: "Jake Tabone before and after his transformation at F15 Training CENTR",
-      credit: { name: "Jake Tabone, 33", result: "Lost 12 kg in 12 weeks" },
-      slotNote:
-        "Closing before and after, shown right before the final CTA.",
-    },
   },
 };
