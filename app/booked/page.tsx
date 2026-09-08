@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AppointmentDetails } from "./appointment-details";
+import { PixelEvent } from "../_landing/pixel";
 
 export const metadata = {
   title: "F15 Training CENTR | Your consultation is booked",
@@ -17,6 +18,8 @@ export const metadata = {
 export default function BookedPage() {
   return (
     <div className="flex flex-col min-h-screen bg-black">
+      {/* Reaching this page means a consultation slot was booked. */}
+      <PixelEvent event="Schedule" dedupeKey="schedule" />
       <nav className="bg-black/90 backdrop-blur-xl border-b border-white/[0.05]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-center">
           <Image

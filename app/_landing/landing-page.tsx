@@ -121,7 +121,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
   const { hero, proof, tangible, different, close } = copy;
 
   return (
-    <div className="flex flex-col min-h-screen bg-black">
+    <div className="flex flex-col min-h-screen bg-black" data-f15-audience={copy.audience}>
       {/* F15 logo only. No navigation on purpose: there is one action on this page. */}
       <header className="bg-black/90 backdrop-blur-xl sticky top-0 z-30 border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center">

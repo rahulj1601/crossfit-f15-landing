@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SurveyEmbed } from "./survey-embed";
+import { PixelEvent } from "../_landing/pixel";
 
 export const metadata = {
   title: "F15 Training CENTR | A few quick questions",
@@ -10,6 +11,8 @@ export const metadata = {
 export default function SurveyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-black">
+      {/* Reaching this page means the lead form was submitted. */}
+      <PixelEvent event="Lead" dedupeKey="lead" />
       {/* Logo only. Nothing here should compete with finishing the questions. */}
       <nav className="bg-black/90 backdrop-blur-xl border-b border-white/[0.05] sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">

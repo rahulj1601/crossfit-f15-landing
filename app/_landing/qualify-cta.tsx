@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { rememberAudience } from "./pixel";
 
 // The single CTA used everywhere on the men and women pages.
 // One label, one commitment, three placements. Nothing else.
@@ -17,6 +18,19 @@ const OPEN_EVENT = "f15:open-application";
 const STATE_EVENT = "f15:application-state";
 
 export function openApplication(source: string) {
+  // Which page this visitor came through, carried into the pixel events that
+  // fire later in the funnel on the shared /survey and /booked pages.
+  const audience = document.querySelector<HTMLElement>("[data-f15-audience]")?.dataset.f15Audience;
+  if (audience) rememberAudience(audience);
+
+  if (typeof window.fbq === "function") {
+    window.fbq("track", "InitiateCheckout", {
+      content_name: "F15 application",
+      content_category: audience || "unknown",
+      source,
+    });
+  }
+
   window.dispatchEvent(new CustomEvent<OpenDetail>(OPEN_EVENT, { detail: { source } }));
 }
 
