@@ -27,7 +27,7 @@ export function SurveyEmbed() {
       src={SURVEY_URL}
       id="MFRj5Q9RZw6cLgX0eDTU"
       title="F15 fitness quiz"
-      style={{ width: "100%", minHeight: "820px", border: "none", display: "block" }}
+      style={{ width: "100%", height: "100%", border: "none", display: "block" }}
       scrolling="no"
     />
   );
