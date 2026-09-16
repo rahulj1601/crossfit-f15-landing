@@ -13,10 +13,8 @@ import {
   TransformationShot,
 } from "./media";
 import {
-  CTA_FINAL_DETAIL,
   CTA_SUBLINE,
   CTA_SUBLINE_DETAIL,
-  SCARCITY,
   type LandingCopy,
 } from "./copy";
 
@@ -269,7 +267,10 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
           <div className="text-center">
             <QualifyButton source="proof" />
-            <p className="text-black/50 text-xs sm:text-sm mt-4">{proof.ctaMicrocopy}</p>
+            <p className="text-black/60 text-xs sm:text-sm mt-4 font-medium">{CTA_SUBLINE}</p>
+            <p className="text-black/45 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-md mx-auto">
+              {CTA_SUBLINE_DETAIL}
+            </p>
           </div>
         </div>
       </section>
@@ -322,14 +323,17 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       <section className="px-5 sm:px-6 py-14 sm:py-20 bg-white">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
-            <SectionHeader number="03" label="Why this time is different" />
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#0a0a0a] text-center mb-9 sm:mb-14 leading-[1.1]">
+            <SectionHeader number="03" label="More than a gym" />
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#0a0a0a] text-center mb-4 sm:mb-5 leading-[1.1]">
               {different.headline.map((line, index) => (
                 <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
                   {line}
                 </span>
               ))}
             </h2>
+            <p className="text-[#4a4a4a] text-base sm:text-lg leading-relaxed text-center mb-9 sm:mb-14 max-w-2xl mx-auto">
+              {different.subheadline}
+            </p>
           </ScrollReveal>
 
           <div className="flex flex-col gap-6 sm:gap-8 mb-10 sm:mb-12">
@@ -349,18 +353,8 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           </div>
 
           <ScrollReveal>
-            <p className="text-[#4a4a4a] text-base sm:text-lg leading-relaxed text-center mb-10 sm:mb-12">
-              {different.bridge}
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal>
             <p className="text-center text-[#0a0a0a] text-xl sm:text-3xl font-extrabold tracking-tight leading-[1.2]">
-              {different.closing.map((line, index) => (
-                <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
-                  {line}
-                </span>
-              ))}
+              {different.closing}
             </p>
           </ScrollReveal>
         </div>
@@ -390,9 +384,11 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
               <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-[1.1] mb-5">
                 {close.headline}
               </h2>
-              <p className="text-[#b8b8b8] text-base sm:text-lg leading-relaxed mb-5">
-                {close.subheadline}
-              </p>
+              {close.subheadline.map((paragraph) => (
+                <p key={paragraph} className="text-[#b8b8b8] text-base sm:text-lg leading-relaxed mb-4 last:mb-5">
+                  {paragraph}
+                </p>
+              ))}
               <p className="text-white text-base sm:text-lg leading-relaxed mb-8 font-medium">
                 {close.lead}
               </p>
@@ -405,11 +401,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
               <p className="text-white/50 text-xs sm:text-sm mt-4 font-medium">{CTA_SUBLINE}</p>
               <p className={`text-white/40 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-md mx-auto ${close.image ? "lg:mx-0" : ""}`}>
-                {CTA_FINAL_DETAIL}
-              </p>
-
-              <p className={`text-white/55 text-xs sm:text-sm mt-6 pt-5 border-t border-white/[0.07] leading-relaxed max-w-md mx-auto ${close.image ? "lg:mx-0" : ""}`}>
-                {SCARCITY}
+                {CTA_SUBLINE_DETAIL}
               </p>
             </ScrollReveal>
           </div>

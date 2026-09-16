@@ -5,7 +5,7 @@ import { rememberAudience } from "./pixel";
 
 // The single CTA used everywhere on the men and women pages.
 // One label, one commitment, three placements. Nothing else.
-export const CTA_LABEL = "SEE IF I QUALIFY";
+export const CTA_LABEL = "YES! I WANT TO KNOW MORE";
 
 // Existing GHL quiz form. Step 1 collects details, the quiz follows,
 // then GHL sends the visitor to the booking step.

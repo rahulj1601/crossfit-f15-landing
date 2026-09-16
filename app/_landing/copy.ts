@@ -33,7 +33,6 @@ export type LandingCopy = {
     headline: string[];
     feature: FeatureClient;
     cards: ProofItem[];
-    ctaMicrocopy: string;
   };
 
   tangible: {
@@ -47,18 +46,19 @@ export type LandingCopy = {
 
   different: {
     headline: string[];
+    subheadline: string;
     rows: [
       { title: string; body: string },
       { title: string; body: string },
       { title: string; body: string },
     ];
-    bridge: string;
-    closing: string[];
+    closing: string;
   };
 
   close: {
     headline: string;
-    subheadline: string;
+    /** Two paragraphs: what could be true, then what stays true if nothing changes. */
+    subheadline: string[];
     lead: string;
     /** Optional: both pages close on copy alone. */
     image?: TransformationImage;
@@ -68,12 +68,35 @@ export type LandingCopy = {
 const CTA_SUB = "60-second application · No obligation";
 
 export const CTA_SUBLINE = CTA_SUB;
+// The same reassurance sits under all three CTAs. One promise, worded once.
 export const CTA_SUBLINE_DETAIL =
-  "If you're a good fit, you'll be able to book your free private consultation with our team.";
-export const CTA_FINAL_DETAIL =
-  "If you qualify, you'll unlock the next step and be able to choose a time for your free private F15 consultation.";
-export const SCARCITY =
-  "Because every new member begins with individual support, we limit how many new starts we accept at one time.";
+  "If it looks like F15 could be a good fit, you'll be able to choose a time for your free private consultation.";
+
+/**
+ * Section 03 is deliberately identical on both pages. The objection it answers,
+ * "I have had a gym membership before and it did not work", does not differ by
+ * audience, so the answer should not either.
+ */
+const MORE_THAN_A_GYM: LandingCopy["different"] = {
+  headline: ["MORE THAN JUST ACCESS TO A GYM."],
+  subheadline:
+    "F15 gives you the structure, coaching and support to actually work toward the results you came for.",
+  rows: [
+    {
+      title: "A PLAN BUILT AROUND YOU",
+      body: "Your starting point, goals and experience are unique. Your training should reflect that.",
+    },
+    {
+      title: "REAL COACHING & PROGRESS",
+      body: "Know what you're working toward, get coached through the process and see how you're progressing along the way.",
+    },
+    {
+      title: "SUPPORT THAT KEEPS YOU MOVING",
+      body: "Training, practical nutrition guidance and accountability designed to help you stay consistent even when life gets busy.",
+    },
+  ],
+  closing: "You don't have to figure everything out alone.",
+};
 
 export const WOMEN: LandingCopy = {
   audience: "women",
@@ -85,12 +108,12 @@ export const WOMEN: LandingCopy = {
 
   hero: {
     eyebrow: "FOR WOMEN IN MSIDA WHO WANT TO FEEL GOOD IN THEIR BODY",
-    headline: ["LOSE UNWANTED WEIGHT.", "FIT YOUR CLOTHES BETTER.", "FEEL CONFIDENT AGAIN."],
+    headline: ["GET FITTER.", "FEEL MORE TONED.", "FEEL CONFIDENT AGAIN."],
     imagineLead: "Imagine what could change in the next 90 days.",
     subheadline:
-      "Feeling leaner, stronger and more toned, having more energy, and finally feeling good in the clothes you actually want to wear.",
+      "Feel fitter, leaner and more toned, build strength, have more energy and feel confident in the clothes you want to wear.",
     effortReduction:
-      "Without crash diets, extreme routines or making fitness take over your life.",
+      "With a clear plan, expert coaching and support built around where you're starting and where you want to get to.",
     image: {
       src: "/images/landing/transformation-francesca.jpg",
       width: 1448,
@@ -156,14 +179,13 @@ export const WOMEN: LandingCopy = {
         video: "/videos/testimonial-diana.mp4",
       },
     ],
-    ctaMicrocopy: "See if F15 could be the right fit for your goal.",
   },
 
   tangible: {
     headline: "WHAT COULD 90 DAYS CHANGE FOR YOU?",
     ticks: [
       "Fit into more of the clothes you actually want to wear",
-      "Look leaner and feel more toned",
+      "Get noticeably fitter, leaner and more toned",
       "Feel stronger and have more energy",
       "Feel confident in your body again",
     ],
@@ -172,33 +194,16 @@ export const WOMEN: LandingCopy = {
       "The real win is looking better, feeling stronger and no longer feeling like you have to keep starting over.",
   },
 
-  different: {
-    headline: ["YOU'VE PROBABLY TRIED BEFORE.", "THIS TIME NEEDS TO FEEL DIFFERENT."],
-    rows: [
-      {
-        title: "STOP WONDERING WHAT TO DO NEXT",
-        body: "Have a clear direction instead of constantly second-guessing whether you're doing the right thing.",
-      },
-      {
-        title: "STOP DEPENDING ON MOTIVATION",
-        body: "Keep moving forward when life gets busy, so one difficult week doesn't become another six months of stopping.",
-      },
-      {
-        title: "STOP TRYING TO FIGURE EVERYTHING OUT ALONE",
-        body: "Have support around you when you need help, adjustments or accountability.",
-      },
-    ],
-    bridge:
-      "That's what F15 is designed to do: remove the confusion, inconsistency and lack of support that make getting lasting results so difficult on your own.",
-    closing: ["YOUR JOB IS TO START.", "OUR JOB IS TO HELP YOU KEEP GOING."],
-  },
+  different: MORE_THAN_A_GYM,
 
   close: {
-    headline: "YOUR NEXT 90 DAYS WILL PASS EITHER WAY.",
-    subheadline:
-      "You can spend them thinking about changing again, or find out what could happen if this time you actually follow through.",
+    headline: "90 DAYS FROM NOW, YOU COULD BE GLAD YOU STARTED TODAY.",
+    subheadline: [
+      "You could feel fitter, more toned, stronger, more energetic and more confident in your body.",
+      "Or you could still be telling yourself you'll start when work settles down, life gets quieter or motivation comes back.",
+    ],
     lead:
-      "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
+      "Answer a few quick questions and see whether F15 could be the right fit to help you get there.",
   },
 };
 
@@ -217,7 +222,7 @@ export const MEN: LandingCopy = {
     subheadline:
       "Noticeably fitter, stronger and leaner, with more energy and confidence in what your body can do again.",
     effortReduction:
-      "Without wasting months on random workouts or spending your life in the gym.",
+      "With a clear plan, expert coaching and support built around where you're starting and where you want to get to.",
     image: {
       src: "/images/landing/transformation-men-1.jpg",
       width: 1445,
@@ -276,13 +281,12 @@ export const MEN: LandingCopy = {
         video: "/videos/testimonial-2.mp4",
       },
     ],
-    ctaMicrocopy: "See if F15 could be the right fit for your goal.",
   },
 
   tangible: {
     headline: "WHAT COULD 12 WEEKS CHANGE?",
     ticks: [
-      "Look noticeably more athletic and in shape",
+      "Get noticeably fitter, leaner and back in shape",
       "Feel stronger and more capable",
       "Have more energy throughout your day",
       "See real progress in your fitness and performance",
@@ -291,32 +295,15 @@ export const MEN: LandingCopy = {
     support: "It's to feel like you're actually moving forward again.",
   },
 
-  different: {
-    headline: ["YOU DON'T NEED MORE MOTIVATION.", "YOU NEED TO STOP LOSING MOMENTUM."],
-    rows: [
-      {
-        title: "STOP DOING RANDOM WORKOUTS",
-        body: "Know what you're working towards instead of simply exercising and hoping something changes.",
-      },
-      {
-        title: "STOP STARTING AND STOPPING",
-        body: "Keep moving when work and life get busy, so a missed week doesn't become another six months off.",
-      },
-      {
-        title: "STOP WONDERING WHETHER YOU'RE IMPROVING",
-        body: "See clear progress in your strength, fitness and performance.",
-      },
-    ],
-    bridge:
-      "That's what F15 is designed to do: remove the guessing, inconsistency and lack of accountability that keep many men stuck in the same cycle.",
-    closing: ["LESS GUESSING.", "MORE PROGRESS."],
-  },
+  different: MORE_THAN_A_GYM,
 
   close: {
     headline: "12 WEEKS FROM NOW, YOU COULD BE GLAD YOU STARTED TODAY.",
-    subheadline:
-      "Or you could still be telling yourself you'll get back in shape when life becomes less busy.",
+    subheadline: [
+      "You could be fitter, stronger, more energetic and noticeably closer to the shape you want to be in.",
+      "Or you could still be telling yourself you'll start when work settles down, life gets quieter or motivation comes back.",
+    ],
     lead:
-      "Answer a few quick questions and see whether F15 could be the right fit for what you want to achieve.",
+      "Answer a few quick questions and see whether F15 could be the right fit to help you get there.",
   },
 };
