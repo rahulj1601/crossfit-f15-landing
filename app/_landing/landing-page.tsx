@@ -51,10 +51,15 @@ async function SocialProofLine({ className = "" }: { className?: string }) {
  * CTA, so distance is self-selected up front rather than discovered too late.
  */
 function LocationLine({ className = "" }: { className?: string }) {
+  // The badge and the CTA button are both inline-flex. Left to themselves they
+  // share a line wherever the column is wide enough to fit both, which in the
+  // centred final section made the button's glow sit on top of the badge. The
+  // wrapper keeps the badge on its own line at every width.
   return (
+    <div className={className}>
     <p
-      className={`inline-flex items-center gap-2 rounded-full border border-cf-red/30 bg-cf-red/[0.08]
-                  px-4 py-2 text-white text-xs sm:text-sm font-semibold tracking-wide ${className}`}
+      className="inline-flex items-center gap-2 rounded-full border border-cf-red/30 bg-cf-red/[0.08]
+                  px-4 py-2 text-white text-xs sm:text-sm font-semibold tracking-wide"
     >
       <svg className="w-4 h-4 text-cf-red flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
@@ -63,6 +68,7 @@ function LocationLine({ className = "" }: { className?: string }) {
         Train with us in <span className="text-cf-red">MSIDA</span>, Malta
       </span>
     </p>
+    </div>
   );
 }
 
