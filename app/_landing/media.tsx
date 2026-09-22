@@ -31,10 +31,6 @@ export type TransformationImage = {
 export type FeatureClient = {
   name: string | null;
   result: string | null;
-  secondaryResult?: string | null;
-  story?: string;
-  /** The "today / after X" line, in the member's own terms. */
-  today?: string;
   quote: string | null;
   video: { src: string | null; poster: string | null; slotNote: string };
 };
@@ -45,7 +41,9 @@ export type ProofItem =
       kind: "filmed";
       name: string;
       result: string;
-      quote: string;
+      /** Optional. The video tells the story; a quote only earns its place
+       *  when it says something the video's first seconds do not. */
+      quote?: string;
       poster: string;
       video: string;
     }
@@ -182,9 +180,11 @@ export function ProofItemCard({ item, tone = "dark" }: { item: ProofItem; tone?:
           {item.kind === "review" && <Stars tone={tone} />}
         </div>
         <p className="text-cf-red font-bold text-[11px] sm:text-sm tracking-[0.06em] uppercase leading-snug">{item.result}</p>
-        <p className={`text-[12px] sm:text-sm leading-relaxed ${light ? "text-[#4a4a4a]" : "text-[#b0b0b0]"}`}>
-          &ldquo;{item.quote}&rdquo;
-        </p>
+        {item.quote && (
+          <p className={`text-[12px] sm:text-sm leading-relaxed ${light ? "text-[#4a4a4a]" : "text-[#b0b0b0]"}`}>
+            &ldquo;{item.quote}&rdquo;
+          </p>
+        )}
         {item.kind === "review" && (
           <p className={`text-[11px] mt-auto pt-2 ${light ? "text-black/40" : "text-white/30"}`}>
             Google review

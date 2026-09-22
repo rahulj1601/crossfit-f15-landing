@@ -50,7 +50,7 @@ async function SocialProofLine({ className = "" }: { className?: string }) {
  * location at the end. It is now stated before anyone applies, next to every
  * CTA, so distance is self-selected up front rather than discovered too late.
  */
-function LocationLine({ className = "" }: { className?: string }) {
+function LocationLine({ text, className = "" }: { text: string; className?: string }) {
   // The badge and the CTA button are both inline-flex. Left to themselves they
   // share a line wherever the column is wide enough to fit both, which in the
   // centred final section made the button's glow sit on top of the badge. The
@@ -64,9 +64,7 @@ function LocationLine({ className = "" }: { className?: string }) {
       <svg className="w-4 h-4 text-cf-red flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
       </svg>
-      <span>
-        Train with us in <span className="text-cf-red">MSIDA</span>, Malta
-      </span>
+      <span>{text}</span>
     </p>
     </div>
   );
@@ -81,30 +79,6 @@ function LocationLine({ className = "" }: { className?: string }) {
  */
 function SectionDivider() {
   return <div className="h-1 w-full bg-cf-red" aria-hidden="true" />;
-}
-
-function SectionHeader({
-  number,
-  label,
-  align = "center",
-}: {
-  number: string;
-  label: string;
-  /** "split" centres on mobile and left-aligns from lg up. */
-  align?: "center" | "split";
-}) {
-  return (
-    <div
-      className={`flex items-center gap-3 mb-4 ${
-        align === "center" ? "justify-center" : "justify-center lg:justify-start"
-      }`}
-    >
-      <span className="h-[2px] w-8 bg-cf-red" aria-hidden="true" />
-      <span className="text-cf-red text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase">
-        {number} · {label}
-      </span>
-    </div>
-  );
 }
 
 function Tick() {
@@ -122,7 +96,7 @@ function Tick() {
 }
 
 export function LandingPage({ copy }: { copy: LandingCopy }) {
-  const { hero, proof, tangible, different, close } = copy;
+  const { hero, proof, tangible, different, close, locationLine } = copy;
 
   return (
     <div className="flex flex-col min-h-screen bg-black" data-f15-audience={copy.audience}>
@@ -149,7 +123,7 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           {/* Copy. On mobile the eyebrow and headline come first, then the
               transformation, so she sees the outcome before anything else. */}
           <div className="order-1 flex flex-col min-w-0">
-            <p className="animate-fade-up text-cf-red text-[10px] sm:text-xs font-bold tracking-[0.22em] uppercase leading-relaxed mb-4">
+            <p className="animate-fade-up text-cf-red text-sm sm:text-lg font-extrabold tracking-[0.08em] uppercase leading-snug mb-5 text-balance">
               {hero.eyebrow}
             </p>
 
@@ -179,12 +153,12 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
               {hero.subheadline}
             </p>
 
-            <p className="animate-fade-up-delay-2 text-white/70 text-sm sm:text-base italic mb-6">
+            <p className="animate-fade-up-delay-2 text-white font-semibold text-base sm:text-lg mb-6">
               {hero.effortReduction}
             </p>
 
             <div className="animate-fade-up-delay-3">
-              <LocationLine className="mb-5" />
+              <LocationLine text={locationLine} className="mb-5" />
 
               <QualifyButton source="hero" id={HERO_CTA_ID} />
 
@@ -206,7 +180,6 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       <section className="px-5 sm:px-6 py-14 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <SectionHeader number="01" label="Real members, real results" />
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#0a0a0a] text-center mb-10 sm:mb-14 leading-[1.1]">
               {proof.headline.map((line, index) => (
                 <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
@@ -234,24 +207,6 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
                 <p className="text-cf-red font-extrabold text-lg sm:text-xl tracking-[0.06em] uppercase">
                   {proof.feature.result ?? <SlotText>Verified result</SlotText>}
                 </p>
-                {proof.feature.secondaryResult !== undefined && (
-                  <p className="text-[#333] font-bold text-sm sm:text-base tracking-[0.06em] uppercase">
-                    {proof.feature.secondaryResult ?? <SlotText>Verified performance result</SlotText>}
-                  </p>
-                )}
-
-                {proof.feature.story && (
-                  <p className="text-[#4a4a4a] text-sm sm:text-base leading-relaxed mt-1">
-                    {proof.feature.story}
-                  </p>
-                )}
-
-                {proof.feature.today && (
-                  <p className="text-[#0a0a0a] text-sm sm:text-base leading-relaxed font-medium">
-                    {proof.feature.today}
-                  </p>
-                )}
-
                 <blockquote className="text-[#0a0a0a] text-base sm:text-lg leading-relaxed border-l-2 border-cf-red pl-4 mt-2">
                   {proof.feature.quote ? (
                     `“${proof.feature.quote}”`
@@ -286,7 +241,6 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       <section className="px-5 sm:px-6 py-14 sm:py-20 bg-black">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
-            <SectionHeader number="02" label="What could change" />
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white text-center mb-9 sm:mb-12 leading-[1.1]">
               {tangible.headline}
             </h2>
@@ -303,24 +257,15 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
             </ul>
           </ScrollReveal>
 
-          {tangible.image && (
+          {tangible.punchline && (
             <ScrollReveal>
-              <div className="mb-10 sm:mb-14">
-                <TransformationShot image={tangible.image} />
+              <div className="text-center border-t border-white/[0.07] pt-9 sm:pt-12">
+                <p className="text-cf-red text-xl sm:text-3xl font-extrabold tracking-tight leading-[1.15]">
+                  {tangible.punchline}
+                </p>
               </div>
             </ScrollReveal>
           )}
-
-          <ScrollReveal>
-            <div className="text-center border-t border-white/[0.07] pt-9 sm:pt-12">
-              <p className="text-cf-red text-xl sm:text-3xl font-extrabold tracking-tight leading-[1.15] mb-4">
-                {tangible.punchline}
-              </p>
-              <p className="text-[#b8b8b8] text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
-                {tangible.support}
-              </p>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
@@ -329,17 +274,9 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
       <section className="px-5 sm:px-6 py-14 sm:py-20 bg-white">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
-            <SectionHeader number="03" label="More than a gym" />
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#0a0a0a] text-center mb-4 sm:mb-5 leading-[1.1]">
-              {different.headline.map((line, index) => (
-                <span key={line} className={index === 1 ? "block text-cf-red" : "block"}>
-                  {line}
-                </span>
-              ))}
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#0a0a0a] text-center mb-9 sm:mb-14 leading-[1.1]">
+              {different.headline}
             </h2>
-            <p className="text-[#4a4a4a] text-base sm:text-lg leading-relaxed text-center mb-9 sm:mb-14 max-w-2xl mx-auto">
-              {different.subheadline}
-            </p>
           </ScrollReveal>
 
           <div className="flex flex-col gap-6 sm:gap-8 mb-10 sm:mb-12">
@@ -359,9 +296,13 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
           </div>
 
           <ScrollReveal>
-            <p className="text-center text-[#0a0a0a] text-xl sm:text-3xl font-extrabold tracking-tight leading-[1.2]">
-              {different.closing}
-            </p>
+            <div className="text-center">
+              <QualifyButton source="what-you-get" />
+              <p className="text-black/60 text-xs sm:text-sm mt-4 font-medium">{CTA_SUBLINE}</p>
+              <p className="text-black/45 text-xs sm:text-sm mt-1.5 leading-relaxed max-w-md mx-auto">
+                {CTA_SUBLINE_DETAIL}
+              </p>
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -386,22 +327,16 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
 
           <div className={close.image ? "text-center lg:text-left" : "text-center"}>
             <ScrollReveal>
-              <SectionHeader number="04" label="Your next step" align={close.image ? "split" : "center"} />
               <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-[1.1] mb-5">
                 {close.headline}
               </h2>
-              {close.subheadline.map((paragraph) => (
-                <p key={paragraph} className="text-[#b8b8b8] text-base sm:text-lg leading-relaxed mb-4 last:mb-5">
-                  {paragraph}
-                </p>
-              ))}
               <p className="text-white text-base sm:text-lg leading-relaxed mb-8 font-medium">
                 {close.lead}
               </p>
             </ScrollReveal>
 
             <ScrollReveal>
-              <LocationLine className="mb-5" />
+              <LocationLine text={locationLine} className="mb-5" />
 
               <QualifyButton source="final" />
 

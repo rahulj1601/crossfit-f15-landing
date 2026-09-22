@@ -3,16 +3,12 @@ import type { FeatureClient, ProofItem, TransformationImage } from "./media";
 /**
  * All copy and assets for the men and women landing pages.
  *
- * Content balance to preserve on every future edit:
- *   outcome and future state ~45%, transformation proof ~30%,
- *   removing failure points ~15%, F15 mechanism ~10%.
+ * Editing principle after the September simplification pass: the videos and
+ * the transformation images carry the proof, the text only labels them. If an
+ * edit starts adding a paragraph next to a video, or a second sentence under a
+ * bullet, the page is drifting back to being read rather than scanned.
  *
- * If an edit starts explaining classes, programming, nutrition plans,
- * onboarding sessions, equipment, coaches or facilities, the page has drifted
- * back to selling the vehicle. Those details belong in the consultation.
- *
- * TO GO LIVE: replace every `null` below with the verified client name, the
- * verified result and the real photo path. Nothing here may be invented.
+ * Nothing here may be invented. Every name, age and result is verified.
  */
 
 export type LandingCopy = {
@@ -20,14 +16,20 @@ export type LandingCopy = {
   meta: { title: string; description: string };
 
   hero: {
+    /** The avatar call-out. Rendered large enough to read on a phone: its job
+     *  is to let the right visitor think "this is for me" before anything else. */
     eyebrow: string;
     headline: string[];
     /** Rendered large and white: this is the promise, not body copy. */
     imagineLead: string;
     subheadline: string;
+    /** One short line, not a paragraph. */
     effortReduction: string;
     image: TransformationImage;
   };
+
+  /** The location badge wording differs per page. */
+  locationLine: string;
 
   proof: {
     headline: string[];
@@ -37,104 +39,66 @@ export type LandingCopy = {
 
   tangible: {
     headline: string;
-    ticks: [string, string, string, string];
-    punchline: string;
-    support: string;
-    /** Optional transformation shown alongside the outcome list. */
-    image?: TransformationImage;
+    ticks: string[];
+    /** Optional closing line under the outcome list. */
+    punchline?: string;
   };
 
   different: {
-    headline: string[];
-    subheadline: string;
+    headline: string;
     rows: [
       { title: string; body: string },
       { title: string; body: string },
       { title: string; body: string },
     ];
-    closing: string;
   };
 
   close: {
     headline: string;
-    /** Two paragraphs: what could be true, then what stays true if nothing changes. */
-    subheadline: string[];
     lead: string;
     /** Optional: both pages close on copy alone. */
     image?: TransformationImage;
   };
 };
 
-const CTA_SUB = "60-second application · No obligation";
-
-export const CTA_SUBLINE = CTA_SUB;
-// The same reassurance sits under all three CTAs. One promise, worded once.
+export const CTA_SUBLINE = "60-second application · No obligation";
+// The same reassurance sits under every CTA. One promise, worded once.
 export const CTA_SUBLINE_DETAIL =
   "If it looks like F15 could be a good fit, you'll be able to choose a time for your free private consultation.";
-
-/**
- * Section 03 is deliberately identical on both pages. The objection it answers,
- * "I have had a gym membership before and it did not work", does not differ by
- * audience, so the answer should not either.
- */
-const MORE_THAN_A_GYM: LandingCopy["different"] = {
-  headline: ["MORE THAN JUST ACCESS TO A GYM."],
-  subheadline:
-    "F15 gives you the structure, coaching and support to actually work toward the results you came for.",
-  rows: [
-    {
-      title: "A PLAN BUILT AROUND YOU",
-      body: "Your starting point, goals and experience are unique. Your training should reflect that.",
-    },
-    {
-      title: "REAL COACHING & PROGRESS",
-      body: "Know what you're working toward, get coached through the process and see how you're progressing along the way.",
-    },
-    {
-      title: "SUPPORT THAT KEEPS YOU MOVING",
-      body: "Training, practical nutrition guidance and accountability designed to help you stay consistent even when life gets busy.",
-    },
-  ],
-  closing: "You don't have to figure everything out alone.",
-};
 
 export const WOMEN: LandingCopy = {
   audience: "women",
   meta: {
-    title: "F15 Training CENTR | Lose weight and feel confident again",
+    title: "F15 Training CENTR | Get fitter and feel confident again",
     description:
-      "For women in Msida who want to feel good in their body. See if you qualify for a free private consultation at F15 Training CENTR.",
+      "For women in Malta who want to feel good in their body. Apply for a free private consultation at F15 Training CENTR in Msida.",
   },
 
   hero: {
-    eyebrow: "FOR WOMEN IN MSIDA WHO WANT TO FEEL GOOD IN THEIR BODY",
+    eyebrow: "FOR WOMEN IN MALTA WHO WANT TO FEEL GOOD IN THEIR BODY",
     headline: ["GET FITTER.", "FEEL MORE TONED.", "FEEL CONFIDENT AGAIN."],
     imagineLead: "Imagine what could change in the next 90 days.",
     subheadline:
       "Feel fitter, leaner and more toned, build strength, have more energy and feel confident in the clothes you want to wear.",
-    effortReduction:
-      "With a clear plan, expert coaching and support built around where you're starting and where you want to get to.",
+    effortReduction: "Get a clear plan. Expert coaching. Ongoing support.",
     image: {
       src: "/images/landing/transformation-francesca.jpg",
       width: 1448,
       height: 1086,
       alt: "Francesca Ellul before and after her transformation at F15 Training CENTR",
       credit: { name: "Francesca Ellul, 31", result: "Lost 12 kg in 12 weeks" },
-      slotNote:
-        "Strongest real female before and after, leading the page.",
+      slotNote: "Strongest real female before and after, leading the page.",
     },
   },
+
+  locationLine: "Train with us in MSIDA, Malta",
 
   proof: {
     headline: ["REAL WOMEN.", "REAL TRANSFORMATIONS."],
     feature: {
       name: "Maria",
       result: "Lost the weight, gained the confidence",
-      story: "She started at 28 wanting to lose weight.",
-      today:
-        "Today she says it gave her confidence she never knew she needed, discipline, and belief in herself.",
-      quote:
-        "I started CrossFit when I was 28, with the original scope of losing weight, but it actually gave me much more than that. It gave me the confidence I never knew I needed.",
+      quote: "It gave me the confidence I never knew I needed.",
       video: {
         src: "/videos/testimonial-maria.mp4",
         poster: "/images/video-posters/testimonial-maria.jpg",
@@ -145,18 +109,14 @@ export const WOMEN: LandingCopy = {
       {
         kind: "filmed",
         name: "Cheyenne",
-        result: "A year in, stronger and surer of herself",
-        quote:
-          "I was very conscious about myself. I decided to start something new. My goal was to get stronger.",
+        result: "Stronger and more confident",
         poster: "/images/video-posters/testimonial-cheyenne.jpg",
         video: "/videos/testimonial-cheyenne.mp4",
       },
       {
         kind: "filmed",
         name: "Eliza",
-        result: "From half a squat to real progress",
-        quote:
-          "I couldn't even do half a squat. They told me you are not weak, you just need patience. After three months I can see the progress.",
+        result: "From not liking her body to feeling proud",
         poster: "/images/video-posters/testimonial-eliza.jpg",
         video: "/videos/testimonial-eliza.mp4",
       },
@@ -164,17 +124,13 @@ export const WOMEN: LandingCopy = {
         kind: "filmed",
         name: "Olga",
         result: "Fitter body, better mind",
-        quote:
-          "Since I joined the gym, I improved my physical fitness, I improved my mental health.",
         poster: "/images/video-posters/testimonial-1.jpg",
         video: "/videos/testimonial-1.mp4",
       },
       {
         kind: "filmed",
         name: "Diana",
-        result: "Three years, way stronger and happier",
-        quote:
-          "I decided I wanted to do something more challenging. I feel way stronger, and overall I'm so much happier now.",
+        result: "Stronger, fitter and happier",
         poster: "/images/video-posters/testimonial-diana.jpg",
         video: "/videos/testimonial-diana.mp4",
       },
@@ -184,26 +140,36 @@ export const WOMEN: LandingCopy = {
   tangible: {
     headline: "WHAT COULD 90 DAYS CHANGE FOR YOU?",
     ticks: [
-      "Fit into more of the clothes you actually want to wear",
       "Get noticeably fitter, leaner and more toned",
       "Feel stronger and have more energy",
       "Feel confident in your body again",
+      "Fit into more of the clothes you actually want to wear",
     ],
     punchline: "THE SCALE IS ONLY ONE PART OF THE TRANSFORMATION.",
-    support:
-      "The real win is looking better, feeling stronger and no longer feeling like you have to keep starting over.",
   },
 
-  different: MORE_THAN_A_GYM,
+  different: {
+    headline: "WHAT YOU GET AT F15",
+    rows: [
+      {
+        title: "A PLAN BUILT AROUND YOU",
+        body: "Training based on your own starting point, goals and experience.",
+      },
+      {
+        title: "REAL COACHING & PROGRESS",
+        body: "Get coached through the process, build real confidence and see how you're progressing.",
+      },
+      {
+        title: "SUPPORT TO STAY CONSISTENT",
+        body: "Training, practical nutrition guidance and accountability to keep you moving when life gets busy.",
+      },
+    ],
+  },
 
   close: {
-    headline: "90 DAYS FROM NOW, YOU COULD BE GLAD YOU STARTED TODAY.",
-    subheadline: [
-      "You could feel fitter, more toned, stronger, more energetic and more confident in your body.",
-      "Or you could still be telling yourself you'll start when work settles down, life gets quieter or motivation comes back.",
-    ],
+    headline: "SEE WHAT YOU COULD ACHIEVE IN THE NEXT 90 DAYS.",
     lead:
-      "Answer a few quick questions and see whether F15 could be the right fit to help you get there.",
+      "Answer a few quick questions and see whether F15 could be the right fit to help you get fitter, more toned, stronger and more confident in your body.",
   },
 };
 
@@ -212,40 +178,35 @@ export const MEN: LandingCopy = {
   meta: {
     title: "F15 Training CENTR | Get back in shape and feel strong again",
     description:
-      "For men in Msida who want to get back in shape and feel like themselves again. See if you qualify for a free private consultation at F15 Training CENTR.",
+      "For busy men in Malta who want to get back in shape, feel stronger and have more energy. Apply for a free private consultation at F15 Training CENTR in Msida.",
   },
 
   hero: {
-    eyebrow: "FOR MEN IN MSIDA WHO WANT TO GET BACK IN SHAPE AND FEEL LIKE THEMSELVES AGAIN",
+    eyebrow:
+      "FOR BUSY MEN IN MALTA WHO WANT TO GET BACK IN SHAPE, FEEL STRONGER AND HAVE MORE ENERGY",
     headline: ["GET BACK IN SHAPE.", "FEEL STRONGER.", "HAVE MORE ENERGY AGAIN."],
     imagineLead: "Imagine where you could be 12 weeks from now.",
     subheadline:
-      "Noticeably fitter, stronger and leaner, with more energy and confidence in what your body can do again.",
-    effortReduction:
-      "With a clear plan, expert coaching and support built around where you're starting and where you want to get to.",
+      "Fitter, stronger and leaner, with more energy and confidence in what your body can do.",
+    effortReduction: "A clear plan. Expert coaching. Ongoing support.",
     image: {
       src: "/images/landing/transformation-men-1.jpg",
       width: 1445,
       height: 1088,
       alt: "Jake Tabone before and after his transformation at F15 Training CENTR",
       credit: { name: "Jake Tabone, 33", result: "Lost 12 kg in 12 weeks" },
-      slotNote:
-        "Strongest real male before and after, leading the page.",
+      slotNote: "Strongest real male before and after, leading the page.",
     },
   },
+
+  locationLine: "Training in Msida, Malta",
 
   proof: {
     headline: ["RESULTS YOU CAN SEE.", "PROGRESS YOU CAN MEASURE."],
     feature: {
       name: "Patrick Debattista, 32",
       result: "From avoiding the gym to two HYROX races",
-      secondaryResult: "More work done, not less",
-      story:
-        "He started out anxious about walking in at all, and worried that training would cost him working hours.",
-      today:
-        "Today he has two HYROX races behind him, and says training improved both the quality and the quantity of his work.",
-      quote:
-        "Without knowing, coming to F15 has actually changed my lifestyle completely. If you're scared to start, don't think, just start.",
+      quote: "Coming to F15 has actually changed my lifestyle completely.",
       video: {
         src: "/videos/testimonial-patrick.mp4",
         poster: "/images/video-posters/testimonial-patrick.jpg",
@@ -256,18 +217,14 @@ export const MEN: LandingCopy = {
       {
         kind: "filmed",
         name: "Alex Ferrante, 35",
-        result: "Four months, doing what he could not before",
-        quote:
-          "When I started gymnastics over here, there were stuff that I couldn't do. Four months later, I started managing to do some stuff.",
+        result: "In 3 months, doing things he couldn't do before",
         poster: "/images/video-posters/testimonial-alex.jpg",
         video: "/videos/testimonial-alex.mp4",
       },
       {
         kind: "filmed",
         name: "Andre Cachia, 47",
-        result: "Back in shape after football",
-        quote:
-          "After retiring from football I was a bit confused of what I was doing. F15 was something that triggered me again, helped me keep fit.",
+        result: "Back in shape & feeling amazing",
         poster: "/images/video-posters/testimonial-andre.jpg",
         video: "/videos/testimonial-andre.mp4",
       },
@@ -275,8 +232,7 @@ export const MEN: LandingCopy = {
         kind: "filmed",
         name: "Keith Abela, 41",
         result: "Fitter at 41 than in his twenties",
-        quote:
-          "I did the leap and it was the best thing I ever did in my life. I feel fitter than I was when I was younger.",
+        quote: "I feel fitter than I was when I was younger.",
         poster: "/images/video-posters/testimonial-2.jpg",
         video: "/videos/testimonial-2.mp4",
       },
@@ -287,23 +243,32 @@ export const MEN: LandingCopy = {
     headline: "WHAT COULD 12 WEEKS CHANGE?",
     ticks: [
       "Get noticeably fitter, leaner and back in shape",
-      "Feel stronger and more capable",
-      "Have more energy throughout your day",
-      "See real progress in your fitness and performance",
+      "Feel stronger and have more energy throughout your day",
+      "See clear, measurable progress in your fitness and performance",
     ],
-    punchline: "THE GOAL ISN'T JUST TO EXERCISE MORE.",
-    support: "It's to feel like you're actually moving forward again.",
   },
 
-  different: MORE_THAN_A_GYM,
+  different: {
+    headline: "WHAT YOU GET AT F15",
+    rows: [
+      {
+        title: "A PLAN BUILT AROUND YOU",
+        body: "Training based on your starting point, goals and experience.",
+      },
+      {
+        title: "REAL COACHING & PROGRESS",
+        body: "Get coached through the process and see how you're progressing.",
+      },
+      {
+        title: "SUPPORT TO STAY CONSISTENT",
+        body: "Training, practical nutrition guidance and an accountability system to keep you moving when life gets busy.",
+      },
+    ],
+  },
 
   close: {
-    headline: "12 WEEKS FROM NOW, YOU COULD BE GLAD YOU STARTED TODAY.",
-    subheadline: [
-      "You could be fitter, stronger, more energetic and noticeably closer to the shape you want to be in.",
-      "Or you could still be telling yourself you'll start when work settles down, life gets quieter or motivation comes back.",
-    ],
+    headline: "SEE WHAT YOU COULD ACHIEVE IN THE NEXT 12 WEEKS.",
     lead:
-      "Answer a few quick questions and see whether F15 could be the right fit to help you get there.",
+      "Answer a few quick questions and see whether F15 could be the right fit to help you get stronger, fitter and back in shape.",
   },
 };
