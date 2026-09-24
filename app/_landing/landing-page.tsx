@@ -160,12 +160,19 @@ export function LandingPage({ copy }: { copy: LandingCopy }) {
             <div className="animate-fade-up-delay-3">
               <LocationLine text={locationLine} className="mb-5" />
 
-              <QualifyButton source="hero" id={HERO_CTA_ID} />
+              {/* The hero column is left-aligned, so the button and its two
+                  reassurance lines sit in their own centred group: the lines
+                  centre under the button here exactly as they do under the
+                  other three CTAs. The group is button-width on desktop and
+                  full-width on mobile, where the button is too. */}
+              <div className="flex flex-col items-center text-center w-full sm:w-fit">
+                <QualifyButton source="hero" id={HERO_CTA_ID} />
 
-              <p className="text-white/50 text-xs sm:text-sm mt-4 font-medium">{CTA_SUBLINE}</p>
-              <p className="text-white/40 text-xs sm:text-sm mt-1.5 max-w-md leading-relaxed">
-                {CTA_SUBLINE_DETAIL}
-              </p>
+                <p className="text-white/50 text-xs sm:text-sm mt-4 font-medium">{CTA_SUBLINE}</p>
+                <p className="text-white/40 text-xs sm:text-sm mt-1.5 max-w-sm leading-relaxed">
+                  {CTA_SUBLINE_DETAIL}
+                </p>
+              </div>
 
               <div className="mt-6 pt-5 border-t border-white/[0.07]">
                 <SocialProofLine className="justify-start" />
